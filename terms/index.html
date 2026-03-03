@@ -76,10 +76,6 @@
   <a href="/guide/" onclick="closeMobile()">AI Guide</a>
   <a href="/book/" onclick="closeMobile()" style="color:var(--accent);">Book Strategy Call</a>
 </div>
-<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--bg-card);border-top:1px solid var(--border);padding:1rem 2rem;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
-  <p style="margin:0;font-size:0.82rem;color:var(--text-muted);max-width:700px;">We use cookies to analyze site traffic and improve your experience. By continuing to use this site, you agree to our <a href="/privacy/" style="color:var(--accent);text-decoration:none;">Privacy Policy</a>.</p>
-  <button id="cookieAccept" style="background:var(--accent);color:#0A0A0A;border:none;padding:0.6rem 1.4rem;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;cursor:pointer;border-radius:2px;white-space:nowrap;">Accept</button>
-</div>
 <div class="legal-body">
   <div class="container">
     <div class="legal-inner">
@@ -153,14 +149,6 @@
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
     iconSun.style.display = isLight ? 'block' : 'none';
     iconMoon.style.display = isLight ? 'none' : 'block';
-  });
-  // Cookie consent
-  if (!localStorage.getItem('cookieOk')) {
-    document.getElementById('cookieBanner').style.display = 'flex';
-  }
-  document.getElementById('cookieAccept').addEventListener('click', () => {
-    localStorage.setItem('cookieOk','1');
-    document.getElementById('cookieBanner').style.display = 'none';
   });
 </script>
 
