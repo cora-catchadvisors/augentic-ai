@@ -1040,29 +1040,48 @@
   });
 
   // ── CONTACT FORM ──
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
     const btn = form.querySelector('button[type="submit"]');
     const data = Object.fromEntries(new FormData(form));
     btn.textContent = 'Sending...';
     btn.disabled = true;
-    // Send to mailto as fallback (replace with actual endpoint later)
-    const subject = encodeURIComponent('Strategy Call Request - ' + data.company);
-    const body = encodeURIComponent(
-      'Name: ' + data.firstName + ' ' + data.lastName + '\n' +
-      'Email: ' + data.email + '\n' +
-      'Company: ' + data.company + '\n' +
-      'Revenue: ' + data.revenue + '\n' +
-      'Interest: ' + data.interest + '\n' +
-      'Message: ' + (data.message || 'N/A')
-    );
-    setTimeout(() => {
-      btn.textContent = 'Request Sent';
-      btn.style.background = '#2a5a2a';
-      btn.style.color = '#90d090';
-      window.location.href = 'mailto:hello@augenticai.com?subject=' + subject + '&body=' + body;
-    }, 600);
+
+    try {
+      const res = await fetch('https://augentic-form-handler.kyle-50d.workers.dev', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          firstName: data.firstName,
+          lastName: data.lastName,
+          email: data.email,
+          company: data.company,
+          phone: data.phone || '',
+          revenue: data.revenue,
+          interest: data.interest,
+          role: data.role || '',
+          message: data.message || '',
+          source: 'contact-form',
+        }),
+      });
+      const result = await res.json();
+      if (result.success) {
+        btn.textContent = 'Request Sent';
+        btn.style.background = '#2a5a2a';
+        btn.style.color = '#90d090';
+        form.reset();
+      } else {
+        throw new Error(result.error || 'Submission failed');
+      }
+    } catch (err) {
+      btn.textContent = 'Try Again';
+      btn.disabled = false;
+      btn.style.background = '';
+      btn.style.color = '';
+      console.error('Form error:', err);
+      alert('Something went wrong. Please email hello@augenticai.com directly.');
+    }
   }
 
   // ── NAV SCROLL ──
