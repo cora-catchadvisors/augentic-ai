@@ -7,7 +7,7 @@
   <meta name="description" content="Augentic AI architects, integrates, and deploys autonomous AI systems that replace manual work and drive measurable revenue outcomes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -16,9 +16,9 @@
       --bg: #0A0A0A;
       --bg-card: #111111;
       --bg-raised: #161616;
-      --text: #F5F5F0;
-      --text-muted: #888880;
-      --text-dim: #555550;
+      --text: #F8F8F4;
+      --text-muted: #B8B8B0;
+      --text-dim: #888880;
       --accent: #D4AF37;
       --accent-dim: rgba(212, 175, 55, 0.15);
       --border: rgba(255,255,255,0.07);
@@ -48,16 +48,17 @@
     ::-webkit-scrollbar-thumb { background: var(--text-dim); border-radius: 2px; }
 
     /* ── TYPOGRAPHY ── */
-    h1, h2, h3, h4 { font-weight: 600; line-height: 1.2; letter-spacing: -0.02em; }
-    h1 { font-family: var(--font-serif); font-size: clamp(2.8rem, 5.5vw, 4.5rem); }
-    h2 { font-family: var(--font-serif); font-size: clamp(2rem, 4vw, 3.2rem); }
-    h3 { font-family: var(--font-sans); font-size: 1.1rem; font-weight: 600; letter-spacing: 0.02em; }
-    p { color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
+    h1, h2, h3, h4 { font-weight: 800; line-height: 1.08; letter-spacing: -0.03em; }
+    h1 { font-family: var(--font-serif); font-size: clamp(3.4rem, 7vw, 6rem); color: #FFFFFF; }
+    h2 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 4rem); color: #FFFFFF; font-weight: 700; }
+    h3 { font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; color: #FFFFFF; }
+    h4 { font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; color: #FFFFFF; }
+    p { color: #A8A8A0; font-size: 1.05rem; line-height: 1.85; font-weight: 300; }
 
     .label {
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 0.2em;
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 0.28em;
       text-transform: uppercase;
       color: var(--accent);
     }
@@ -96,10 +97,10 @@
       list-style: none;
     }
     .nav-links a {
-      font-size: 0.8rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      color: var(--text-muted);
+      font-size: 0.82rem;
+      font-weight: 500;
+      letter-spacing: 0.06em;
+      color: #A0A098;
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -171,7 +172,7 @@
     .hero-content h1 { margin-bottom: 1.5rem; }
     .hero-content h1 em { font-style: normal; color: var(--accent); }
     .hero-sub {
-      font-size: 1.05rem;
+      font-size: 1.2rem;
       color: var(--text-muted);
       max-width: 580px; margin: 0 auto 3rem;
       line-height: 1.9;
@@ -208,7 +209,7 @@
     .section-header { margin-bottom: 5rem; }
     .section-header .label { margin-bottom: 1rem; display: block; }
     .section-header h2 { margin-bottom: 1.2rem; }
-    .section-header p { max-width: 560px; font-size: 1rem; }
+    .section-header p { max-width: 600px; font-size: 1.1rem; color: #B0B0A8; }
     .section-header.center { text-align: center; }
     .section-header.center p { margin: 0 auto; }
 
@@ -245,8 +246,8 @@
       margin-bottom: 1.8rem;
       color: var(--accent);
     }
-    .problem-card h3 { color: var(--text); margin-bottom: 0.8rem; font-size: 1rem; }
-    .problem-card p { font-size: 0.9rem; line-height: 1.8; }
+    .problem-card h3 { color: #FFFFFF; margin-bottom: 0.8rem; font-size: 1.05rem; font-weight: 700; }
+    .problem-card p { font-size: 0.95rem; line-height: 1.85; color: #A0A098; }
 
     /* ── SOLUTION ── */
     #solution { background: var(--bg-card); }
@@ -272,13 +273,13 @@
     }
     .solution-step h3 {
       color: var(--accent);
-      font-size: 0.8rem;
-      font-weight: 600;
-      letter-spacing: 0.15em;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       margin-bottom: 0.8rem;
     }
-    .solution-step p { font-size: 0.9rem; line-height: 1.8; }
+    .solution-step p { font-size: 0.95rem; line-height: 1.85; color: #A0A098; }
 
     /* ── OFFERINGS ── */
     #offerings { background: var(--bg); }
@@ -309,16 +310,17 @@
     }
     .offering-card h3 {
       font-family: var(--font-serif);
-      font-size: 1.5rem;
-      font-weight: 400;
-      color: var(--text);
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #FFFFFF;
       margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
     }
     .offering-desc {
-      font-size: 0.88rem;
-      color: var(--text-muted);
+      font-size: 0.95rem;
+      color: #A0A098;
       margin-bottom: 2rem;
-      line-height: 1.7;
+      line-height: 1.75;
       min-height: 3rem;
     }
     .offering-features {
@@ -328,8 +330,8 @@
       margin-bottom: 2.5rem;
     }
     .offering-features li {
-      font-size: 0.85rem;
-      color: var(--text-muted);
+      font-size: 0.9rem;
+      color: #B0B0A8;
       padding: 0.5rem 0;
       border-bottom: 1px solid var(--border);
       display: flex; align-items: flex-start; gap: 0.8rem;
@@ -505,8 +507,8 @@
       section { padding: 5rem 0; }
     }
     @media (max-width: 600px) {
-      h1 { font-size: 2rem; }
-      h2 { font-size: 1.7rem; }
+      h1 { font-size: clamp(2.2rem, 8vw, 3.2rem); }
+      h2 { font-size: clamp(1.8rem, 6vw, 2.6rem); }
       .who-col { padding: 2.5rem 1.5rem; }
       .offering-card { padding: 2rem 1.5rem; }
       .problem-card { padding: 2rem 1.5rem; }
