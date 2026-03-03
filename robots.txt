@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /build-prompt.md
+Disallow: /_build_site.py
+
+Sitemap: https://www.augenticai.com/sitemap.xml

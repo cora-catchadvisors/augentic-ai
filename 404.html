@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" /><meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Page Not Found | Augentic AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230B0B0B'/%3E%3Cpath fill='%23D4AF37' fill-rule='evenodd' d='M50 5 L5 95 H25 L50 57 L75 95 H95 L50 5 Z M50 30 L35 68 H65 L50 30 Z'/%3E%3C/svg%3E" />
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0A0A0A;--bg-card:#111111;--bg-raised:#161616;--text:#F5F5F0;--text-muted:#888880;--text-dim:#555550;--accent:#D4AF37;--accent-dim:rgba(212,175,55,0.12);--border:rgba(255,255,255,0.07);--border-accent:rgba(212,175,55,0.3);--font-serif:'Playfair Display',Georgia,serif;--font-sans:'Inter',system-ui,sans-serif;--max:1200px;--radius:2px}
+    body.light{--bg:#FAFAF7;--bg-card:#F2F2EE;--text:#0B0B0B;--text-muted:#444440;--text-dim:#999990;--border:rgba(0,0,0,0.08);--border-accent:rgba(212,175,55,0.4)}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:var(--font-sans);font-weight:300;line-height:1.7;-webkit-font-smoothing:antialiased}
+    ::selection{background:var(--accent-dim);color:var(--accent)}
+    h1,h2,h3,h4{font-weight:400;line-height:1.25;letter-spacing:-0.02em}
+    h1{font-family:var(--font-serif);font-size:clamp(2rem,4vw,3.2rem)}
+    h2{font-family:var(--font-serif);font-size:clamp(1.6rem,3vw,2.4rem)}
+    h3{font-family:var(--font-sans);font-size:1.05rem;font-weight:500;letter-spacing:0}
+    p{color:var(--text-muted);line-height:1.85}
+    a{color:inherit}
+    .label{font-size:0.7rem;font-weight:600;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent)}
+    .container{max-width:var(--max);margin:0 auto;padding:0 2rem}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.5rem 0;transition:background 0.4s,padding 0.3s}
+    nav.scrolled{background:rgba(10,10,10,0.95);border-bottom:1px solid var(--border);padding:1rem 0;backdrop-filter:blur(12px)}
+    body.light nav.scrolled{background:rgba(250,250,247,0.95)}
+    nav .container{display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+    .nav-links{display:flex;align-items:center;gap:2rem;list-style:none}
+    .nav-links a{font-size:0.8rem;color:var(--text-muted);text-decoration:none;transition:color 0.2s}
+    .nav-links a:hover{color:var(--text)}
+    .nav-cta{font-size:0.78rem;font-weight:500;letter-spacing:0.08em;padding:0.65rem 1.4rem;background:var(--accent);color:#0A0A0A;text-decoration:none;border-radius:var(--radius);transition:opacity 0.2s;white-space:nowrap}
+    .nav-cta:hover{opacity:0.88}
+    .theme-toggle{background:none;border:1px solid var(--border);color:var(--text-muted);cursor:pointer;width:34px;height:34px;display:flex;align-items:center;justify-content:center;border-radius:var(--radius);transition:color 0.2s;flex-shrink:0}
+    .theme-toggle:hover{color:var(--accent)}
+    .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;background:none;border:none;padding:4px}
+    .hamburger span{display:block;width:22px;height:1px;background:var(--text)}
+    .mobile-menu{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:99;background:var(--bg);padding:6rem 2rem 2rem;flex-direction:column;gap:2rem}
+    .mobile-menu.open{display:flex}
+    .mobile-menu a{font-size:1.4rem;color:var(--text);text-decoration:none;border-bottom:1px solid var(--border);padding-bottom:1.2rem}
+    footer{background:var(--bg);border-top:1px solid var(--border);padding:3rem 0}
+    .footer-inner{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.5rem}
+    .footer-tagline{font-size:0.78rem;color:var(--text-dim);margin-top:0.3rem}
+    .footer-links{display:flex;gap:2rem;list-style:none;flex-wrap:wrap}
+    .footer-links a{font-size:0.78rem;color:var(--text-dim);text-decoration:none;transition:color 0.2s}
+    .footer-links a:hover{color:var(--text-muted)}
+    .footer-copy{font-size:0.75rem;color:var(--text-dim)}
+    .divider{height:1px;background:linear-gradient(90deg,transparent,var(--border),transparent)}
+    .btn-primary{display:inline-block;padding:0.9rem 2rem;background:var(--accent);color:#0A0A0A;font-size:0.82rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:var(--radius);transition:opacity 0.2s,transform 0.2s;border:none;cursor:pointer}
+    .btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
+    .btn-outline{display:inline-block;padding:0.85rem 1.8rem;border:1px solid var(--border-accent);color:var(--accent);font-size:0.82rem;font-weight:500;text-decoration:none;border-radius:var(--radius);transition:all 0.2s}
+    .btn-outline:hover{background:var(--accent-dim)}
+    @media(max-width:900px){.nav-links,.nav-cta{display:none}.hamburger{display:flex}}
+  </style>
+  <style>.not-found{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:2rem}.not-found-inner{max-width:480px}.not-found-num{font-family:var(--font-serif);font-size:8rem;color:var(--accent);opacity:0.3;line-height:1;margin-bottom:1rem}.not-found-inner h1{font-size:1.8rem;margin-bottom:1rem}.not-found-inner p{margin-bottom:2.5rem}</style>
+</head>
+<body>
+<nav id="nav"><div class="container"><a href="/" class="nav-logo" style="display:flex;align-items:center;text-decoration:none;"><img src="/logo.svg" alt="Augentic AI" height="36" style="height:36px;width:auto;" /></a>
+    <ul class="nav-links">
+      <li><a href="/#solution">Solutions</a></li>
+      <li><a href="/#offerings">Offerings</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/guide/">AI Guide</a></li>
+    </ul>
+    <a href="/book/" class="nav-cta">Book Strategy Call</a>
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+      <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+      <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button></div></nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#solution" onclick="closeMobile()">Solutions</a>
+  <a href="/#offerings" onclick="closeMobile()">Offerings</a>
+  <a href="/blog/" onclick="closeMobile()">Insights</a>
+  <a href="/guide/" onclick="closeMobile()">AI Guide</a>
+  <a href="/book/" onclick="closeMobile()" style="color:var(--accent);">Book Strategy Call</a>
+</div>
+<div id="cookieBanner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:var(--bg-card);border-top:1px solid var(--border);padding:1rem 2rem;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
+  <p style="margin:0;font-size:0.82rem;color:var(--text-muted);max-width:700px;">We use cookies to analyze site traffic and improve your experience. By continuing to use this site, you agree to our <a href="/privacy/" style="color:var(--accent);text-decoration:none;">Privacy Policy</a>.</p>
+  <button id="cookieAccept" style="background:var(--accent);color:#0A0A0A;border:none;padding:0.6rem 1.4rem;font-size:0.78rem;font-weight:600;letter-spacing:0.08em;cursor:pointer;border-radius:2px;white-space:nowrap;">Accept</button>
+</div>
+<div class="not-found">
+  <div class="not-found-inner">
+    <div class="not-found-num">404</div>
+    <h1>Page Not Found</h1>
+    <p>The page you are looking for does not exist or has been moved.</p>
+    <a href="/" class="btn-primary">Return Home</a>
+  </div>
+</div>
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div style="display:flex;align-items:center;"><img src="/logo.svg" alt="Augentic AI" height="28" style="height:28px;width:auto;" /></div>
+        <div class="footer-tagline">Autonomous AI. Measurable Revenue.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="/#solution">Solutions</a></li>
+        <li><a href="/#offerings">Offerings</a></li>
+        <li><a href="/blog/">Insights</a></li>
+        <li><a href="/guide/">AI Guide</a></li>
+        <li><a href="/book/">Book a Call</a></li>
+        <li><a href="/privacy/">Privacy</a></li>
+        <li><a href="/terms/">Terms</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2026 Augentic AI. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => { nav.classList.toggle('scrolled', window.scrollY > 40); }, { passive: true });
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+  const themeToggle = document.getElementById('themeToggle');
+  const iconSun = document.getElementById('iconSun');
+  const iconMoon = document.getElementById('iconMoon');
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') { document.body.classList.add('light'); iconSun.style.display = 'block'; iconMoon.style.display = 'none'; }
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    iconSun.style.display = isLight ? 'block' : 'none';
+    iconMoon.style.display = isLight ? 'none' : 'block';
+  });
+  // Cookie consent
+  if (!localStorage.getItem('cookieOk')) {
+    document.getElementById('cookieBanner').style.display = 'flex';
+  }
+  document.getElementById('cookieAccept').addEventListener('click', () => {
+    localStorage.setItem('cookieOk','1');
+    document.getElementById('cookieBanner').style.display = 'none';
+  });
+</script>
+</body></html>
