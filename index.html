@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Augentic AI — Autonomous AI Workforces for Revenue-Driven Companies</title>
+  <meta name="description" content="Augentic AI architects, integrates, and deploys autonomous AI systems that replace manual work and drive measurable revenue outcomes." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #0A0A0A;
+      --bg-card: #111111;
+      --bg-raised: #161616;
+      --text: #F5F5F0;
+      --text-muted: #888880;
+      --text-dim: #555550;
+      --accent: #C8A96E;
+      --accent-dim: rgba(200, 169, 110, 0.15);
+      --border: rgba(255,255,255,0.07);
+      --border-accent: rgba(200, 169, 110, 0.3);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --max: 1200px;
+      --radius: 2px;
+    }
+
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-sans);
+      font-weight: 300;
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    ::selection { background: var(--accent-dim); color: var(--accent); }
+
+    /* ── SCROLLBAR ── */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: var(--text-dim); border-radius: 2px; }
+
+    /* ── TYPOGRAPHY ── */
+    h1, h2, h3, h4 { font-weight: 400; line-height: 1.2; letter-spacing: -0.02em; }
+    h1 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 4rem); }
+    h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+    h3 { font-family: var(--font-sans); font-size: 1.1rem; font-weight: 500; letter-spacing: 0.02em; }
+    p { color: var(--text-muted); font-size: 1rem; line-height: 1.8; }
+
+    .label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: var(--accent);
+    }
+
+    /* ── LAYOUT ── */
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    section { padding: 8rem 0; }
+
+    /* ── NAVIGATION ── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      padding: 1.5rem 0;
+      transition: background 0.4s ease, border-bottom 0.4s ease, padding 0.3s ease;
+    }
+    nav.scrolled {
+      background: rgba(10,10,10,0.95);
+      border-bottom: 1px solid var(--border);
+      padding: 1rem 0;
+      backdrop-filter: blur(12px);
+    }
+    nav .container {
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--font-sans);
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text);
+      text-decoration: none;
+    }
+    .nav-logo span { color: var(--accent); }
+    .nav-links {
+      display: flex; align-items: center; gap: 2.5rem;
+      list-style: none;
+    }
+    .nav-links a {
+      font-size: 0.8rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      font-size: 0.78rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      padding: 0.65rem 1.4rem;
+      background: var(--accent);
+      color: #0A0A0A;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: opacity 0.2s;
+      white-space: nowrap;
+    }
+    .nav-cta:hover { opacity: 0.88; }
+    .hamburger {
+      display: none;
+      flex-direction: column; gap: 5px;
+      cursor: pointer; background: none; border: none; padding: 4px;
+    }
+    .hamburger span {
+      display: block; width: 22px; height: 1px;
+      background: var(--text); transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99;
+      background: var(--bg);
+      padding: 6rem 2rem 2rem;
+      flex-direction: column; gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-size: 1.4rem; color: var(--text); text-decoration: none;
+      border-bottom: 1px solid var(--border); padding-bottom: 1.2rem;
+    }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      display: flex; align-items: center;
+      position: relative; overflow: hidden;
+      padding: 0;
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image:
+        linear-gradient(rgba(200,169,110,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200,169,110,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+      mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 40%, transparent 100%);
+    }
+    .hero-glow {
+      position: absolute; top: 20%; left: 50%; transform: translateX(-50%);
+      width: 600px; height: 400px;
+      background: radial-gradient(ellipse, rgba(200,169,110,0.06) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative; z-index: 1;
+      max-width: 820px; margin: 0 auto;
+      padding: 10rem 2rem 6rem;
+      text-align: center;
+    }
+    .hero-content .label { margin-bottom: 2rem; display: block; }
+    .hero-content h1 { margin-bottom: 1.5rem; }
+    .hero-content h1 em { font-style: normal; color: var(--accent); }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      max-width: 580px; margin: 0 auto 3rem;
+      line-height: 1.9;
+    }
+    .hero-actions { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    .btn-primary {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background: var(--accent);
+      color: #0A0A0A;
+      font-size: 0.82rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      text-decoration: none;
+      border-radius: var(--radius);
+      transition: opacity 0.2s, transform 0.2s;
+    }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-ghost {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.82rem;
+      font-weight: 400;
+      color: var(--text-muted);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+    .btn-ghost:hover { color: var(--text); }
+    .btn-ghost svg { transition: transform 0.2s; }
+    .btn-ghost:hover svg { transform: translateX(3px); }
+
+    /* ── SECTION HEADERS ── */
+    .section-header { margin-bottom: 5rem; }
+    .section-header .label { margin-bottom: 1rem; display: block; }
+    .section-header h2 { margin-bottom: 1.2rem; }
+    .section-header p { max-width: 560px; font-size: 1rem; }
+    .section-header.center { text-align: center; }
+    .section-header.center p { margin: 0 auto; }
+
+    /* ── DIVIDER ── */
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+    }
+
+    /* ── PROBLEM ── */
+    #problem { background: var(--bg); }
+    .problem-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1px;
+      background: var(--border);
+      border: 1px solid var(--border);
+    }
+    .problem-card {
+      background: var(--bg);
+      padding: 3rem 2.5rem;
+      position: relative;
+    }
+    .problem-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0;
+      height: 2px;
+      background: transparent;
+      transition: background 0.3s;
+    }
+    .problem-card:hover::before { background: var(--accent); }
+    .problem-icon {
+      width: 40px; height: 40px;
+      margin-bottom: 1.8rem;
+      color: var(--accent);
+    }
+    .problem-card h3 { color: var(--text); margin-bottom: 0.8rem; font-size: 1rem; }
+    .problem-card p { font-size: 0.9rem; line-height: 1.8; }
+
+    /* ── SOLUTION ── */
+    #solution { background: var(--bg-card); }
+    .solution-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      background: var(--border);
+    }
+    .solution-step {
+      background: var(--bg-card);
+      padding: 3rem 2rem;
+      position: relative;
+    }
+    .step-number {
+      font-family: var(--font-serif);
+      font-size: 3.5rem;
+      color: var(--accent-dim);
+      color: rgba(200,169,110,0.12);
+      line-height: 1;
+      margin-bottom: 1.5rem;
+      display: block;
+    }
+    .solution-step h3 {
+      color: var(--accent);
+      font-size: 0.8rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.8rem;
+    }
+    .solution-step p { font-size: 0.9rem; line-height: 1.8; }
+
+    /* ── OFFERINGS ── */
+    #offerings { background: var(--bg); }
+    .offerings-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+    .offering-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      padding: 3rem 2.5rem;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+    .offering-card:hover { border-color: var(--border-accent); }
+    .offering-card.featured {
+      border-color: var(--border-accent);
+      background: linear-gradient(160deg, #141210 0%, var(--bg-card) 100%);
+    }
+    .offering-tag {
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.8rem;
+      display: block;
+    }
+    .offering-card h3 {
+      font-family: var(--font-serif);
+      font-size: 1.5rem;
+      font-weight: 400;
+      color: var(--text);
+      margin-bottom: 0.5rem;
+    }
+    .offering-desc {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+      line-height: 1.7;
+      min-height: 3rem;
+    }
+    .offering-features {
+      list-style: none;
+      border-top: 1px solid var(--border);
+      padding-top: 1.8rem;
+      margin-bottom: 2.5rem;
+    }
+    .offering-features li {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      padding: 0.5rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 0.8rem;
+    }
+    .offering-features li::before {
+      content: '—';
+      color: var(--accent);
+      flex-shrink: 0;
+      margin-top: 0.05em;
+    }
+    .offering-price {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      color: var(--text);
+      margin-bottom: 1.5rem;
+    }
+    .offering-price span { font-size: 0.85rem; font-family: var(--font-sans); color: var(--text-muted); }
+
+    /* ── HOW IT WORKS ── */
+    #process { background: var(--bg-card); }
+    .process-steps { max-width: 720px; }
+    .process-step {
+      display: flex; gap: 2.5rem;
+      padding: 2.5rem 0;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .process-step:last-child { border-bottom: none; }
+    .step-num {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      color: var(--accent);
+      font-weight: 400;
+      flex-shrink: 0;
+      width: 2rem;
+      padding-top: 0.1rem;
+    }
+    .step-body h3 {
+      color: var(--text);
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0;
+    }
+    .step-body p { font-size: 0.9rem; }
+
+    /* ── WHO IT'S FOR ── */
+    #who { background: var(--bg); }
+    .who-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2px;
+      background: var(--border);
+    }
+    .who-col {
+      background: var(--bg);
+      padding: 4rem 3.5rem;
+    }
+    .who-col h3 {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 2.5rem;
+    }
+    .who-col.fit h3 { color: var(--accent); }
+    .who-col.nofit h3 { color: var(--text-muted); }
+    .who-list { list-style: none; }
+    .who-list li {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      padding: 0.8rem 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: flex-start; gap: 1rem;
+      line-height: 1.6;
+    }
+    .who-list li:last-child { border-bottom: none; }
+    .who-list .icon { flex-shrink: 0; margin-top: 0.1rem; font-style: normal; font-size: 0.9rem; }
+    .fit .icon { color: var(--accent); }
+    .nofit .icon { color: var(--text-dim); }
+
+    /* ── AUTHORITY ── */
+    #authority {
+      background: var(--bg-card);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .authority-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4rem;
+    }
+    .authority-item h3 {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--text);
+      margin-bottom: 0.8rem;
+      letter-spacing: 0;
+    }
+    .authority-item p { font-size: 0.9rem; line-height: 1.8; }
+    .authority-item .line {
+      width: 24px; height: 1px;
+      background: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ── CTA ── */
+    #contact {
+      background: var(--bg);
+      text-align: center;
+      position: relative; overflow: hidden;
+    }
+    #contact::before {
+      content: '';
+      position: absolute; top: -200px; left: 50%; transform: translateX(-50%);
+      width: 800px; height: 600px;
+      background: radial-gradient(ellipse, rgba(200,169,110,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .cta-content { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .cta-content h2 { margin-bottom: 1.2rem; }
+    .cta-content p { font-size: 1rem; margin-bottom: 3rem; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-note {
+      font-size: 0.82rem;
+      color: var(--text-dim);
+      margin-top: 1.5rem;
+    }
+    .cta-note a { color: var(--text-muted); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+    .cta-note a:hover { color: var(--text); }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 3rem 0;
+    }
+    .footer-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-logo { font-size: 0.8rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); }
+    .footer-logo span { color: var(--accent); }
+    .footer-tagline { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.3rem; letter-spacing: 0.05em; }
+    .footer-links { display: flex; gap: 2rem; list-style: none; flex-wrap: wrap; }
+    .footer-links a { font-size: 0.78rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--text-muted); }
+    .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
+
+    /* ── FADE IN ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .fade-in-delay-1 { transition-delay: 0.1s; }
+    .fade-in-delay-2 { transition-delay: 0.2s; }
+    .fade-in-delay-3 { transition-delay: 0.3s; }
+    .fade-in-delay-4 { transition-delay: 0.4s; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      .problem-grid,
+      .solution-grid,
+      .offerings-grid,
+      .authority-grid { grid-template-columns: 1fr; }
+      .who-grid { grid-template-columns: 1fr; }
+      .nav-links, .nav-cta { display: none; }
+      .hamburger { display: flex; }
+      section { padding: 5rem 0; }
+    }
+    @media (max-width: 600px) {
+      h1 { font-size: 2rem; }
+      h2 { font-size: 1.7rem; }
+      .who-col { padding: 2.5rem 1.5rem; }
+      .offering-card { padding: 2rem 1.5rem; }
+      .problem-card { padding: 2rem 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── NAVIGATION ── -->
+<nav id="nav">
+  <div class="container">
+    <a href="#hero" class="nav-logo">AUGENTIC<span>.</span>AI</a>
+    <ul class="nav-links">
+      <li><a href="#solution">Solutions</a></li>
+      <li><a href="#offerings">Offerings</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#who">Who We Serve</a></li>
+    </ul>
+    <a href="#contact" class="nav-cta">Book Strategy Call</a>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#solution" onclick="closeMobile()">Solutions</a>
+  <a href="#offerings" onclick="closeMobile()">Offerings</a>
+  <a href="#process" onclick="closeMobile()">Process</a>
+  <a href="#who" onclick="closeMobile()">Who We Serve</a>
+  <a href="#contact" onclick="closeMobile()" style="color: var(--accent);">Book Strategy Call</a>
+</div>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-glow"></div>
+  <div class="hero-content">
+    <span class="label fade-in">AI Systems Integration</span>
+    <h1 class="fade-in fade-in-delay-1">
+      Your Workforce. Automated.<br>
+      Your Revenue. <em>Accelerated.</em>
+    </h1>
+    <p class="hero-sub fade-in fade-in-delay-2">
+      Augentic AI architects, integrates, and deploys autonomous AI systems that replace manual work and drive measurable revenue outcomes for mid-market and enterprise companies.
+    </p>
+    <div class="hero-actions fade-in fade-in-delay-3">
+      <a href="#contact" class="btn-primary">Book a Strategy Call</a>
+      <a href="#solution" class="btn-ghost">
+        See How It Works
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── PROBLEM ── -->
+<section id="problem">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">The Problem</span>
+      <h2>The Cost of Manual Operations<br>Is Compounding</h2>
+      <p>Every quarter you delay AI transformation, the gap between you and your competitors widens. Manual workflows are not a minor inefficiency — they are a structural liability.</p>
+    </div>
+    <div class="problem-grid">
+      <div class="problem-card fade-in">
+        <svg class="problem-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+          <rect x="4" y="8" width="14" height="10" rx="1"/>
+          <rect x="22" y="8" width="14" height="10" rx="1"/>
+          <rect x="4" y="24" width="14" height="10" rx="1"/>
+          <rect x="22" y="24" width="14" height="10" rx="1"/>
+          <line x1="11" y1="18" x2="11" y2="24"/>
+          <line x1="29" y1="18" x2="29" y2="24"/>
+          <line x1="11" y1="21" x2="29" y2="21" stroke-dasharray="2 2"/>
+        </svg>
+        <h3>Fragmented Tools, Zero Automation</h3>
+        <p>Your CRM, email, calendar, and sales workflows run on human effort. Every manual step is a revenue leak. The tools exist — the systems connecting them do not.</p>
+      </div>
+      <div class="problem-card fade-in fade-in-delay-1">
+        <svg class="problem-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+          <circle cx="20" cy="14" r="7"/>
+          <path d="M6 36c0-7.732 6.268-14 14-14s14 6.268 14 14"/>
+          <line x1="28" y1="8" x2="36" y2="4"/>
+          <line x1="28" y1="14" x2="36" y2="14"/>
+          <line x1="28" y1="20" x2="36" y2="24"/>
+        </svg>
+        <h3>Teams Built for Yesterday</h3>
+        <p>Your team is executing tasks that AI should own — lead follow-up, scheduling, data entry, reporting. The opportunity cost is measured in millions and growing every quarter.</p>
+      </div>
+      <div class="problem-card fade-in fade-in-delay-2">
+        <svg class="problem-icon" viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.2">
+          <path d="M8 32L20 8l12 24"/>
+          <line x1="13" y1="22" x2="27" y2="22"/>
+          <circle cx="20" cy="29" r="1.5" fill="currentColor" stroke="none"/>
+        </svg>
+        <h3>AI Experiments, No Results</h3>
+        <p>Most companies have tried AI tools. Few have built AI systems. A ChatGPT subscription is not a strategy. A point solution is not a workforce. There is a difference — and it shows in your numbers.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── SOLUTION ── -->
+<section id="solution">
+  <div class="container">
+    <div class="section-header fade-in">
+      <span class="label">Our Approach</span>
+      <h2>We Do Not Deploy Tools.<br>We Build Systems.</h2>
+      <p>Augentic AI operates as your AI systems integrator — designing, building, and operating autonomous AI architectures that become a structural part of your business.</p>
+    </div>
+    <div class="solution-grid">
+      <div class="solution-step fade-in">
+        <span class="step-number">01</span>
+        <h3>Architect</h3>
+        <p>We map your revenue workflow, identify automation leverage points, and design a custom AI system blueprint specific to your business model and existing stack.</p>
+      </div>
+      <div class="solution-step fade-in fade-in-delay-1">
+        <span class="step-number">02</span>
+        <h3>Integrate</h3>
+        <p>We connect AI agents into your existing CRM, email, calendar, voice, and sales infrastructure — no rip and replace. Your team keeps working. The AI starts too.</p>
+      </div>
+      <div class="solution-step fade-in fade-in-delay-2">
+        <span class="step-number">03</span>
+        <h3>Automate</h3>
+        <p>Autonomous agents execute outreach, follow-up, scheduling, reporting, and front-office operations continuously — without supervision, without fatigue.</p>
+      </div>
+      <div class="solution-step fade-in fade-in-delay-3">
+        <span class="step-number">04</span>
+        <h3>Optimize</h3>
+        <p>We monitor performance, retrain agents, and scale what works. AI systems are not set-and-forget — we treat them as living infrastructure that improves over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── OFFERINGS ── -->
+<section id="offerings">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="label">Offerings</span>
+      <h2>Built for Companies Ready<br>to Operate at AI Speed</h2>
+    </div>
+    <div class="offerings-grid">
+
+      <div class="offering-card featured fade-in">
+        <span class="offering-tag">Augentic Enterprise</span>
+        <h3>Full AI Workforce Buildout</h3>
+        <p class="offering-desc">For companies ready to deploy a complete autonomous AI workforce across revenue operations.</p>
+        <ul class="offering-features">
+          <li>Custom multi-agent architecture</li>
+          <li>Full CRM, email, voice, and workflow integration</li>
+          <li>Dedicated AI systems team</li>
+          <li>Ongoing optimization and agent retraining</li>
+          <li>Executive reporting and KPI dashboards</li>
+        </ul>
+        <div class="offering-price">$50,000+ <span>custom engagement</span></div>
+        <a href="#contact" class="btn-primary" style="display:inline-block;font-size:0.78rem;padding:0.75rem 1.6rem;">Schedule Discovery Call</a>
+      </div>
+
+      <div class="offering-card fade-in fade-in-delay-1">
+        <span class="offering-tag">Augentic Accelerator</span>
+        <h3>90-Day AI Integration</h3>
+        <p class="offering-desc">For companies that need to move fast and prove ROI before committing to a full deployment.</p>
+        <ul class="offering-features">
+          <li>90-day structured AI integration program</li>
+          <li>3–5 core workflows automated</li>
+          <li>Weekly optimization sprints</li>
+          <li>Measurable outcome commitments</li>
+          <li>Fixed-scope, fixed-fee engagement</li>
+        </ul>
+        <div class="offering-price">&nbsp; <span style="font-size:0.9rem;font-family:var(--font-sans);color:var(--text-muted);">Fixed-fee — contact for pricing</span></div>
+        <a href="#contact" class="btn-primary" style="display:inline-block;font-size:0.78rem;padding:0.75rem 1.6rem;">Get Started</a>
+      </div>
+
+      <div class="offering-card fade-in fade-in-delay-2">
+        <span class="offering-tag">Augentic Voice</span>
+        <h3>AI Front Office</h3>
+        <p class="offering-desc">AI-powered front office operations that handle inbound calls, scheduling, and lead qualification — 24 hours a day.</p>
+        <ul class="offering-features">
+          <li>AI receptionist for inbound calls</li>
+          <li>Appointment scheduling and routing</li>
+          <li>Lead qualification and CRM logging</li>
+          <li>Available 24/7/365</li>
+          <li>Deploys in days, not months</li>
+        </ul>
+        <div class="offering-price">&nbsp; <span style="font-size:0.9rem;font-family:var(--font-sans);color:var(--text-muted);">Monthly retainer — contact for pricing</span></div>
+        <a href="#contact" class="btn-primary" style="display:inline-block;font-size:0.78rem;padding:0.75rem 1.6rem;">Request Demo</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="process">
+  <div class="container">
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:6rem;align-items:start;">
+      <div class="section-header fade-in" style="margin-bottom:0;">
+        <span class="label">Engagement Model</span>
+        <h2>From Discovery to Deployment in 30 Days</h2>
+        <p style="margin-top:1.2rem;">We move fast without cutting corners. Every engagement follows a proven sequence designed to minimize disruption and maximize time-to-value.</p>
+      </div>
+      <div class="process-steps fade-in fade-in-delay-1">
+        <div class="process-step">
+          <span class="step-num">01</span>
+          <div class="step-body">
+            <h3>Strategy Call</h3>
+            <p>We assess your current workflow, identify your highest-value automation opportunities, and determine organizational fit before any engagement begins.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="step-num">02</span>
+          <div class="step-body">
+            <h3>System Design</h3>
+            <p>Our team architects a custom AI system blueprint tailored to your revenue model, existing tooling, and operational requirements.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="step-num">03</span>
+          <div class="step-body">
+            <h3>Integration</h3>
+            <p>We connect agents to your existing tools — no new platforms, no disruption to your current operations. Your team keeps running. The agents start working.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="step-num">04</span>
+          <div class="step-body">
+            <h3>Deployment</h3>
+            <p>Agents go live. Your team is briefed. The system begins executing — outreach, scheduling, follow-up, reporting — without human initiation.</p>
+          </div>
+        </div>
+        <div class="process-step">
+          <span class="step-num">05</span>
+          <div class="step-body">
+            <h3>Optimization</h3>
+            <p>We monitor performance KPIs, retrain agents based on outcomes, and scale what is working. Every quarter, the system improves.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── WHO IT'S FOR ── -->
+<section id="who">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="label">Ideal Client Profile</span>
+      <h2>We Work With Companies<br>That Are Done Experimenting</h2>
+    </div>
+    <div class="who-grid fade-in">
+      <div class="who-col fit">
+        <h3>You are a fit if</h3>
+        <ul class="who-list">
+          <li><span class="icon">&#10003;</span> Your company generates $5M–$100M+ in annual revenue</li>
+          <li><span class="icon">&#10003;</span> You have a sales or revenue team running manual workflows</li>
+          <li><span class="icon">&#10003;</span> You are frustrated with AI tools that still require human oversight</li>
+          <li><span class="icon">&#10003;</span> You want measurable ROI, not a pilot program or proof of concept</li>
+          <li><span class="icon">&#10003;</span> You are ready to make AI a structural part of your business operations</li>
+        </ul>
+      </div>
+      <div class="who-col nofit">
+        <h3>We are not the right fit if</h3>
+        <ul class="who-list">
+          <li><span class="icon">&#10007;</span> You want to experiment with AI casually before committing resources</li>
+          <li><span class="icon">&#10007;</span> You are looking for a marketing agency, content service, or chatbot vendor</li>
+          <li><span class="icon">&#10007;</span> You need someone to manage your existing software subscriptions</li>
+          <li><span class="icon">&#10007;</span> You are not prepared to invest in AI as infrastructure, not a line item</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── AUTHORITY ── -->
+<section id="authority">
+  <div class="container">
+    <div class="section-header center fade-in" style="margin-bottom:5rem;">
+      <span class="label">Why Augentic AI</span>
+      <h2>We Are AI Systems Integrators.<br>Not Experimenters.</h2>
+    </div>
+    <div class="authority-grid">
+      <div class="authority-item fade-in">
+        <div class="line"></div>
+        <h3>Systems, Not Tools</h3>
+        <p>We build interconnected AI architectures that operate autonomously across your entire revenue workflow. Not dashboards. Not chatbots. Not isolated automations. Systems that run without you in the loop.</p>
+      </div>
+      <div class="authority-item fade-in fade-in-delay-1">
+        <div class="line"></div>
+        <h3>Revenue-Focused by Design</h3>
+        <p>Every system we build is tied to a specific revenue outcome — pipeline generation, conversion rate, sales cycle length, or retained team capacity. We measure impact in business metrics, not usage statistics.</p>
+      </div>
+      <div class="authority-item fade-in fade-in-delay-2">
+        <div class="line"></div>
+        <h3>Enterprise-Grade Infrastructure</h3>
+        <p>We design for stability, security, and operational scale. Our deployments are built to handle production workloads and grow with your business — not to impress a demo environment.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── CTA ── -->
+<section id="contact">
+  <div class="container">
+    <div class="cta-content">
+      <span class="label fade-in" style="display:block;margin-bottom:1.5rem;">Get Started</span>
+      <h2 class="fade-in fade-in-delay-1">Ready to Build<br>Your AI Workforce?</h2>
+      <p class="fade-in fade-in-delay-2">Schedule a 30-minute strategy call. We will assess your workflows, identify your highest-leverage automation opportunities, and tell you exactly what we would build — and what it would cost. No sales pitch. No obligation.</p>
+      <div class="fade-in fade-in-delay-3">
+        <a href="mailto:hello@augentic.ai" class="btn-primary" style="font-size:0.85rem;padding:1rem 2.2rem;">Book a Strategy Call</a>
+        <p class="cta-note">Not ready to talk? <a href="#">Download our AI Readiness Assessment</a>.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div>
+        <div class="footer-logo">AUGENTIC<span>.</span>AI</div>
+        <div class="footer-tagline">Autonomous AI. Measurable Revenue.</div>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#solution">Solutions</a></li>
+        <li><a href="#offerings">Offerings</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#who">Who We Serve</a></li>
+        <li><a href="mailto:hello@augentic.ai">Contact</a></li>
+      </ul>
+      <div class="footer-copy">&copy; 2026 Augentic AI. All rights reserved.</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // ── NAV SCROLL ──
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+  }, { passive: true });
+
+  // ── MOBILE MENU ──
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+  }
+
+  // ── FADE IN ON SCROLL ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+  document.querySelectorAll('.fade-in').forEach(el => {
+    observer.observe(el);
+  });
+
+  // ── HERO IMMEDIATE VISIBILITY ──
+  document.querySelectorAll('#hero .fade-in').forEach((el, i) => {
+    setTimeout(() => el.classList.add('visible'), 100 + i * 150);
+  });
+
+  // ── SUBTLE GRID PARALLAX ──
+  const heroGrid = document.querySelector('.hero-grid');
+  window.addEventListener('scroll', () => {
+    if (heroGrid) {
+      const offset = window.scrollY * 0.15;
+      heroGrid.style.transform = `translateY(${offset}px)`;
+    }
+  }, { passive: true });
+</script>
+</body>
+</html>
