@@ -1083,8 +1083,9 @@
         }),
         fetch(SHEETS_URL, {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
+          headers: { 'Content-Type': 'text/plain' },
           body: JSON.stringify(payload),
+          mode: 'no-cors',
         }).catch(err => console.warn('Sheets backup error:', err)),
       ]);
       const result = await workerRes.json();
