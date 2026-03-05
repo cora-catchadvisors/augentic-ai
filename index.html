@@ -7,7 +7,7 @@
   <meta name="description" content="Augentic AI architects, integrates, and deploys autonomous AI systems that replace manual work and drive measurable revenue outcomes." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -53,7 +53,7 @@
     h2 { font-family: var(--font-serif); font-size: clamp(2.4rem, 5vw, 4rem); color: var(--text); font-weight: 700; }
     h3 { font-family: var(--font-sans); font-size: 1.15rem; font-weight: 700; letter-spacing: -0.01em; color: var(--text); }
     h4 { font-family: var(--font-sans); font-size: 0.95rem; font-weight: 700; letter-spacing: 0.01em; color: var(--text); }
-    p { color: #A8A8A0; font-size: 1.05rem; line-height: 1.85; font-weight: 300; }
+    p { color: var(--text-muted); font-size: 1.05rem; line-height: 1.85; font-weight: 300; }
 
     .label {
       font-size: 0.68rem;
@@ -100,7 +100,7 @@
       font-size: 0.82rem;
       font-weight: 500;
       letter-spacing: 0.06em;
-      color: #A0A098;
+      color: var(--text-muted);
       text-decoration: none;
       transition: color 0.2s;
     }
@@ -170,7 +170,8 @@
     }
     .hero-content .label { margin-bottom: 2rem; display: block; }
     .hero-content h1 { margin-bottom: 1.5rem; }
-    .hero-content h1 em { font-style: normal; color: var(--accent); }
+    .hero-content h1 em { font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+    .pop { font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 700; color: var(--accent); text-transform: uppercase; }
     .hero-sub {
       font-size: 1.2rem;
       color: var(--text-muted);
@@ -209,7 +210,7 @@
     .section-header { margin-bottom: 5rem; }
     .section-header .label { margin-bottom: 1rem; display: block; }
     .section-header h2 { margin-bottom: 1.2rem; }
-    .section-header p { max-width: 600px; font-size: 1.1rem; color: #B0B0A8; }
+    .section-header p { max-width: 600px; font-size: 1.1rem; color: var(--text-muted); }
     .section-header.center { text-align: center; }
     .section-header.center p { margin: 0 auto; }
 
@@ -247,7 +248,7 @@
       color: var(--accent);
     }
     .problem-card h3 { color: var(--text); margin-bottom: 0.8rem; font-size: 1.05rem; font-weight: 700; }
-    .problem-card p { font-size: 0.95rem; line-height: 1.85; color: #A0A098; }
+    .problem-card p { font-size: 0.95rem; line-height: 1.85; color: var(--text-muted); }
 
     /* ── SOLUTION ── */
     #solution { background: var(--bg-card); }
@@ -265,7 +266,7 @@
     .step-number {
       font-family: var(--font-serif);
       font-size: 3.5rem;
-      color: var(--accent-dim);
+      color: rgba(212, 175, 55, 0.45);
       line-height: 1;
       margin-bottom: 1.5rem;
       display: block;
@@ -278,7 +279,7 @@
       text-transform: uppercase;
       margin-bottom: 0.8rem;
     }
-    .solution-step p { font-size: 0.95rem; line-height: 1.85; color: #A0A098; }
+    .solution-step p { font-size: 0.95rem; line-height: 1.85; color: var(--text-muted); }
 
     /* ── OFFERINGS ── */
     #offerings { background: var(--bg); }
@@ -319,7 +320,7 @@
     }
     .offering-desc {
       font-size: 0.95rem;
-      color: #A0A098;
+      color: var(--text-muted);
       margin-bottom: 2rem;
       line-height: 1.75;
       min-height: 3rem;
@@ -333,7 +334,7 @@
     }
     .offering-features li {
       font-size: 0.9rem;
-      color: #B0B0A8;
+      color: var(--text-muted);
       padding: 0.5rem 0;
       border-bottom: 1px solid var(--border);
       display: flex; align-items: flex-start; gap: 0.8rem;
@@ -546,8 +547,8 @@
       --bg-card: #F2F2EE;
       --bg-raised: #E8E8E4;
       --text: #0B0B0B;
-      --text-muted: #333330;
-      --text-dim: #5A5A54;
+      --text-muted: #111110;
+      --text-dim: #333330;
       --border: rgba(0,0,0,0.08);
       --border-accent: rgba(212,175,55,0.4);
       --accent-dim: rgba(212,175,55,0.25);
@@ -658,6 +659,7 @@
 
 <!-- ── HERO ── -->
 <section id="hero">
+  <canvas id="heroCanvas" style="position:absolute;inset:0;z-index:0;pointer-events:none;"></canvas>
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
   <div class="hero-content">
@@ -688,7 +690,7 @@
   <div class="container">
     <div class="section-header fade-in">
       <span class="label">The Problem</span>
-      <h2>The Cost of Manual Operations<br>Is Compounding</h2>
+      <h2>The Cost of Manual Operations<br><span class="pop">Is Compounding</span></h2>
       <p>Every quarter you delay AI transformation, the gap between you and your competitors widens. Manual workflows are not a minor inefficiency - they are a structural liability.</p>
     </div>
     <div class="problem-grid">
@@ -736,7 +738,7 @@
   <div class="container">
     <div class="section-header fade-in">
       <span class="label">Our Approach</span>
-      <h2>We Do Not Deploy Tools.<br>We Build Systems.</h2>
+      <h2>We Do Not Deploy Tools.<br><span class="pop">We Build Systems.</span></h2>
       <p>Augentic AI operates as your AI systems integrator - designing, building, and operating autonomous AI architectures that become a structural part of your business.</p>
     </div>
     <div class="solution-grid">
@@ -771,7 +773,7 @@
   <div class="container">
     <div class="section-header center fade-in">
       <span class="label">Offerings</span>
-      <h2>Built for Companies Ready<br>to Operate at AI Speed</h2>
+      <h2>Built for Companies Ready<br>to Operate at <span class="pop">AI Speed</span></h2>
     </div>
     <div class="offerings-grid">
 
@@ -787,7 +789,7 @@
           <li>Executive reporting and KPI dashboards</li>
         </ul>
         <div class="offering-price">&nbsp; <span style="font-size:0.9rem;font-family:var(--font-sans);color:var(--text-muted);">Custom engagement - contact for pricing</span></div>
-        <a href="#contact" class="btn-primary" style="display:inline-block;font-size:0.78rem;padding:0.75rem 1.6rem;">Schedule Discovery Call</a>
+        <a href="#contact" class="btn-primary" style="display:block;font-size:0.78rem;padding:0.75rem 1.6rem;text-align:center;">Schedule Discovery Call</a>
       </div>
 
       <div class="offering-card fade-in fade-in-delay-1">
@@ -802,7 +804,7 @@
           <li>Fixed-scope, fixed-fee engagement</li>
         </ul>
         <div class="offering-price">&nbsp; <span style="font-size:0.9rem;font-family:var(--font-sans);color:var(--text-muted);">Fixed-fee - contact for pricing</span></div>
-        <a href="#contact" class="btn-primary" style="display:inline-block;font-size:0.78rem;padding:0.75rem 1.6rem;">Get Started</a>
+        <a href="#contact" class="btn-primary" style="display:block;font-size:0.78rem;padding:0.75rem 1.6rem;text-align:center;">Get Started</a>
       </div>
 
       <div class="offering-card fade-in fade-in-delay-2">
@@ -817,7 +819,7 @@
           <li>Deploys in days, not months</li>
         </ul>
         <div class="offering-price">&nbsp; <span style="font-size:0.9rem;font-family:var(--font-sans);color:var(--text-muted);">Monthly retainer - contact for pricing</span></div>
-        <a href="#contact" class="btn-primary" style="display:inline-block;font-size:0.78rem;padding:0.75rem 1.6rem;">Request Demo</a>
+        <a href="/voice/" class="btn-primary" style="display:block;font-size:0.78rem;padding:0.75rem 1.6rem;text-align:center;">View Pricing</a>
       </div>
 
     </div>
@@ -832,7 +834,7 @@
     <div class="process-layout">
       <div class="section-header fade-in" style="margin-bottom:0;">
         <span class="label">Engagement Model</span>
-        <h2>From Discovery to Deployment in 30 Days</h2>
+        <h2>From Discovery to Deployment in <span class="pop">30 Days</span></h2>
         <p style="margin-top:1.2rem;">We move fast without cutting corners. Every engagement follows a proven sequence designed to minimize disruption and maximize time-to-value.</p>
       </div>
       <div class="process-steps fade-in fade-in-delay-1">
@@ -883,7 +885,7 @@
   <div class="container">
     <div class="section-header center fade-in">
       <span class="label">Ideal Client Profile</span>
-      <h2>We Work With Companies<br>That Are Done Experimenting</h2>
+      <h2>We Work With Companies<br>That Are <span class="pop">Done Experimenting</span></h2>
     </div>
     <div class="who-grid fade-in">
       <div class="who-col fit">
@@ -911,12 +913,71 @@
 
 <div class="divider"></div>
 
+<!-- ── INDUSTRY USE CASES ── -->
+<section id="industries" style="background:var(--bg-card);">
+  <div class="container">
+    <div class="section-header center fade-in">
+      <span class="label">Industry Use Cases</span>
+      <h2>AI That Works in<br><span class="pop">Your Industry</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;" class="fade-in fade-in-delay-1">
+
+      <div style="background:var(--bg);border:1px solid var(--border);padding:2.5rem 2rem;display:flex;flex-direction:column;">
+        <span class="label" style="margin-bottom:1.2rem;">Healthcare</span>
+        <h3 style="margin-bottom:1rem;font-size:1.15rem;">Patient Operations & Compliance</h3>
+        <ul style="list-style:none;margin:0;padding:0;flex:1;">
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Automated patient intake and scheduling</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Insurance verification and pre-authorization</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> HIPAA-compliant document processing</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> After-hours AI voice triage</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--bg);border:1px solid var(--border);padding:2.5rem 2rem;display:flex;flex-direction:column;">
+        <span class="label" style="margin-bottom:1.2rem;">Legal</span>
+        <h3 style="margin-bottom:1rem;font-size:1.15rem;">Practice Efficiency & Client Intake</h3>
+        <ul style="list-style:none;margin:0;padding:0;flex:1;">
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> AI-powered client intake and qualification</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Contract review and clause extraction</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Document assembly and deadline tracking</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Automated billing and time capture</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--bg);border:1px solid var(--border);padding:2.5rem 2rem;display:flex;flex-direction:column;">
+        <span class="label" style="margin-bottom:1.2rem;">RevOps</span>
+        <h3 style="margin-bottom:1rem;font-size:1.15rem;">Revenue Pipeline Automation</h3>
+        <ul style="list-style:none;margin:0;padding:0;flex:1;">
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Lead scoring and routing without human review</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> CRM hygiene and data enrichment agents</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Automated outbound sequencing and follow-up</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Deal velocity tracking and forecasting</li>
+        </ul>
+      </div>
+
+      <div style="background:var(--bg);border:1px solid var(--border);padding:2.5rem 2rem;display:flex;flex-direction:column;">
+        <span class="label" style="margin-bottom:1.2rem;">FinOps</span>
+        <h3 style="margin-bottom:1rem;font-size:1.15rem;">Financial Operations & Reporting</h3>
+        <ul style="list-style:none;margin:0;padding:0;flex:1;">
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Invoice processing and AP/AR automation</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Expense categorization and anomaly detection</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;border-bottom:1px solid var(--border);display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Cloud and SaaS spend optimization</li>
+          <li style="font-size:0.88rem;color:var(--text-muted);padding:0.4rem 0;display:flex;gap:0.6rem;align-items:flex-start;"><span style="color:var(--accent);flex-shrink:0;">-</span> Automated financial reporting and dashboards</li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ── AUTHORITY ── -->
 <section id="authority">
   <div class="container">
     <div class="section-header center fade-in" style="margin-bottom:5rem;">
       <span class="label">Why Augentic AI</span>
-      <h2>We Are AI Systems Integrators.<br>Not Experimenters.</h2>
+      <h2>We Are AI Systems Integrators.<br><span class="pop">Not Experimenters.</span></h2>
     </div>
     <div class="authority-grid">
       <div class="authority-item fade-in">
@@ -945,7 +1006,7 @@
   <div class="container">
     <div class="cta-content" style="max-width:780px;">
       <span class="label fade-in" style="display:block;margin-bottom:1.5rem;">Get Started</span>
-      <h2 class="fade-in fade-in-delay-1">Ready to Build<br>Your AI Workforce?</h2>
+      <h2 class="fade-in fade-in-delay-1">Ready to Build<br><span class="pop">Your AI Workforce?</span></h2>
       <p class="fade-in fade-in-delay-2" style="margin-bottom:3rem;">Tell us about your business. We will assess your workflows, identify your highest-leverage automation opportunities, and tell you exactly what we would build.</p>
 
       <form class="contact-form fade-in fade-in-delay-3" id="contactForm" onsubmit="handleSubmit(event)">
@@ -1149,6 +1210,121 @@
       heroGrid.style.transform = `translateY(${offset}px)`;
     }
   }, { passive: true });
+
+  // ── HERO MOUSE EFFECT ──
+  (function() {
+    const canvas = document.getElementById('heroCanvas');
+    const hero = document.getElementById('hero');
+    if (!canvas || !hero) return;
+    const ctx = canvas.getContext('2d');
+    let mouseX = -1, mouseY = -1;
+    let particles = [];
+    let raf;
+
+    function resize() {
+      canvas.width = hero.offsetWidth;
+      canvas.height = hero.offsetHeight;
+    }
+    resize();
+    window.addEventListener('resize', resize);
+
+    // Floating particles
+    const PARTICLE_COUNT = 40;
+    for (let i = 0; i < PARTICLE_COUNT; i++) {
+      particles.push({
+        x: Math.random() * 2000,
+        y: Math.random() * 1200,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        r: Math.random() * 1.5 + 0.5,
+        baseAlpha: Math.random() * 0.3 + 0.1,
+      });
+    }
+
+    hero.addEventListener('mousemove', (e) => {
+      const rect = hero.getBoundingClientRect();
+      mouseX = e.clientX - rect.left;
+      mouseY = e.clientY - rect.top;
+    });
+    hero.addEventListener('mouseleave', () => { mouseX = -1; mouseY = -1; });
+
+    function draw() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Mouse glow
+      if (mouseX > 0 && mouseY > 0) {
+        const gradient = ctx.createRadialGradient(mouseX, mouseY, 0, mouseX, mouseY, 280);
+        gradient.addColorStop(0, 'rgba(212, 175, 55, 0.07)');
+        gradient.addColorStop(0.4, 'rgba(212, 175, 55, 0.03)');
+        gradient.addColorStop(1, 'rgba(212, 175, 55, 0)');
+        ctx.fillStyle = gradient;
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+      }
+
+      // Particles
+      for (const p of particles) {
+        p.x += p.vx;
+        p.y += p.vy;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
+
+        let alpha = p.baseAlpha;
+        // Brighten near mouse
+        if (mouseX > 0) {
+          const dx = p.x - mouseX, dy = p.y - mouseY;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 250) {
+            alpha += (1 - dist / 250) * 0.5;
+            // Slight attraction
+            p.x -= dx * 0.003;
+            p.y -= dy * 0.003;
+          }
+        }
+
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(212, 175, 55, ${Math.min(alpha, 0.8)})`;
+        ctx.fill();
+      }
+
+      // Draw faint connections between nearby particles
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < 120) {
+            let lineAlpha = (1 - dist / 120) * 0.08;
+            // Brighter connections near mouse
+            if (mouseX > 0) {
+              const mx = (particles[i].x + particles[j].x) / 2;
+              const my = (particles[i].y + particles[j].y) / 2;
+              const md = Math.sqrt((mx - mouseX) ** 2 + (my - mouseY) ** 2);
+              if (md < 200) lineAlpha += (1 - md / 200) * 0.12;
+            }
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.strokeStyle = `rgba(212, 175, 55, ${lineAlpha})`;
+            ctx.lineWidth = 0.5;
+            ctx.stroke();
+          }
+        }
+      }
+
+      raf = requestAnimationFrame(draw);
+    }
+    draw();
+
+    // Pause when not visible
+    const heroObserver = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting) { if (!raf) draw(); }
+      else { cancelAnimationFrame(raf); raf = null; }
+    });
+    heroObserver.observe(hero);
+  })();
 </script>
 
 <!-- COOKIE CONSENT BANNER -->
