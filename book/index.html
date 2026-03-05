@@ -247,18 +247,47 @@
   });
 </script>
 <script>
+var SHEETS_URL = 'https://script.google.com/a/macros/catchadvisors.com/s/AKfycbzEcpb-pFIoKA5Ar2OUCBD58CNMbxdbPYzYgG4JHtWMVDnE3T-wGFdTUnUG6cNZ-dra/exec';
+var WORKER_URL = 'https://augentic-form-handler.kyle-50d.workers.dev';
+
 function handleBook(e) {
   e.preventDefault();
   const btn = e.target.querySelector('button[type="submit"]');
   const data = Object.fromEntries(new FormData(e.target));
   btn.textContent = 'Sending...'; btn.disabled = true;
-  const subject = encodeURIComponent('Strategy Call Request - ' + data.company);
-  const body = encodeURIComponent('Name: ' + data.firstName + ' ' + data.lastName + '\nEmail: ' + data.email + '\nCompany: ' + data.company + '\nRole: ' + data.role + '\nRevenue: ' + data.revenue + '\nInterest: ' + data.interest);
-  setTimeout(() => {
+
+  const payload = {
+    firstName: data.firstName,
+    lastName: data.lastName,
+    email: data.email,
+    company: data.company,
+    role: data.role || '',
+    revenue: data.revenue,
+    interest: data.interest,
+    source: 'strategy-call',
+    formType: 'strategy-call',
+  };
+
+  Promise.all([
+    fetch(WORKER_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(payload),
+    }).catch(function(err) { console.warn('Worker error:', err); }),
+    fetch(SHEETS_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'text/plain' },
+      body: JSON.stringify(payload),
+      mode: 'no-cors',
+    }).catch(function(err) { console.warn('Sheets error:', err); }),
+  ]).then(function() {
     btn.textContent = 'Request Sent - We Will Be In Touch';
     btn.style.background = '#2a5a2a'; btn.style.color = '#90d090';
-    window.location.href = 'mailto:hello@augenticai.com?subject=' + subject + '&body=' + body;
-  }, 600);
+  }).catch(function() {
+    btn.textContent = 'Try Again';
+    btn.disabled = false;
+    btn.style.background = ''; btn.style.color = '';
+  });
 }
 </script>
 
