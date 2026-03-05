@@ -1041,6 +1041,9 @@
   });
 
   // ── CONTACT FORM ──
+  var SHEETS_URL = 'https://script.google.com/a/macros/catchadvisors.com/s/AKfycbzEcpb-pFIoKA5Ar2OUCBD58CNMbxdbPYzYgG4JHtWMVDnE3T-wGFdTUnUG6cNZ-dra/exec';
+  var WORKER_URL = 'https://augentic-form-handler.kyle-50d.workers.dev';
+
   async function handleSubmit(e) {
     e.preventDefault();
     const form = e.target;
@@ -1049,24 +1052,35 @@
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
+    const payload = {
+      firstName: data.firstName,
+      lastName: data.lastName,
+      email: data.email,
+      company: data.company,
+      phone: data.phone || '',
+      revenue: data.revenue,
+      interest: data.interest,
+      role: data.role || '',
+      message: data.message || '',
+      source: 'contact-form',
+      formType: 'contact-form',
+    };
+
     try {
-      const res = await fetch('https://augentic-form-handler.kyle-50d.workers.dev', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          firstName: data.firstName,
-          lastName: data.lastName,
-          email: data.email,
-          company: data.company,
-          phone: data.phone || '',
-          revenue: data.revenue,
-          interest: data.interest,
-          role: data.role || '',
-          message: data.message || '',
-          source: 'contact-form',
+      // Google Sheets (browser-side) + Worker for Slack/email (fire both in parallel)
+      const [workerRes] = await Promise.all([
+        fetch(WORKER_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
         }),
-      });
-      const result = await res.json();
+        fetch(SHEETS_URL, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload),
+        }).catch(err => console.warn('Sheets backup error:', err)),
+      ]);
+      const result = await workerRes.json();
       if (result.success) {
         btn.textContent = 'Request Sent';
         btn.style.background = '#2a5a2a';
