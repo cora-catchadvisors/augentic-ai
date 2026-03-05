@@ -247,16 +247,16 @@
   });
 </script>
 <script>
-var SHEETS_URL = 'https://script.google.com/a/macros/catchadvisors.com/s/AKfycbzEcpb-pFIoKA5Ar2OUCBD58CNMbxdbPYzYgG4JHtWMVDnE3T-wGFdTUnUG6cNZ-dra/exec';
 var WORKER_URL = 'https://augentic-form-handler.kyle-50d.workers.dev';
 
 function handleBook(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('button[type="submit"]');
-  const data = Object.fromEntries(new FormData(e.target));
+  var btn = e.target.querySelector('button[type="submit"]');
+  var data = Object.fromEntries(new FormData(e.target));
   btn.textContent = 'Sending...'; btn.disabled = true;
 
-  const payload = {
+  var ref = localStorage.getItem('ref') || new URLSearchParams(window.location.search).get('ref') || '';
+  var payload = {
     firstName: data.firstName,
     lastName: data.lastName,
     email: data.email,
@@ -266,23 +266,19 @@ function handleBook(e) {
     interest: data.interest,
     source: 'strategy-call',
     formType: 'strategy-call',
+    ref: ref,
   };
 
-  Promise.all([
-    fetch(WORKER_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(payload),
-    }).catch(function(err) { console.warn('Worker error:', err); }),
-    fetch(SHEETS_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'text/plain' },
-      body: JSON.stringify(payload),
-      mode: 'no-cors',
-    }).catch(function(err) { console.warn('Sheets error:', err); }),
-  ]).then(function() {
-    btn.textContent = 'Request Sent - We Will Be In Touch';
-    btn.style.background = '#2a5a2a'; btn.style.color = '#90d090';
+  fetch(WORKER_URL, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(payload),
+  }).then(function(res) { return res.json(); })
+  .then(function(result) {
+    if (result.success) {
+      btn.textContent = 'Request Sent - We Will Be In Touch';
+      btn.style.background = '#2a5a2a'; btn.style.color = '#90d090';
+    } else { throw new Error(result.error || 'Failed'); }
   }).catch(function() {
     btn.textContent = 'Try Again';
     btn.disabled = false;

@@ -1048,7 +1048,6 @@
   });
 
   // ── CONTACT FORM ──
-  var SHEETS_URL = 'https://script.google.com/a/macros/catchadvisors.com/s/AKfycbzEcpb-pFIoKA5Ar2OUCBD58CNMbxdbPYzYgG4JHtWMVDnE3T-wGFdTUnUG6cNZ-dra/exec';
   var WORKER_URL = 'https://augentic-form-handler.kyle-50d.workers.dev';
 
   async function handleSubmit(e) {
@@ -1059,6 +1058,7 @@
     btn.textContent = 'Sending...';
     btn.disabled = true;
 
+    const ref = localStorage.getItem('ref') || new URLSearchParams(window.location.search).get('ref') || '';
     const payload = {
       firstName: data.firstName,
       lastName: data.lastName,
@@ -1071,24 +1071,16 @@
       message: data.message || '',
       source: 'contact-form',
       formType: 'contact-form',
+      ref: ref,
     };
 
     try {
-      // Google Sheets (browser-side) + Worker for Slack/email (fire both in parallel)
-      const [workerRes] = await Promise.all([
-        fetch(WORKER_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(payload),
-        }),
-        fetch(SHEETS_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'text/plain' },
-          body: JSON.stringify(payload),
-          mode: 'no-cors',
-        }).catch(err => console.warn('Sheets backup error:', err)),
-      ]);
-      const result = await workerRes.json();
+      const res = await fetch(WORKER_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload),
+      });
+      const result = await res.json();
       if (result.success) {
         btn.textContent = 'Request Sent';
         btn.style.background = '#2a5a2a';
