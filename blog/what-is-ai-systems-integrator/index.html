@@ -94,7 +94,7 @@
 <body>
 <nav id="nav">
   <div class="container">
-    <a href="/" class="nav-logo" style="display:flex;align-items:center;text-decoration:none;"><img src="/logo.svg" alt="Augentic AI" height="37" style="height:37px;width:auto;" /></a>
+    <a href="/" class="nav-logo" style="display:flex;align-items:center;text-decoration:none;"><img src="/logo-light.svg" alt="Augentic AI" height="37" style="height:37px;width:auto;" class="logo-themed" data-light="/logo-dark.svg" data-dark="/logo-light.svg" /></a>
     <ul class="nav-links">
       <li><a href="/#solution">Solutions</a></li>
       <li><a href="/#offerings">Offerings</a></li>
@@ -190,7 +190,7 @@
   <div class="container">
     <div class="footer-inner">
       <div>
-        <div class="footer-logo" style="display:flex;align-items:center;"><img src="/logo.svg" alt="Augentic AI" height="28" style="height:28px;width:auto;" /></div>
+        <div class="footer-logo" style="display:flex;align-items:center;"><img src="/logo-light.svg" alt="Augentic AI" height="28" style="height:28px;width:auto;" class="logo-themed" data-light="/logo-dark.svg" data-dark="/logo-light.svg" /></div>
         <div class="footer-tagline">Autonomous AI. Measurable Revenue.</div>
       </div>
       <ul class="footer-links">
@@ -215,13 +215,19 @@
   const themeToggle = document.getElementById('themeToggle');
   const iconSun = document.getElementById('iconSun');
   const iconMoon = document.getElementById('iconMoon');
+  function updateLogos(isLight) {
+    document.querySelectorAll('.logo-themed').forEach(function(img) {
+      img.src = isLight ? img.dataset.light : img.dataset.dark;
+    });
+  }
   const savedTheme = localStorage.getItem('theme') || 'dark';
-  if (savedTheme === 'light') { document.body.classList.add('light'); iconSun.style.display = 'block'; iconMoon.style.display = 'none'; }
+  if (savedTheme === 'light') { document.body.classList.add('light'); iconSun.style.display = 'block'; iconMoon.style.display = 'none'; updateLogos(true); }
   themeToggle.addEventListener('click', () => {
     const isLight = document.body.classList.toggle('light');
     localStorage.setItem('theme', isLight ? 'light' : 'dark');
     iconSun.style.display = isLight ? 'block' : 'none';
     iconMoon.style.display = isLight ? 'none' : 'block';
+    updateLogos(isLight);
   });
 </script>
 
