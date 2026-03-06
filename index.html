@@ -1572,6 +1572,22 @@
       btn.onclick = function() { retell.stopCall(); };
       status.textContent = 'Connected — talking to Auri';
       status.style.color = 'var(--accent)';
+
+      // Auto-end call after 3 minutes
+      var MAX_MINUTES = 3;
+      var callSeconds = 0;
+      window._callTimer = setInterval(function() {
+        callSeconds++;
+        var remaining = (MAX_MINUTES * 60) - callSeconds;
+        var m = Math.floor(remaining / 60);
+        var s = remaining % 60;
+        status.textContent = 'Talking to Auri — ' + m + ':' + (s < 10 ? '0' : '') + s + ' remaining';
+        if (remaining <= 0) {
+          clearInterval(window._callTimer);
+          retell.stopCall();
+          status.textContent = 'Call ended — 3 minute limit reached';
+        }
+      }, 1000);
     } catch (err) {
       console.error('Web call error:', err);
       status.textContent = 'Could not connect. Try calling instead.';
@@ -1583,6 +1599,7 @@
   };
 
   retell.on('call_ended', () => {
+    if (window._callTimer) clearInterval(window._callTimer);
     const btn = document.getElementById('webCallBtn');
     const status = document.getElementById('webCallStatus');
     btn.disabled = false;
