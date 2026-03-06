@@ -189,6 +189,23 @@
       position: relative; overflow: hidden;
       padding: 0;
     }
+    /* ── FLOATING APP ICONS ── */
+    .floating-icons { position: absolute; inset: 0; z-index: 2; overflow: hidden; pointer-events: none; }
+    .floating-icon {
+      position: absolute;
+      width: 56px; height: 56px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0;
+      will-change: transform;
+    }
+    .floating-icon svg { width: 28px; height: 28px; stroke: var(--text-dim); fill: none; stroke-width: 1.5; transition: stroke 0.4s, fill 0.4s; }
+    .floating-icon.filled svg { fill: var(--text-dim); stroke: none; }
+    .floating-icon:hover svg { stroke: var(--accent); }
+    .floating-icon.filled:hover svg { fill: var(--accent); }
+    @media (max-width: 900px) { .floating-icon { width: 40px; height: 40px; border-radius: 10px; } .floating-icon svg { width: 20px; height: 20px; } }
     .hero-grid {
       position: absolute; inset: 0; z-index: 0;
       background-image:
@@ -1015,6 +1032,45 @@
 
 <!-- ── HERO ── -->
 <section id="hero">
+  <canvas id="connectionCanvas" style="position:absolute;inset:0;z-index:1;pointer-events:none;"></canvas>
+  <div class="floating-icons" id="floatingIcons">
+    <!-- Slack -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="8" y1="4" x2="6" y2="20"/><line x1="18" y1="4" x2="16" y2="20"/></svg></div>
+    <!-- Microsoft (4 squares) -->
+    <div class="floating-icon filled"><svg viewBox="0 0 24 24"><rect x="1" y="1" width="10" height="10"/><rect x="13" y="1" width="10" height="10"/><rect x="1" y="13" width="10" height="10"/><rect x="13" y="13" width="10" height="10"/></svg></div>
+    <!-- Google (G outline) -->
+    <div class="floating-icon filled"><svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+    <!-- HubSpot (sprocket outline) -->
+    <div class="floating-icon filled"><svg viewBox="0 0 24 24"><path d="M17.5 8.1V5.74a2.26 2.26 0 0 0 1.3-2.04 2.27 2.27 0 0 0-2.27-2.27 2.27 2.27 0 0 0-2.27 2.27c0 .87.5 1.63 1.22 2.01V8.1a5.27 5.27 0 0 0-2.7 1.52l-7.12-5.54a2.72 2.72 0 0 0 .08-.63A2.57 2.57 0 0 0 3.17.88 2.57 2.57 0 0 0 .6 3.45a2.57 2.57 0 0 0 2.57 2.57c.56 0 1.07-.18 1.5-.49l7 5.45a5.32 5.32 0 0 0-.06 7.35l-2.16 2.16a1.86 1.86 0 0 0-.55-.09 1.88 1.88 0 1 0 1.88 1.88c0-.2-.04-.38-.1-.56l2.14-2.14a5.3 5.3 0 1 0 5.18-11.47z"/></svg></div>
+    <!-- Salesforce (cloud outline) -->
+    <div class="floating-icon filled"><svg viewBox="0 0 24 24"><path d="M10.05 4.85a4.5 4.5 0 0 1 4 2.1 5.4 5.4 0 0 1 2.45-.6 5.5 5.5 0 0 1 5.5 5.5 5.5 5.5 0 0 1-5.5 5.5H6a4.75 4.75 0 0 1-4.75-4.75A4.75 4.75 0 0 1 5.4 8a4.5 4.5 0 0 1 4.65-3.15z"/></svg></div>
+    <!-- Calendar -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><rect x="7" y="14" width="3" height="3" rx="0.5"/><rect x="14" y="14" width="3" height="3" rx="0.5"/></svg></div>
+    <!-- Microphone -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+    <!-- Document -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></div>
+    <!-- Contact/Person -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+    <!-- Slack duplicate -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24" stroke-width="2" stroke-linecap="round"><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="8" y1="4" x2="6" y2="20"/><line x1="18" y1="4" x2="16" y2="20"/></svg></div>
+    <!-- Google duplicate -->
+    <div class="floating-icon filled"><svg viewBox="0 0 24 24"><path d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 0 1-2.2 3.32v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.1z"/><path d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/><path d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/></svg></div>
+    <!-- Microsoft duplicate -->
+    <div class="floating-icon filled"><svg viewBox="0 0 24 24"><rect x="1" y="1" width="10" height="10"/><rect x="13" y="1" width="10" height="10"/><rect x="1" y="13" width="10" height="10"/><rect x="13" y="13" width="10" height="10"/></svg></div>
+    <!-- Calendar duplicate -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/><rect x="7" y="14" width="3" height="3" rx="0.5"/><rect x="14" y="14" width="3" height="3" rx="0.5"/></svg></div>
+    <!-- Salesforce duplicate -->
+    <div class="floating-icon filled"><svg viewBox="0 0 24 24"><path d="M10.05 4.85a4.5 4.5 0 0 1 4 2.1 5.4 5.4 0 0 1 2.45-.6 5.5 5.5 0 0 1 5.5 5.5 5.5 5.5 0 0 1-5.5 5.5H6a4.75 4.75 0 0 1-4.75-4.75A4.75 4.75 0 0 1 5.4 8a4.5 4.5 0 0 1 4.65-3.15z"/></svg></div>
+    <!-- Microphone duplicate -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg></div>
+    <!-- HubSpot duplicate -->
+    <div class="floating-icon filled"><svg viewBox="0 0 24 24"><path d="M17.5 8.1V5.74a2.26 2.26 0 0 0 1.3-2.04 2.27 2.27 0 0 0-2.27-2.27 2.27 2.27 0 0 0-2.27 2.27c0 .87.5 1.63 1.22 2.01V8.1a5.27 5.27 0 0 0-2.7 1.52l-7.12-5.54a2.72 2.72 0 0 0 .08-.63A2.57 2.57 0 0 0 3.17.88 2.57 2.57 0 0 0 .6 3.45a2.57 2.57 0 0 0 2.57 2.57c.56 0 1.07-.18 1.5-.49l7 5.45a5.32 5.32 0 0 0-.06 7.35l-2.16 2.16a1.86 1.86 0 0 0-.55-.09 1.88 1.88 0 1 0 1.88 1.88c0-.2-.04-.38-.1-.56l2.14-2.14a5.3 5.3 0 1 0 5.18-11.47z"/></svg></div>
+    <!-- Document duplicate -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="8" y1="13" x2="16" y2="13"/><line x1="8" y1="17" x2="16" y2="17"/></svg></div>
+    <!-- Contact duplicate -->
+    <div class="floating-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+  </div>
   <canvas id="heroCanvas" style="position:absolute;inset:0;z-index:0;pointer-events:none;"></canvas>
   <div class="hero-grid"></div>
   <div class="hero-glow"></div>
@@ -1200,6 +1256,9 @@
       <div class="int-logo" data-name="DocuSign"><img src="https://img.logo.dev/docusign.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="DocuSign" /></div>
       <div class="int-logo" data-name="Dropbox"><img src="https://img.logo.dev/dropbox.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Dropbox" /></div>
       <div class="int-logo" data-name="LinkedIn"><img src="https://img.logo.dev/linkedin.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="LinkedIn" /></div>
+      <div class="int-logo" data-name="Facebook"><img src="https://img.logo.dev/facebook.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Facebook" /></div>
+      <div class="int-logo" data-name="X"><img src="https://img.logo.dev/x.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="X" /></div>
+      <div class="int-logo" data-name="Instagram"><img src="https://img.logo.dev/instagram.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Instagram" /></div>
       <div class="int-logo" data-name="Jira"><img src="https://img.logo.dev/atlassian.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Jira" /></div>
       <div class="int-logo" data-name="Monday"><img src="https://img.logo.dev/monday.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Monday" /></div>
       <div class="int-logo" data-name="Pipedrive"><img src="https://img.logo.dev/pipedrive.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Pipedrive" /></div>
@@ -1788,6 +1847,194 @@
     observer.observe(el);
   });
 
+  // ── FLOATING ICONS SPACE DRIFT ──
+  (function() {
+    var icons = document.querySelectorAll('.floating-icon');
+    var hero = document.getElementById('hero');
+    if (!hero || !icons.length) return;
+    var W = hero.offsetWidth, H = hero.offsetHeight;
+    var items = [];
+    icons.forEach(function(el) {
+      var speed = 0.1 + Math.random() * 0.25;
+      var angle = Math.random() * Math.PI * 2;
+      var size = 48 + Math.random() * 24;
+      el.style.width = size + 'px';
+      el.style.height = size + 'px';
+      el.style.borderRadius = (size * 0.22) + 'px';
+      el.style.transition = 'opacity 0.4s, box-shadow 0.4s, border-color 0.4s';
+      el.style.cursor = 'grab';
+      el.style.pointerEvents = 'auto';
+      var item = {
+        el: el,
+        x: Math.random() * W,
+        y: Math.random() * H,
+        vx: Math.cos(angle) * speed,
+        vy: Math.sin(angle) * speed,
+        rot: Math.random() * 360,
+        rotSpeed: (Math.random() - 0.5) * 0.3,
+        baseOpacity: 0.07 + Math.random() * 0.08,
+        size: size,
+        dragging: false
+      };
+      el.style.opacity = item.baseOpacity;
+      (function(it) {
+        el.addEventListener('mouseenter', function() {
+          if (!it.dragging) {
+            el.style.opacity = 1;
+            el.style.borderColor = 'rgba(212,175,55,0.5)';
+            el.style.boxShadow = '0 0 24px rgba(212,175,55,0.4), 0 0 48px rgba(212,175,55,0.2), inset 0 0 12px rgba(212,175,55,0.1)';
+          }
+        });
+        el.addEventListener('mouseleave', function() {
+          if (!it.dragging) {
+            el.style.opacity = it.baseOpacity;
+            el.style.borderColor = '';
+            el.style.boxShadow = 'none';
+          }
+        });
+      })(item);
+      items.push(item);
+    });
+
+    // ── DRAG & THROW ──
+    var dragged = null;
+    var dragOffX = 0, dragOffY = 0;
+    var prevMX = 0, prevMY = 0, throwVX = 0, throwVY = 0;
+
+    function getItemByEl(el) {
+      for (var i = 0; i < items.length; i++) { if (items[i].el === el) return items[i]; }
+      return null;
+    }
+
+    function onDown(e) {
+      var target = e.target.closest('.floating-icon');
+      if (!target) return;
+      var it = getItemByEl(target);
+      if (!it) return;
+      e.preventDefault();
+      dragged = it;
+      it.dragging = true;
+      target.style.cursor = 'grabbing';
+      target.style.opacity = 1;
+      target.style.borderColor = 'rgba(212,175,55,0.5)';
+      target.style.boxShadow = '0 0 24px rgba(212,175,55,0.4), 0 0 48px rgba(212,175,55,0.2), inset 0 0 12px rgba(212,175,55,0.1)';
+      var rect = hero.getBoundingClientRect();
+      var cx = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      var cy = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+      dragOffX = cx - it.x;
+      dragOffY = cy - it.y;
+      prevMX = cx; prevMY = cy;
+      throwVX = 0; throwVY = 0;
+    }
+
+    function onMove(e) {
+      if (!dragged) return;
+      e.preventDefault();
+      var rect = hero.getBoundingClientRect();
+      var cx = (e.touches ? e.touches[0].clientX : e.clientX) - rect.left;
+      var cy = (e.touches ? e.touches[0].clientY : e.clientY) - rect.top;
+      dragged.x = cx - dragOffX;
+      dragged.y = cy - dragOffY;
+      throwVX = (cx - prevMX) * 0.4;
+      throwVY = (cy - prevMY) * 0.4;
+      prevMX = cx; prevMY = cy;
+    }
+
+    function onUp() {
+      if (!dragged) return;
+      dragged.vx = throwVX;
+      dragged.vy = throwVY;
+      dragged.el.style.cursor = 'grab';
+      dragged.el.style.opacity = dragged.baseOpacity;
+      dragged.el.style.borderColor = '';
+      dragged.el.style.boxShadow = 'none';
+      dragged.dragging = false;
+      dragged = null;
+    }
+
+    hero.addEventListener('mousedown', onDown);
+    hero.addEventListener('mousemove', onMove);
+    window.addEventListener('mouseup', onUp);
+    hero.addEventListener('touchstart', onDown, { passive: false });
+    hero.addEventListener('touchmove', onMove, { passive: false });
+    window.addEventListener('touchend', onUp);
+
+    // ── CONNECTION CANVAS ──
+    var connCanvas = document.getElementById('connectionCanvas');
+    var connCtx = connCanvas.getContext('2d');
+    var CONNECTION_DIST = 180;
+
+    function tick() {
+      W = hero.offsetWidth; H = hero.offsetHeight;
+      connCanvas.width = W;
+      connCanvas.height = H;
+      connCtx.clearRect(0, 0, W, H);
+
+      for (var i = 0; i < items.length; i++) {
+        var it = items[i];
+        if (it.dragging) {
+          it.el.style.transform = 'translate(' + it.x.toFixed(1) + 'px,' + it.y.toFixed(1) + 'px) rotate(' + it.rot.toFixed(1) + 'deg) scale(1.1)';
+        } else {
+          it.x += it.vx;
+          it.y += it.vy;
+          it.rot += it.rotSpeed;
+          var spd = Math.sqrt(it.vx * it.vx + it.vy * it.vy);
+          if (spd > 0.4) { it.vx *= 0.995; it.vy *= 0.995; }
+          if (it.x < -it.size) it.x = W + it.size;
+          if (it.x > W + it.size) it.x = -it.size;
+          if (it.y < -it.size) it.y = H + it.size;
+          if (it.y > H + it.size) it.y = -it.size;
+          it.el.style.transform = 'translate(' + it.x.toFixed(1) + 'px,' + it.y.toFixed(1) + 'px) rotate(' + it.rot.toFixed(1) + 'deg)';
+        }
+      }
+
+      // Draw connections between nearby icons
+      for (var i = 0; i < items.length; i++) {
+        var a = items[i];
+        var ax = a.x + a.size / 2;
+        var ay = a.y + a.size / 2;
+        for (var j = i + 1; j < items.length; j++) {
+          var b = items[j];
+          var bx = b.x + b.size / 2;
+          var by = b.y + b.size / 2;
+          var dx = ax - bx;
+          var dy = ay - by;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < CONNECTION_DIST) {
+            var alpha = (1 - dist / CONNECTION_DIST);
+            // stronger glow if either icon is being dragged
+            var boost = (a.dragging || b.dragging) ? 3 : 1;
+            alpha = Math.min(alpha * boost, 1);
+
+            connCtx.beginPath();
+            connCtx.moveTo(ax, ay);
+            connCtx.lineTo(bx, by);
+            connCtx.strokeStyle = 'rgba(212,175,55,' + (alpha * 0.35).toFixed(3) + ')';
+            connCtx.lineWidth = 1 + alpha;
+            connCtx.stroke();
+
+            // Draw small particles along the line
+            var numDots = Math.floor(alpha * 4) + 1;
+            var time = Date.now() * 0.001;
+            for (var d = 0; d < numDots; d++) {
+              var t = ((time * 0.3 + d / numDots) % 1);
+              var px = ax + (bx - ax) * t;
+              var py = ay + (by - ay) * t;
+              var dotAlpha = alpha * 0.6 * Math.sin(t * Math.PI);
+              connCtx.beginPath();
+              connCtx.arc(px, py, 1.5 + alpha, 0, Math.PI * 2);
+              connCtx.fillStyle = 'rgba(212,175,55,' + dotAlpha.toFixed(3) + ')';
+              connCtx.fill();
+            }
+          }
+        }
+      }
+
+      requestAnimationFrame(tick);
+    }
+    tick();
+  })();
+
   // ── HERO IMMEDIATE VISIBILITY ──
   document.querySelectorAll('#hero .fade-in').forEach((el, i) => {
     setTimeout(() => el.classList.add('visible'), 100 + i * 150);
@@ -2120,8 +2367,8 @@
       status.textContent = 'Connected: talking to Auri';
       status.style.color = 'var(--accent)';
 
-      // Auto-end call after 3 minutes
-      var MAX_MINUTES = 3;
+      // Auto-end call after 4 minutes
+      var MAX_MINUTES = 4;
       var callSeconds = 0;
       window._callTimer = setInterval(function() {
         callSeconds++;
@@ -2132,7 +2379,7 @@
         if (remaining <= 0) {
           clearInterval(window._callTimer);
           retell.stopCall();
-          status.textContent = 'Call ended: 3 minute limit reached';
+          status.textContent = 'Call ended: 4 minute limit reached';
         }
       }, 1000);
     } catch (err) {
