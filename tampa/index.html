@@ -11,17 +11,17 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Front Desk | Augentic AI</title>
-  <meta name="description" content="AI-powered front desk that handles inbound calls, scheduling, and lead qualification 24/7. Plans starting at $199/month." />
-  <meta property="og:title" content="AI Front Desk | Augentic AI" />
-  <meta property="og:description" content="AI-powered front desk that handles inbound calls, scheduling, and lead qualification 24/7. Plans starting at $199/month." />
+  <title>AI Automation Agency in Tampa, FL | Augentic AI</title>
+  <meta name="description" content="Tampa's AI automation agency. We deploy AI voice agents, autonomous workflows, and intelligent systems for Tampa Bay businesses. Strategy call available." />
+  <meta property="og:title" content="AI Automation Agency in Tampa, FL | Augentic AI" />
+  <meta property="og:description" content="Tampa's AI automation agency. We deploy AI voice agents, autonomous workflows, and intelligent systems for Tampa Bay businesses. Strategy call available." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://augenticai.com/favicon.svg" />
-  <meta property="og:url" content="https://augenticai.com/voice/" />
+  <meta property="og:url" content="https://augenticai.com/tampa/" />
   <meta property="og:site_name" content="Augentic AI" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="AI Front Desk | Augentic AI" />
-  <meta name="twitter:description" content="AI-powered front desk that handles inbound calls, scheduling, and lead qualification 24/7. Plans starting at $199/month." />
+  <meta name="twitter:title" content="AI Automation Agency in Tampa, FL | Augentic AI" />
+  <meta name="twitter:description" content="Tampa's AI automation agency. We deploy AI voice agents, autonomous workflows, and intelligent systems for Tampa Bay businesses. Strategy call available." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet" />
@@ -81,56 +81,48 @@
     .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
     .btn-primary { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%); background-size: 300% 100%; animation: goldShimmer 4s ease infinite; color: #0A0A0A; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer; box-shadow: 0 0 18px rgba(212,175,55,0.25); }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-secondary { display: inline-block; padding: 0.9rem 2rem; background: transparent; border: 1px solid var(--border-accent); color: var(--accent); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: background 0.2s, transform 0.2s; cursor: pointer; }
+    .btn-secondary:hover { background: var(--accent-dim); transform: translateY(-1px); }
     .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
     @media (max-width: 900px) { .nav-links, .nav-right .nav-cta { display: none; } .hamburger { display: flex; } }
 
     /* ── PAGE-SPECIFIC ── */
-    .voice-hero { padding: 12rem 0 6rem; text-align: center; background: var(--bg-card); }
-    .voice-hero h1 { margin: 1rem 0 1.5rem; }
-    .voice-hero p { max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
-
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-    .pricing-card {
-      background: var(--bg-card); border: 1px solid var(--border); padding: 3rem 2.5rem;
-      display: flex; flex-direction: column; position: relative; transition: border-color 0.3s;
-    }
-    .pricing-card:hover { border-color: var(--border-accent); }
-    .pricing-card.featured { border-color: var(--accent); }
-    .pricing-card.featured::before {
-      content: 'Most Popular';
-      position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
-      background: var(--accent); color: #0A0A0A;
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 0.35rem 1.2rem; border-radius: 0 0 4px 4px;
-    }
-    .pricing-tier { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-    .pricing-amount { font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.3rem; }
-    .pricing-amount span { font-size: 1rem; font-weight: 400; color: var(--text-dim); font-family: var(--font-sans); }
-    .pricing-setup { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 2rem; }
-    .pricing-includes { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 1rem; }
-    .pricing-features { list-style: none; border-top: 1px solid var(--border); padding-top: 1.2rem; margin-bottom: 2rem; flex: 1; }
-    .pricing-features li {
-      font-size: 0.88rem; color: var(--text-muted); padding: 0.45rem 0;
-      display: flex; align-items: flex-start; gap: 0.7rem;
-    }
-    .pricing-features li::before { content: '-'; color: var(--accent); flex-shrink: 0; }
-    .pricing-overage { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-    .pricing-overage strong { color: var(--text-muted); }
+    .tampa-hero { padding: 12rem 0 6rem; text-align: center; background: var(--bg-card); }
+    .tampa-hero h1 { margin: 1rem 0 1.5rem; }
+    .tampa-hero p { max-width: 640px; margin: 0 auto; font-size: 1.1rem; }
+    .tampa-hero .hero-phone { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: 0.02em; display: inline-block; margin-top: 2rem; }
+    .tampa-hero .hero-phone:hover { color: var(--accent); }
+    .tampa-hero .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
 
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-    .feature-item { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; }
+    .feature-item { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; transition: border-color 0.3s; }
+    .feature-item:hover { border-color: var(--border-accent); }
     .feature-item h3 { margin-bottom: 0.6rem; }
     .feature-item p { font-size: 0.9rem; }
+
+    .why-section { background: var(--bg-card); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .why-item { padding: 2rem; border: 1px solid var(--border); background: var(--bg); transition: border-color 0.3s; }
+    .why-item:hover { border-color: var(--border-accent); }
+    .why-item h3 { margin-bottom: 0.6rem; color: var(--accent); }
+    .why-item p { font-size: 0.9rem; }
+
+    .industries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .industry-item { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; text-align: center; transition: border-color 0.3s; }
+    .industry-item:hover { border-color: var(--border-accent); }
+    .industry-item .industry-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .industry-item h3 { margin-bottom: 0.5rem; }
+    .industry-item p { font-size: 0.85rem; }
 
     .cta-section { text-align: center; padding: 6rem 0; background: var(--bg-card); }
     .cta-section h2 { margin-bottom: 1rem; }
     .cta-section p { max-width: 500px; margin: 0 auto 2rem; }
 
     @media (max-width: 900px) {
-      .pricing-grid, .features-grid { grid-template-columns: 1fr; }
-      .voice-hero { padding: 9rem 0 4rem; }
+      .features-grid, .why-grid, .industries-grid { grid-template-columns: 1fr; }
+      .tampa-hero { padding: 9rem 0 4rem; }
     }
-        .footer-logo, .nav-logo { position: relative; }
+            .footer-logo, .nav-logo { position: relative; }
     .footer-logo::before, .nav-logo::before {
       content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%;
       transform: translate(-50%, -50%);
@@ -180,117 +172,110 @@
 </div>
 
 <!-- ── HERO ── -->
-<div class="voice-hero">
+<div class="tampa-hero">
   <div class="container">
-    <span class="label">Augentic Voice</span>
-    <h1>AI Front Desk</h1>
-    <p>Your AI receptionist handles inbound calls, books appointments, captures leads, and routes messages: 24 hours a day, 7 days a week.</p>
+    <span class="label">Tampa Bay AI Automation</span>
+    <h1>AI Automation for<br>Tampa Bay Businesses</h1>
+    <p>Augentic AI is Tampa's premier AI systems integrator. We deploy AI voice agents, autonomous workflows, and intelligent systems that drive revenue and eliminate operational drag.</p>
+    <a href="tel:+18135441659" class="hero-phone">(813) 544-1659</a>
+    <div class="hero-ctas">
+      <a href="/book/" class="btn-primary" style="font-size:0.85rem;padding:1rem 2.5rem;">Book a Strategy Call</a>
+      <a href="tel:+18135441659" class="btn-secondary" style="font-size:0.85rem;padding:1rem 2.5rem;">Talk to Auri, Our AI</a>
+    </div>
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- ── PRICING ── -->
+<!-- ── SERVICES ── -->
 <section style="background:var(--bg);">
   <div class="container">
     <div style="text-align:center;">
-      <span class="label">Pricing</span>
-      <h2 style="margin-top:0.75rem;">Simple, Transparent Plans</h2>
+      <span class="label">What We Deploy</span>
+      <h2 style="margin-top:0.75rem;">AI Solutions for Tampa Businesses</h2>
     </div>
-    <div class="pricing-grid">
-
-      <!-- STARTER -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Starter</div>
-        <div class="pricing-amount">$199 <span>/ month</span></div>
-        <div class="pricing-setup">Setup: $497</div>
-        <div class="pricing-includes">Includes</div>
-        <ul class="pricing-features">
-          <li>200 AI call minutes</li>
-          <li>Inbound AI receptionist</li>
-          <li>Basic FAQ responses</li>
-          <li>Message capture or call routing</li>
-          <li>Optional appointment booking</li>
-        </ul>
-        <div class="pricing-overage">Overage: <strong>$0.85 / minute</strong></div>
-        <a href="/book/" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;padding:0.85rem;">Get Started</a>
+    <div class="features-grid">
+      <div class="feature-item">
+        <h3>AI Voice Agents</h3>
+        <p>Intelligent AI receptionists that answer calls, book appointments, qualify leads, and route messages around the clock. Your Tampa business never misses another opportunity.</p>
       </div>
-
-      <!-- STANDARD -->
-      <div class="pricing-card featured">
-        <div class="pricing-tier">Standard</div>
-        <div class="pricing-amount">$349 <span>/ month</span></div>
-        <div class="pricing-setup">Setup: $997</div>
-        <div class="pricing-includes">Includes</div>
-        <ul class="pricing-features">
-          <li>500 AI call minutes</li>
-          <li>Everything in Starter</li>
-          <li>Deeper prompt customization</li>
-          <li>Appointment booking + confirmations</li>
-          <li>Missed-call capture + follow-up text</li>
-          <li>Call summaries</li>
-          <li>Call analytics</li>
-        </ul>
-        <div class="pricing-overage">Overage: <strong>$0.75 / minute</strong></div>
-        <a href="/book/" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;padding:0.85rem;">Get Started</a>
+      <div class="feature-item">
+        <h3>AI Workflow Automation</h3>
+        <p>Autonomous systems that handle intake, follow-up, scheduling, and internal operations. We eliminate the manual work that slows Tampa Bay teams down.</p>
       </div>
-
-      <!-- PREMIUM -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Premium</div>
-        <div class="pricing-amount">$599 <span>/ month</span></div>
-        <div class="pricing-setup">Setup: $1,497</div>
-        <div class="pricing-includes">Includes</div>
-        <ul class="pricing-features">
-          <li>1,000 AI call minutes</li>
-          <li>Everything in Standard</li>
-          <li>Advanced conversation training</li>
-          <li>CRM/email integrations</li>
-          <li>Call summaries + tagging</li>
-          <li>Priority support</li>
-          <li>Monthly prompt optimization</li>
-        </ul>
-        <div class="pricing-overage">Overage: <strong>$0.65 / minute</strong></div>
-        <a href="/book/" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;padding:0.85rem;">Get Started</a>
+      <div class="feature-item">
+        <h3>AI Systems Integration</h3>
+        <p>End-to-end integration of AI into your existing tech stack. CRM, EHR, practice management, accounting: we connect intelligent automation to the tools you already use.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ── FEATURES ── -->
-<section style="background:var(--bg-card);">
+<!-- ── WHY TAMPA ── -->
+<section class="why-section">
   <div class="container">
     <div style="text-align:center;">
-      <span class="label">What You Get</span>
-      <h2 style="margin-top:0.75rem;">Built for Businesses That<br>Never Miss a Call</h2>
+      <span class="label">Local Expertise</span>
+      <h2 style="margin-top:0.75rem;">Why Tampa Businesses Choose Augentic AI</h2>
     </div>
-    <div class="features-grid">
-      <div class="feature-item">
-        <h3>24/7 Availability</h3>
-        <p>Your AI receptionist answers every call: nights, weekends, holidays. No voicemail. No missed opportunities.</p>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>Tampa Bay Presence</h3>
+        <p>We are based in Tampa. Same area code, same market, same urgency. When you call (813) 544-1659, you reach a team that understands your business environment firsthand.</p>
       </div>
-      <div class="feature-item">
-        <h3>Appointment Booking</h3>
-        <p>Integrates with your calendar to schedule appointments in real time during the call.</p>
+      <div class="why-item">
+        <h3>Market Understanding</h3>
+        <p>Tampa Bay's economy runs on professional services, healthcare, home services, real estate, and financial advisory. We build AI systems purpose-fit for these industries.</p>
       </div>
-      <div class="feature-item">
-        <h3>Lead Qualification</h3>
-        <p>Asks the right questions, captures caller details, and logs everything to your CRM automatically.</p>
+      <div class="why-item">
+        <h3>Fast Deployment</h3>
+        <p>No six-month roadmaps. We scope, build, and deploy production AI systems in days to weeks. Tampa businesses start seeing results immediately, not next quarter.</p>
       </div>
-      <div class="feature-item">
-        <h3>Call Routing</h3>
-        <p>Transfers urgent calls to the right person. Routes everything else intelligently based on your rules.</p>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── INDUSTRIES ── -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="label">Industries We Serve</span>
+      <h2 style="margin-top:0.75rem;">AI Automation Across Tampa Bay</h2>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">+</div>
+        <h3>Medical Practices</h3>
+        <p>AI-powered patient intake, appointment scheduling, and after-hours call handling for Tampa Bay clinics and practices.</p>
       </div>
-      <div class="feature-item">
-        <h3>Missed-Call Recovery</h3>
-        <p>Automatically sends a follow-up text when a call is missed, converting abandons into conversations.</p>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&sect;</div>
+        <h3>Law Firms</h3>
+        <p>Intelligent lead qualification, client intake automation, and 24/7 call answering for Tampa attorneys and legal practices.</p>
       </div>
-      <div class="feature-item">
-        <h3>Deploys in Days</h3>
-        <p>No months-long implementation. We configure, train, and launch your AI front desk in under a week.</p>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&#9670;</div>
+        <h3>Home Services</h3>
+        <p>Never miss a service call again. AI dispatching, booking, and follow-up for HVAC, plumbing, electrical, and roofing companies across Tampa Bay.</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&#8962;</div>
+        <h3>Real Estate</h3>
+        <p>Automated lead capture, showing scheduling, and prospect follow-up for Tampa Bay real estate agents and brokerages.</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&#9733;</div>
+        <h3>Professional Services</h3>
+        <p>Streamlined client onboarding, scheduling, and communication workflows for Tampa consultancies, agencies, and advisory firms.</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&#36;</div>
+        <h3>Financial Advisors</h3>
+        <p>Compliant AI automation for client scheduling, document collection, and prospect qualification for Tampa Bay financial practices.</p>
       </div>
     </div>
   </div>
@@ -301,9 +286,9 @@
 <!-- ── CTA ── -->
 <div class="cta-section">
   <div class="container">
-    <span class="label">Ready to Start?</span>
-    <h2 style="margin-top:0.75rem;">Stop Missing Calls.<br>Start Closing Deals.</h2>
-    <p>Book a strategy call and we will walk you through how Augentic Voice works for your business.</p>
+    <span class="label">Get Started</span>
+    <h2 style="margin-top:0.75rem;">Ready to Automate<br>Your Tampa Business?</h2>
+    <p>Talk to Auri, our AI receptionist, or book a strategy call to see how Augentic AI deploys intelligent automation for Tampa Bay businesses.</p>
     <div style="margin-bottom:2rem;">
       <div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:700;font-size:1.6rem;color:var(--accent);text-transform:uppercase;margin-bottom:0.3rem;">Talk to Auri</div>
       <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.6rem;">Our AI receptionist: live right now</div>

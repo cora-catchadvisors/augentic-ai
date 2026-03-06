@@ -11,17 +11,18 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Front Desk | Augentic AI</title>
-  <meta name="description" content="AI-powered front desk that handles inbound calls, scheduling, and lead qualification 24/7. Plans starting at $199/month." />
-  <meta property="og:title" content="AI Front Desk | Augentic AI" />
-  <meta property="og:description" content="AI-powered front desk that handles inbound calls, scheduling, and lead qualification 24/7. Plans starting at $199/month." />
+  <title>AI Voice Agent for Law Firms | Augentic AI</title>
+  <meta name="description" content="AI voice agent for law firms that answers every call 24/7. AI receptionist for attorneys handles intake, qualifies cases, and books consultations. Never lose a potential client to voicemail again." />
+  <meta name="keywords" content="AI voice agent law firm, AI receptionist attorney, AI answering service legal, AI phone agent lawyers" />
+  <meta property="og:title" content="AI Voice Agent for Law Firms | Augentic AI" />
+  <meta property="og:description" content="AI voice agent for law firms that answers every call 24/7. AI receptionist for attorneys handles intake, qualifies cases, and books consultations." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://augenticai.com/favicon.svg" />
-  <meta property="og:url" content="https://augenticai.com/voice/" />
+  <meta property="og:url" content="https://augenticai.com/voice/law-firms/" />
   <meta property="og:site_name" content="Augentic AI" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="AI Front Desk | Augentic AI" />
-  <meta name="twitter:description" content="AI-powered front desk that handles inbound calls, scheduling, and lead qualification 24/7. Plans starting at $199/month." />
+  <meta name="twitter:title" content="AI Voice Agent for Law Firms | Augentic AI" />
+  <meta name="twitter:description" content="AI voice agent for law firms that answers every call 24/7. AI receptionist for attorneys handles intake, qualifies cases, and books consultations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet" />
@@ -81,56 +82,51 @@
     .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
     .btn-primary { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%); background-size: 300% 100%; animation: goldShimmer 4s ease infinite; color: #0A0A0A; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer; box-shadow: 0 0 18px rgba(212,175,55,0.25); }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-secondary { display: inline-block; padding: 0.9rem 2rem; background: transparent; border: 1px solid var(--border-accent); color: var(--accent); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: background 0.2s, transform 0.2s; cursor: pointer; }
+    .btn-secondary:hover { background: var(--accent-dim); transform: translateY(-1px); }
     .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
     @media (max-width: 900px) { .nav-links, .nav-right .nav-cta { display: none; } .hamburger { display: flex; } }
 
     /* ── PAGE-SPECIFIC ── */
     .voice-hero { padding: 12rem 0 6rem; text-align: center; background: var(--bg-card); }
     .voice-hero h1 { margin: 1rem 0 1.5rem; }
-    .voice-hero p { max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+    .voice-hero p { max-width: 640px; margin: 0 auto; font-size: 1.1rem; }
+    .voice-hero .hero-stat { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 700; color: var(--accent); margin-top: 2rem; }
+    .voice-hero .hero-stat-label { font-size: 0.85rem; color: var(--text-dim); margin-top: 0.25rem; }
 
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-    .pricing-card {
-      background: var(--bg-card); border: 1px solid var(--border); padding: 3rem 2.5rem;
-      display: flex; flex-direction: column; position: relative; transition: border-color 0.3s;
-    }
-    .pricing-card:hover { border-color: var(--border-accent); }
-    .pricing-card.featured { border-color: var(--accent); }
-    .pricing-card.featured::before {
-      content: 'Most Popular';
-      position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
-      background: var(--accent); color: #0A0A0A;
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 0.35rem 1.2rem; border-radius: 0 0 4px 4px;
-    }
-    .pricing-tier { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-    .pricing-amount { font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.3rem; }
-    .pricing-amount span { font-size: 1rem; font-weight: 400; color: var(--text-dim); font-family: var(--font-sans); }
-    .pricing-setup { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 2rem; }
-    .pricing-includes { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 1rem; }
-    .pricing-features { list-style: none; border-top: 1px solid var(--border); padding-top: 1.2rem; margin-bottom: 2rem; flex: 1; }
-    .pricing-features li {
-      font-size: 0.88rem; color: var(--text-muted); padding: 0.45rem 0;
-      display: flex; align-items: flex-start; gap: 0.7rem;
-    }
-    .pricing-features li::before { content: '-'; color: var(--accent); flex-shrink: 0; }
-    .pricing-overage { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-    .pricing-overage strong { color: var(--text-muted); }
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .problem-item { background: var(--bg-raised); border: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; }
+    .problem-item .problem-icon { font-size: 2.4rem; margin-bottom: 1rem; }
+    .problem-item h3 { margin-bottom: 0.6rem; color: var(--text); }
+    .problem-item p { font-size: 0.9rem; }
+
+    .solution-list { max-width: 720px; margin: 3rem auto 0; }
+    .solution-item { display: flex; gap: 1.5rem; padding: 1.5rem 0; border-bottom: 1px solid var(--border); }
+    .solution-item:last-child { border-bottom: none; }
+    .solution-num { font-family: var(--font-serif); font-size: 1.4rem; font-weight: 700; color: var(--accent); flex-shrink: 0; width: 2rem; }
+    .solution-item h3 { margin-bottom: 0.4rem; color: var(--text); }
+    .solution-item p { font-size: 0.9rem; }
 
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
     .feature-item { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; }
     .feature-item h3 { margin-bottom: 0.6rem; }
     .feature-item p { font-size: 0.9rem; }
 
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; margin-top: 3rem; }
+    .step-item { text-align: center; padding: 2rem 1.5rem; }
+    .step-num { font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 1rem; }
+    .step-item h3 { margin-bottom: 0.6rem; color: var(--text); }
+    .step-item p { font-size: 0.9rem; }
+
     .cta-section { text-align: center; padding: 6rem 0; background: var(--bg-card); }
     .cta-section h2 { margin-bottom: 1rem; }
-    .cta-section p { max-width: 500px; margin: 0 auto 2rem; }
+    .cta-section p { max-width: 560px; margin: 0 auto 2rem; }
 
     @media (max-width: 900px) {
-      .pricing-grid, .features-grid { grid-template-columns: 1fr; }
+      .problem-grid, .features-grid, .steps-grid { grid-template-columns: 1fr; }
       .voice-hero { padding: 9rem 0 4rem; }
     }
-        .footer-logo, .nav-logo { position: relative; }
+            .footer-logo, .nav-logo { position: relative; }
     .footer-logo::before, .nav-logo::before {
       content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%;
       transform: translate(-50%, -50%);
@@ -182,115 +178,155 @@
 <!-- ── HERO ── -->
 <div class="voice-hero">
   <div class="container">
-    <span class="label">Augentic Voice</span>
-    <h1>AI Front Desk</h1>
-    <p>Your AI receptionist handles inbound calls, books appointments, captures leads, and routes messages: 24 hours a day, 7 days a week.</p>
+    <span class="label">AI Voice Agent for Law Firms</span>
+    <h1>Every Missed Call Is a<br>Case You Will Never Get Back</h1>
+    <p>Your AI receptionist answers every call, qualifies potential clients, and books consultations with your attorneys. 24 hours a day, 7 days a week. No voicemail. No missed intake.</p>
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- ── PRICING ── -->
+<!-- ── THE PROBLEM ── -->
 <section style="background:var(--bg);">
   <div class="container">
     <div style="text-align:center;">
-      <span class="label">Pricing</span>
-      <h2 style="margin-top:0.75rem;">Simple, Transparent Plans</h2>
+      <span class="label">The Problem</span>
+      <h2 style="margin-top:0.75rem;">Potential Clients Call Once.<br>They Do Not Call Back.</h2>
+      <p style="max-width:620px;margin:1rem auto 0;">Legal consumers contact an average of three firms before hiring one. If your phone goes to voicemail, you are not in the running. The math is unforgiving.</p>
     </div>
-    <div class="pricing-grid">
-
-      <!-- STARTER -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Starter</div>
-        <div class="pricing-amount">$199 <span>/ month</span></div>
-        <div class="pricing-setup">Setup: $497</div>
-        <div class="pricing-includes">Includes</div>
-        <ul class="pricing-features">
-          <li>200 AI call minutes</li>
-          <li>Inbound AI receptionist</li>
-          <li>Basic FAQ responses</li>
-          <li>Message capture or call routing</li>
-          <li>Optional appointment booking</li>
-        </ul>
-        <div class="pricing-overage">Overage: <strong>$0.85 / minute</strong></div>
-        <a href="/book/" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;padding:0.85rem;">Get Started</a>
+    <div class="problem-grid">
+      <div class="problem-item">
+        <div class="problem-icon" style="color:var(--accent);">80%</div>
+        <h3>Will Not Leave a Voicemail</h3>
+        <p>Most callers hang up and dial the next firm on their list. Your marketing spend walks out the door with them.</p>
       </div>
-
-      <!-- STANDARD -->
-      <div class="pricing-card featured">
-        <div class="pricing-tier">Standard</div>
-        <div class="pricing-amount">$349 <span>/ month</span></div>
-        <div class="pricing-setup">Setup: $997</div>
-        <div class="pricing-includes">Includes</div>
-        <ul class="pricing-features">
-          <li>500 AI call minutes</li>
-          <li>Everything in Starter</li>
-          <li>Deeper prompt customization</li>
-          <li>Appointment booking + confirmations</li>
-          <li>Missed-call capture + follow-up text</li>
-          <li>Call summaries</li>
-          <li>Call analytics</li>
-        </ul>
-        <div class="pricing-overage">Overage: <strong>$0.75 / minute</strong></div>
-        <a href="/book/" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;padding:0.85rem;">Get Started</a>
+      <div class="problem-item">
+        <div class="problem-icon" style="color:var(--accent);">35%</div>
+        <h3>Call Outside Business Hours</h3>
+        <p>Evenings, weekends, and holidays generate over a third of intake calls. If no one answers, that lead is gone.</p>
       </div>
-
-      <!-- PREMIUM -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Premium</div>
-        <div class="pricing-amount">$599 <span>/ month</span></div>
-        <div class="pricing-setup">Setup: $1,497</div>
-        <div class="pricing-includes">Includes</div>
-        <ul class="pricing-features">
-          <li>1,000 AI call minutes</li>
-          <li>Everything in Standard</li>
-          <li>Advanced conversation training</li>
-          <li>CRM/email integrations</li>
-          <li>Call summaries + tagging</li>
-          <li>Priority support</li>
-          <li>Monthly prompt optimization</li>
-        </ul>
-        <div class="pricing-overage">Overage: <strong>$0.65 / minute</strong></div>
-        <a href="/book/" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;padding:0.85rem;">Get Started</a>
+      <div class="problem-item">
+        <div class="problem-icon" style="color:var(--accent);">$10K+</div>
+        <h3>Average Case Value at Risk</h3>
+        <p>Every unanswered call is not just a missed call. It is a five- or six-figure engagement that went to competing counsel.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ── FEATURES ── -->
+<!-- ── HOW AI VOICE AGENTS SOLVE IT ── -->
 <section style="background:var(--bg-card);">
   <div class="container">
     <div style="text-align:center;">
-      <span class="label">What You Get</span>
-      <h2 style="margin-top:0.75rem;">Built for Businesses That<br>Never Miss a Call</h2>
+      <span class="label">The Solution</span>
+      <h2 style="margin-top:0.75rem;">An AI Receptionist Built<br>for Legal Intake</h2>
+      <p style="max-width:620px;margin:1rem auto 0;">Your AI phone agent handles every call like a trained intake specialist. It qualifies, routes, and schedules, so your attorneys focus on practicing law.</p>
+    </div>
+    <div class="solution-list">
+      <div class="solution-item">
+        <div class="solution-num">1</div>
+        <div>
+          <h3>24/7 Client Intake</h3>
+          <p>Every call is answered on the first ring. Nights, weekends, holidays. Potential clients get a professional, attentive conversation instead of a voicemail box.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-num">2</div>
+        <div>
+          <h3>Initial Case Qualification</h3>
+          <p>The AI asks the right questions: practice area, incident details, timeline, prior representation. You get a structured intake summary before the prospect ever sits down with an attorney.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-num">3</div>
+        <div>
+          <h3>Consultation Scheduling</h3>
+          <p>Integrates with your attorneys' calendars to book consultations in real time. No back-and-forth emails. No double-bookings.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-num">4</div>
+        <div>
+          <h3>Conflict Check Routing</h3>
+          <p>Captures adverse party information and flags potential conflicts before scheduling. Keeps your firm compliant from the very first interaction.</p>
+        </div>
+      </div>
+      <div class="solution-item">
+        <div class="solution-num">5</div>
+        <div>
+          <h3>Urgent Matter Escalation</h3>
+          <p>Emergency calls, court deadlines, or time-sensitive matters get routed immediately to the right attorney. Everything else is handled, summarized, and queued.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── KEY BENEFITS ── -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="label">Why It Matters</span>
+      <h2 style="margin-top:0.75rem;">The Competitive Advantage<br>of Never Missing a Call</h2>
     </div>
     <div class="features-grid">
       <div class="feature-item">
-        <h3>24/7 Availability</h3>
-        <p>Your AI receptionist answers every call: nights, weekends, holidays. No voicemail. No missed opportunities.</p>
+        <h3>Capture Every Potential Client</h3>
+        <p>No more calls going to voicemail. Every inquiry gets a live, professional conversation and a path to your firm, regardless of when they call.</p>
       </div>
       <div class="feature-item">
-        <h3>Appointment Booking</h3>
-        <p>Integrates with your calendar to schedule appointments in real time during the call.</p>
+        <h3>Reduce Intake Costs</h3>
+        <p>Stop paying $25-45/hour for after-hours answering services that take messages and nothing more. Your AI answering service qualifies and schedules at a fraction of the cost.</p>
       </div>
       <div class="feature-item">
-        <h3>Lead Qualification</h3>
-        <p>Asks the right questions, captures caller details, and logs everything to your CRM automatically.</p>
+        <h3>Never Lose a Lead to Voicemail</h3>
+        <p>Callers who reach a live voice are seven times more likely to become clients. Your AI receptionist ensures that first impression is always a good one.</p>
       </div>
       <div class="feature-item">
-        <h3>Call Routing</h3>
-        <p>Transfers urgent calls to the right person. Routes everything else intelligently based on your rules.</p>
+        <h3>Free Up Your Staff</h3>
+        <p>Paralegals and legal assistants spend hours fielding routine calls. Let the AI handle screening so your team focuses on billable work.</p>
       </div>
       <div class="feature-item">
-        <h3>Missed-Call Recovery</h3>
-        <p>Automatically sends a follow-up text when a call is missed, converting abandons into conversations.</p>
+        <h3>Consistent Intake Process</h3>
+        <p>Every caller gets the same thorough, compliant intake experience. No variation between receptionists. No forgotten questions. No dropped details.</p>
       </div>
       <div class="feature-item">
-        <h3>Deploys in Days</h3>
-        <p>No months-long implementation. We configure, train, and launch your AI front desk in under a week.</p>
+        <h3>Detailed Call Intelligence</h3>
+        <p>Every conversation is summarized, tagged by practice area, and logged. Know exactly where your leads come from and what they need before you call back.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── HOW IT WORKS ── -->
+<section style="background:var(--bg-card);">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="label">How It Works</span>
+      <h2 style="margin-top:0.75rem;">Live in Days. Not Months.</h2>
+      <p style="max-width:560px;margin:1rem auto 0;">We handle everything. You keep practicing law.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-num">1</div>
+        <h3>Configure</h3>
+        <p>We learn your practice areas, intake questions, scheduling rules, and escalation protocols. Your AI agent is trained on how your firm operates.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">2</div>
+        <h3>Launch</h3>
+        <p>Your AI receptionist goes live on your firm's phone line. Calls are answered, qualified, and scheduled from day one.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-num">3</div>
+        <h3>Optimize</h3>
+        <p>We review call data, refine qualification logic, and tune the conversation flow. Your intake process gets sharper every month.</p>
       </div>
     </div>
   </div>
@@ -302,8 +338,8 @@
 <div class="cta-section">
   <div class="container">
     <span class="label">Ready to Start?</span>
-    <h2 style="margin-top:0.75rem;">Stop Missing Calls.<br>Start Closing Deals.</h2>
-    <p>Book a strategy call and we will walk you through how Augentic Voice works for your business.</p>
+    <h2 style="margin-top:0.75rem;">Stop Losing Cases<br>to Voicemail.</h2>
+    <p>Hear what an AI receptionist sounds like for your firm. Call Auri now or book a strategy call to see the full platform.</p>
     <div style="margin-bottom:2rem;">
       <div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:700;font-size:1.6rem;color:var(--accent);text-transform:uppercase;margin-bottom:0.3rem;">Talk to Auri</div>
       <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.6rem;">Our AI receptionist: live right now</div>

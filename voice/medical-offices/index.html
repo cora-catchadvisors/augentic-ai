@@ -11,17 +11,18 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AI Front Desk | Augentic AI</title>
-  <meta name="description" content="AI-powered front desk that handles inbound calls, scheduling, and lead qualification 24/7. Plans starting at $199/month." />
-  <meta property="og:title" content="AI Front Desk | Augentic AI" />
-  <meta property="og:description" content="AI-powered front desk that handles inbound calls, scheduling, and lead qualification 24/7. Plans starting at $199/month." />
+  <title>AI Voice Agent for Medical Offices | Augentic AI</title>
+  <meta name="description" content="AI voice agent for medical offices that answers every call 24/7. AI receptionist for medical practices handles appointment scheduling, prescription refill routing, insurance questions, and after-hours coverage. HIPAA-compliant AI answering service for healthcare." />
+  <meta property="og:title" content="AI Voice Agent for Medical Offices | Augentic AI" />
+  <meta property="og:description" content="AI receptionist for medical practices. 24/7 appointment scheduling, prescription refill routing, and after-hours coverage. Stop losing patients to missed calls." />
   <meta property="og:type" content="website" />
   <meta property="og:image" content="https://augenticai.com/favicon.svg" />
-  <meta property="og:url" content="https://augenticai.com/voice/" />
+  <meta property="og:url" content="https://augenticai.com/voice/medical-offices/" />
   <meta property="og:site_name" content="Augentic AI" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="AI Front Desk | Augentic AI" />
-  <meta name="twitter:description" content="AI-powered front desk that handles inbound calls, scheduling, and lead qualification 24/7. Plans starting at $199/month." />
+  <meta name="twitter:title" content="AI Voice Agent for Medical Offices | Augentic AI" />
+  <meta name="twitter:description" content="AI receptionist for medical practices. 24/7 appointment scheduling, prescription refill routing, and after-hours coverage. Stop losing patients to missed calls." />
+  <link rel="canonical" href="https://augenticai.com/voice/medical-offices/" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet" />
@@ -81,56 +82,49 @@
     .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
     .btn-primary { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%); background-size: 300% 100%; animation: goldShimmer 4s ease infinite; color: #0A0A0A; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer; box-shadow: 0 0 18px rgba(212,175,55,0.25); }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .btn-secondary { display: inline-block; padding: 0.9rem 2rem; background: transparent; border: 1px solid var(--border-accent); color: var(--accent); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: background 0.2s, transform 0.2s; cursor: pointer; }
+    .btn-secondary:hover { background: var(--accent-dim); transform: translateY(-1px); }
     .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
     @media (max-width: 900px) { .nav-links, .nav-right .nav-cta { display: none; } .hamburger { display: flex; } }
 
     /* ── PAGE-SPECIFIC ── */
     .voice-hero { padding: 12rem 0 6rem; text-align: center; background: var(--bg-card); }
     .voice-hero h1 { margin: 1rem 0 1.5rem; }
-    .voice-hero p { max-width: 600px; margin: 0 auto; font-size: 1.1rem; }
+    .voice-hero p { max-width: 640px; margin: 0 auto; font-size: 1.1rem; }
+    .voice-hero .hero-ctas { margin-top: 2.5rem; display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
 
-    .pricing-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
-    .pricing-card {
-      background: var(--bg-card); border: 1px solid var(--border); padding: 3rem 2.5rem;
-      display: flex; flex-direction: column; position: relative; transition: border-color 0.3s;
-    }
-    .pricing-card:hover { border-color: var(--border-accent); }
-    .pricing-card.featured { border-color: var(--accent); }
-    .pricing-card.featured::before {
-      content: 'Most Popular';
-      position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
-      background: var(--accent); color: #0A0A0A;
-      font-size: 0.68rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
-      padding: 0.35rem 1.2rem; border-radius: 0 0 4px 4px;
-    }
-    .pricing-tier { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; }
-    .pricing-amount { font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--text); line-height: 1; margin-bottom: 0.3rem; }
-    .pricing-amount span { font-size: 1rem; font-weight: 400; color: var(--text-dim); font-family: var(--font-sans); }
-    .pricing-setup { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 2rem; }
-    .pricing-includes { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 1rem; }
-    .pricing-features { list-style: none; border-top: 1px solid var(--border); padding-top: 1.2rem; margin-bottom: 2rem; flex: 1; }
-    .pricing-features li {
-      font-size: 0.88rem; color: var(--text-muted); padding: 0.45rem 0;
-      display: flex; align-items: flex-start; gap: 0.7rem;
-    }
-    .pricing-features li::before { content: '-'; color: var(--accent); flex-shrink: 0; }
-    .pricing-overage { font-size: 0.82rem; color: var(--text-dim); margin-bottom: 1.5rem; padding-top: 1rem; border-top: 1px solid var(--border); }
-    .pricing-overage strong { color: var(--text-muted); }
+    .problem-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .problem-item { background: var(--bg-raised); border: 1px solid var(--border); padding: 2rem; }
+    .problem-item h3 { margin-bottom: 0.6rem; color: var(--text); }
+    .problem-item p { font-size: 0.9rem; }
+    .problem-stat { font-family: var(--font-serif); font-size: 2.4rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.75rem; }
 
     .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
     .feature-item { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; }
     .feature-item h3 { margin-bottom: 0.6rem; }
     .feature-item p { font-size: 0.9rem; }
 
+    .benefits-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .benefit-item { background: var(--bg-raised); border: 1px solid var(--border); padding: 2.5rem 2rem; text-align: center; }
+    .benefit-stat { font-family: var(--font-serif); font-size: 2.8rem; font-weight: 700; color: var(--accent); line-height: 1; margin-bottom: 0.5rem; }
+    .benefit-item h3 { margin-bottom: 0.6rem; }
+    .benefit-item p { font-size: 0.9rem; }
+
+    .steps-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; counter-reset: steps; }
+    .step-item { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem 2rem; position: relative; }
+    .step-number { font-family: var(--font-serif); font-size: 3rem; font-weight: 700; color: var(--accent); opacity: 0.3; line-height: 1; margin-bottom: 1rem; }
+    .step-item h3 { margin-bottom: 0.6rem; }
+    .step-item p { font-size: 0.9rem; }
+
     .cta-section { text-align: center; padding: 6rem 0; background: var(--bg-card); }
     .cta-section h2 { margin-bottom: 1rem; }
     .cta-section p { max-width: 500px; margin: 0 auto 2rem; }
 
     @media (max-width: 900px) {
-      .pricing-grid, .features-grid { grid-template-columns: 1fr; }
+      .problem-grid, .features-grid, .benefits-grid, .steps-grid { grid-template-columns: 1fr; }
       .voice-hero { padding: 9rem 0 4rem; }
     }
-        .footer-logo, .nav-logo { position: relative; }
+            .footer-logo, .nav-logo { position: relative; }
     .footer-logo::before, .nav-logo::before {
       content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%;
       transform: translate(-50%, -50%);
@@ -182,115 +176,138 @@
 <!-- ── HERO ── -->
 <div class="voice-hero">
   <div class="container">
-    <span class="label">Augentic Voice</span>
-    <h1>AI Front Desk</h1>
-    <p>Your AI receptionist handles inbound calls, books appointments, captures leads, and routes messages: 24 hours a day, 7 days a week.</p>
+    <span class="label">AI Voice Agent for Medical Offices</span>
+    <h1>Every Missed Call Is a<br>Lost Patient</h1>
+    <p>Your front desk is overwhelmed. Patients call after hours and get voicemail. Appointment slots sit empty from no-shows. An AI voice agent answers every call, schedules every appointment, and never puts a patient on hold.</p>
+    <div class="hero-ctas">
+      <a href="tel:+18135441659" class="btn-primary" style="font-size:0.85rem;padding:1rem 2.5rem;">Call Our AI Demo</a>
+      <a href="/book/" class="btn-secondary" style="font-size:0.85rem;padding:1rem 2.5rem;">Book a Strategy Call</a>
+    </div>
   </div>
 </div>
 
 <div class="divider"></div>
 
-<!-- ── PRICING ── -->
+<!-- ── THE PROBLEM ── -->
 <section style="background:var(--bg);">
   <div class="container">
     <div style="text-align:center;">
-      <span class="label">Pricing</span>
-      <h2 style="margin-top:0.75rem;">Simple, Transparent Plans</h2>
+      <span class="label">The Problem</span>
+      <h2 style="margin-top:0.75rem;">Your Phone System Is Costing<br>You Patients and Revenue</h2>
     </div>
-    <div class="pricing-grid">
-
-      <!-- STARTER -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Starter</div>
-        <div class="pricing-amount">$199 <span>/ month</span></div>
-        <div class="pricing-setup">Setup: $497</div>
-        <div class="pricing-includes">Includes</div>
-        <ul class="pricing-features">
-          <li>200 AI call minutes</li>
-          <li>Inbound AI receptionist</li>
-          <li>Basic FAQ responses</li>
-          <li>Message capture or call routing</li>
-          <li>Optional appointment booking</li>
-        </ul>
-        <div class="pricing-overage">Overage: <strong>$0.85 / minute</strong></div>
-        <a href="/book/" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;padding:0.85rem;">Get Started</a>
+    <div class="problem-grid">
+      <div class="problem-item">
+        <div class="problem-stat">35%</div>
+        <h3>Calls Go Unanswered</h3>
+        <p>During peak hours, lunch breaks, and staff turnover, a third or more of inbound calls never reach a human. Each one is a patient who may not call back.</p>
       </div>
-
-      <!-- STANDARD -->
-      <div class="pricing-card featured">
-        <div class="pricing-tier">Standard</div>
-        <div class="pricing-amount">$349 <span>/ month</span></div>
-        <div class="pricing-setup">Setup: $997</div>
-        <div class="pricing-includes">Includes</div>
-        <ul class="pricing-features">
-          <li>500 AI call minutes</li>
-          <li>Everything in Starter</li>
-          <li>Deeper prompt customization</li>
-          <li>Appointment booking + confirmations</li>
-          <li>Missed-call capture + follow-up text</li>
-          <li>Call summaries</li>
-          <li>Call analytics</li>
-        </ul>
-        <div class="pricing-overage">Overage: <strong>$0.75 / minute</strong></div>
-        <a href="/book/" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;padding:0.85rem;">Get Started</a>
+      <div class="problem-item">
+        <div class="problem-stat">$200+</div>
+        <h3>Lost Per No-Show</h3>
+        <p>Patients who forget appointments cost the average practice over $200 per empty slot. Without automated reminders and confirmations, no-show rates climb to 20-30%.</p>
       </div>
-
-      <!-- PREMIUM -->
-      <div class="pricing-card">
-        <div class="pricing-tier">Premium</div>
-        <div class="pricing-amount">$599 <span>/ month</span></div>
-        <div class="pricing-setup">Setup: $1,497</div>
-        <div class="pricing-includes">Includes</div>
-        <ul class="pricing-features">
-          <li>1,000 AI call minutes</li>
-          <li>Everything in Standard</li>
-          <li>Advanced conversation training</li>
-          <li>CRM/email integrations</li>
-          <li>Call summaries + tagging</li>
-          <li>Priority support</li>
-          <li>Monthly prompt optimization</li>
-        </ul>
-        <div class="pricing-overage">Overage: <strong>$0.65 / minute</strong></div>
-        <a href="/book/" class="btn-primary" style="width:100%;text-align:center;font-size:0.78rem;padding:0.85rem;">Get Started</a>
+      <div class="problem-item">
+        <div class="problem-stat">40%</div>
+        <h3>Calls Are After Hours</h3>
+        <p>Nearly half of patient calls come outside business hours. Every one that hits voicemail is a scheduling opportunity, prescription question, or new patient intake that goes unresolved.</p>
       </div>
-
     </div>
   </div>
 </section>
 
 <div class="divider"></div>
 
-<!-- ── FEATURES ── -->
+<!-- ── HOW AI SOLVES IT ── -->
 <section style="background:var(--bg-card);">
   <div class="container">
     <div style="text-align:center;">
-      <span class="label">What You Get</span>
-      <h2 style="margin-top:0.75rem;">Built for Businesses That<br>Never Miss a Call</h2>
+      <span class="label">The Solution</span>
+      <h2 style="margin-top:0.75rem;">An AI Receptionist Built for<br>Medical Practices</h2>
+      <p style="max-width:620px;margin:1rem auto 0;">Your AI voice agent handles patient calls with the same care and accuracy your front desk staff would, around the clock, without hold times or missed calls.</p>
     </div>
     <div class="features-grid">
       <div class="feature-item">
-        <h3>24/7 Availability</h3>
-        <p>Your AI receptionist answers every call: nights, weekends, holidays. No voicemail. No missed opportunities.</p>
+        <h3>24/7 Call Answering</h3>
+        <p>Every call is answered on the first ring. Nights, weekends, holidays. No voicemail, no answering service delays, no lost patients.</p>
       </div>
       <div class="feature-item">
-        <h3>Appointment Booking</h3>
-        <p>Integrates with your calendar to schedule appointments in real time during the call.</p>
+        <h3>Appointment Scheduling</h3>
+        <p>Books, reschedules, and confirms appointments directly on your calendar. Sends reminders that reduce no-shows before they happen.</p>
       </div>
       <div class="feature-item">
-        <h3>Lead Qualification</h3>
-        <p>Asks the right questions, captures caller details, and logs everything to your CRM automatically.</p>
+        <h3>Prescription Refill Routing</h3>
+        <p>Captures refill requests with patient details and medication information, then routes them to the appropriate provider or pharmacy workflow.</p>
       </div>
       <div class="feature-item">
-        <h3>Call Routing</h3>
-        <p>Transfers urgent calls to the right person. Routes everything else intelligently based on your rules.</p>
+        <h3>Insurance &amp; Billing Questions</h3>
+        <p>Answers common insurance verification questions, directs patients to the right department, and captures details for billing staff follow-up.</p>
       </div>
       <div class="feature-item">
-        <h3>Missed-Call Recovery</h3>
-        <p>Automatically sends a follow-up text when a call is missed, converting abandons into conversations.</p>
+        <h3>Intelligent Call Routing</h3>
+        <p>Urgent clinical concerns are transferred immediately to on-call staff. Routine inquiries are handled autonomously. Nothing falls through the cracks.</p>
       </div>
       <div class="feature-item">
-        <h3>Deploys in Days</h3>
-        <p>No months-long implementation. We configure, train, and launch your AI front desk in under a week.</p>
+        <h3>HIPAA-Compliant Handling</h3>
+        <p>Designed for healthcare environments with appropriate data handling practices. Patient information is treated with the security and discretion your practice requires.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── KEY BENEFITS ── -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="label">Results</span>
+      <h2 style="margin-top:0.75rem;">Measurable Impact on Your Practice</h2>
+    </div>
+    <div class="benefits-grid">
+      <div class="benefit-item">
+        <div class="benefit-stat">50%</div>
+        <h3>Fewer No-Shows</h3>
+        <p>Automated appointment confirmations and reminders cut no-show rates in half, recovering thousands in lost revenue each month.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-stat">100%</div>
+        <h3>After-Hours Coverage</h3>
+        <p>Capture every after-hours call. New patient inquiries are logged, appointments are booked, and urgent matters are escalated immediately.</p>
+      </div>
+      <div class="benefit-item">
+        <div class="benefit-stat">15+ hrs</div>
+        <h3>Staff Time Recovered Weekly</h3>
+        <p>Free your front desk from routine call handling. Refill requests, appointment changes, and FAQ calls are handled without staff involvement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── HOW IT WORKS ── -->
+<section style="background:var(--bg-card);">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="label">How It Works</span>
+      <h2 style="margin-top:0.75rem;">Live in Days, Not Months</h2>
+      <p style="max-width:580px;margin:1rem auto 0;">We handle the entire setup. You stay focused on patient care.</p>
+    </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <div class="step-number">01</div>
+        <h3>Configure</h3>
+        <p>We learn your practice: services offered, scheduling rules, call routing preferences, common patient questions, and provider workflows. Your AI agent is trained on your specific operations.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-number">02</div>
+        <h3>Launch</h3>
+        <p>Your AI receptionist goes live on your existing phone number. Calls are answered instantly, appointments are booked, and messages are routed. Your staff notices the difference on day one.</p>
+      </div>
+      <div class="step-item">
+        <div class="step-number">03</div>
+        <h3>Optimize</h3>
+        <p>We review call transcripts and performance data monthly. Conversation flows are refined, new scenarios are added, and your AI agent gets sharper over time.</p>
       </div>
     </div>
   </div>
@@ -302,8 +319,8 @@
 <div class="cta-section">
   <div class="container">
     <span class="label">Ready to Start?</span>
-    <h2 style="margin-top:0.75rem;">Stop Missing Calls.<br>Start Closing Deals.</h2>
-    <p>Book a strategy call and we will walk you through how Augentic Voice works for your business.</p>
+    <h2 style="margin-top:0.75rem;">Stop Losing Patients<br>to Missed Calls</h2>
+    <p>Hear what an AI receptionist sounds like. Call our live demo, or book a strategy call to discuss your practice.</p>
     <div style="margin-bottom:2rem;">
       <div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:700;font-size:1.6rem;color:var(--accent);text-transform:uppercase;margin-bottom:0.3rem;">Talk to Auri</div>
       <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.6rem;">Our AI receptionist: live right now</div>

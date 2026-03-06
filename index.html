@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-34XDZ0ENK7"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-34XDZ0ENK7');
+  </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Augentic AI - Autonomous AI Workforces for Revenue-Driven Companies</title>
@@ -134,18 +142,21 @@
       text-decoration: none;
       transition: color 0.2s;
     }
-    .nav-links a:hover { color: var(--text); }
+    .nav-links a:hover, .nav-links a.active { color: var(--accent); }
     .nav-cta {
       font-size: 0.78rem;
       font-weight: 500;
       letter-spacing: 0.08em;
       padding: 0.65rem 1.4rem;
-      background: var(--accent);
+      background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%);
+      background-size: 300% 100%;
+      animation: goldShimmer 4s ease infinite;
       color: #0A0A0A;
       text-decoration: none;
       border-radius: var(--radius);
       transition: opacity 0.2s;
       white-space: nowrap;
+      box-shadow: 0 0 14px rgba(212,175,55,0.2);
     }
     .nav-cta:hover { opacity: 0.88; }
     .nav-right { display: flex; align-items: center; gap: 0.75rem; }
@@ -201,7 +212,18 @@
     .hero-content .label { margin-bottom: 2rem; display: block; }
     .hero-content h1 { margin-bottom: 1.5rem; }
     .hero-content h1 em { font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 700; color: var(--accent); text-transform: uppercase; }
-    .pop { font-family: 'Poppins', sans-serif; font-style: italic; font-weight: 700; color: var(--accent); text-transform: uppercase; }
+    .pop {
+      font-family: 'Poppins', sans-serif;
+      font-style: italic;
+      font-weight: 700;
+      text-transform: uppercase;
+      background: linear-gradient(105deg, #B8960C 0%, #D4AF37 18%, #F5D060 35%, #FFF1A8 50%, #F5D060 65%, #D4AF37 82%, #B8960C 100%);
+      background-size: 200% 100%;
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      animation: goldShimmer 4s ease infinite;
+    }
     .hero-sub {
       font-size: 1.2rem;
       color: var(--text-muted);
@@ -212,7 +234,9 @@
     .btn-primary {
       display: inline-block;
       padding: 0.9rem 2rem;
-      background: var(--accent);
+      background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%);
+      background-size: 300% 100%;
+      animation: goldShimmer 4s ease infinite;
       color: #0A0A0A;
       font-size: 0.82rem;
       font-weight: 600;
@@ -221,8 +245,33 @@
       text-decoration: none;
       border-radius: var(--radius);
       transition: opacity 0.2s, transform 0.2s;
+      box-shadow: 0 0 18px rgba(212,175,55,0.25);
     }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    .auri-hero-btn {
+      background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%);
+      background-size: 300% 100%;
+      animation: goldShimmer 4s ease infinite, auriGlow 2s ease-in-out infinite;
+      border: 2px solid var(--accent);
+      color: #0A0A0A;
+      cursor: pointer;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 1rem 2.5rem;
+      border-radius: var(--radius);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      transition: all 0.3s;
+    }
+    .auri-hero-btn:hover { opacity: 0.88; }
+    @keyframes auriGlow {
+      0%, 100% { box-shadow: 0 0 15px rgba(212,175,55,0.3), 0 0 30px rgba(212,175,55,0.15); }
+      50% { box-shadow: 0 0 25px rgba(212,175,55,0.5), 0 0 50px rgba(212,175,55,0.25), 0 0 80px rgba(212,175,55,0.1); }
+    }
     .btn-ghost {
       display: inline-flex; align-items: center; gap: 0.5rem;
       font-size: 0.82rem;
@@ -247,7 +296,15 @@
     /* ── DIVIDER ── */
     .divider {
       height: 1px;
-      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      opacity: 0.2;
+    }
+
+    /* ── SCROLL PROGRESS BAR ── */
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 101;
+      background: linear-gradient(90deg, #B8960C, #D4AF37, #F5D060, #D4AF37);
+      width: 0%; transition: width 0.1s linear;
     }
 
     /* ── PROBLEM ── */
@@ -263,7 +320,9 @@
       background: var(--bg);
       padding: 3rem 2.5rem;
       position: relative;
+      transition: box-shadow 0.3s;
     }
+    .problem-card:hover { box-shadow: 0 0 20px rgba(212,175,55,0.08); }
     .problem-card::before {
       content: '';
       position: absolute; top: 0; left: 0; right: 0;
@@ -323,11 +382,11 @@
       border: 1px solid var(--border);
       padding: 3rem 2.5rem;
       position: relative;
-      transition: border-color 0.3s;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
       display: flex;
       flex-direction: column;
     }
-    .offering-card:hover { border-color: var(--border-accent); }
+    .offering-card:hover { border-color: var(--border-accent); box-shadow: 0 4px 24px rgba(212,175,55,0.1); transform: translateY(-2px); }
     .offering-card.featured {
       border-color: var(--border-accent);
     }
@@ -576,7 +635,8 @@
     @media (max-width: 900px) { .results-grid { grid-template-columns: 1fr; } }
 
     /* ── FAQ ── */
-    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item { border-bottom: 1px solid var(--border); border-left: 2px solid transparent; padding-left: 0; transition: border-color 0.3s, padding-left 0.3s; }
+    .faq-item.open { border-left-color: var(--accent); padding-left: 1.2rem; }
     .faq-q {
       width: 100%; background: none; border: none; color: var(--text);
       font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600;
@@ -617,6 +677,14 @@
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 1.5rem;
+    }
+    .industries-grid > div {
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .industries-grid > div:hover {
+      border-color: var(--border-accent) !important;
+      box-shadow: 0 4px 24px rgba(212,175,55,0.1);
+      transform: translateY(-2px);
     }
     @media (max-width: 900px) {
       .industries-grid { grid-template-columns: repeat(2, 1fr); }
@@ -701,10 +769,171 @@
     @media (max-width: 600px) {
       .contact-form { grid-template-columns: 1fr; }
     }
+            .footer-logo, .nav-logo { position: relative; }
+    .footer-logo::before, .nav-logo::before {
+      content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0) 60%);
+      border-radius: 50%;
+      animation: logoGlow 3s ease-in-out infinite;
+      pointer-events: none; z-index: 0;
+    }
+    .footer-logo > *, .nav-logo > * { position: relative; z-index: 1; }
+    @keyframes logoGlow {
+      0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.15); }
+    }
+    @keyframes goldShimmer {
+      0% { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+
+    /* ── TYPING CURSOR ── */
+    .typing-cursor {
+      display: inline-block;
+      width: 3px;
+      background: var(--accent);
+      margin-left: 4px;
+      animation: blink 0.7s step-end infinite;
+      vertical-align: baseline;
+    }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* ── FLOATING AURI BUTTON ── */
+    .floating-auri {
+      position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 95;
+      width: 60px; height: 60px; border-radius: 50%;
+      background: linear-gradient(135deg, #B8960C, #D4AF37, #F5D060);
+      border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(212,175,55,0.35);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: auriFloat 3s ease-in-out infinite;
+    }
+    .floating-auri:hover { transform: scale(1.1); box-shadow: 0 6px 30px rgba(212,175,55,0.5); }
+    .floating-auri svg { color: #0A0A0A; }
+    .floating-auri-label {
+      position: fixed; bottom: 1.5rem; right: 5rem; z-index: 95;
+      background: var(--bg-card); border: 1px solid var(--border-accent);
+      padding: 0.5rem 1rem; border-radius: var(--radius);
+      font-size: 0.78rem; font-weight: 600; color: var(--accent);
+      white-space: nowrap; opacity: 0; pointer-events: none;
+      transition: opacity 0.3s; box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    }
+    .floating-auri:hover + .floating-auri-label { opacity: 1; }
+    @keyframes auriFloat {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    @media (max-width: 900px) {
+      .floating-auri { bottom: 4.5rem; }
+      .floating-auri-label { bottom: 4.5rem; }
+    }
+
+    /* ── SOCIAL PROOF TICKER ── */
+    .proof-ticker {
+      background: var(--bg-card); border-bottom: 1px solid var(--border);
+      padding: 0.5rem 0; overflow: hidden; position: relative;
+    }
+    .proof-ticker-inner {
+      display: flex; gap: 4rem; animation: ticker 20s linear infinite;
+      white-space: nowrap;
+    }
+    .proof-ticker span {
+      font-size: 0.75rem; color: var(--text-dim); letter-spacing: 0.08em;
+      text-transform: uppercase; font-weight: 500; flex-shrink: 0;
+    }
+    .proof-ticker span strong { color: var(--accent); font-weight: 700; }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* ── SVG DRAW-IN ── */
+    .problem-icon { stroke-dasharray: 200; stroke-dashoffset: 200; transition: stroke-dashoffset 1.2s ease; }
+    .problem-card.visible .problem-icon { stroke-dashoffset: 0; }
+
+    /* ── PROCESS TIMELINE ── */
+
+    /* ── NAV LOGO REVEAL ── */
+    .nav-logo { animation: logoReveal 0.8s ease-out; }
+    @keyframes logoReveal {
+      0% { opacity: 0; transform: translateX(-12px); }
+      100% { opacity: 1; transform: translateX(0); }
+    }
+
+    /* ── HERO H1 GRADIENT ── */
+    #hero h1 {
+      background: linear-gradient(180deg, var(--text) 0%, var(--text-muted) 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    #hero h1 .pop {
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* ── EXIT INTENT MODAL ── */
+    .exit-modal-overlay {
+      display: none; position: fixed; inset: 0; z-index: 200;
+      background: rgba(0,0,0,0.7); backdrop-filter: blur(4px);
+      align-items: center; justify-content: center;
+    }
+    .exit-modal-overlay.open { display: flex; }
+    .exit-modal {
+      background: var(--bg-card); border: 1px solid var(--border-accent);
+      padding: 3rem; max-width: 440px; width: 90%; text-align: center;
+      position: relative; animation: modalIn 0.3s ease;
+    }
+    @keyframes modalIn { 0% { opacity: 0; transform: scale(0.95) translateY(10px); } 100% { opacity: 1; transform: scale(1) translateY(0); } }
+    .exit-modal-close {
+      position: absolute; top: 1rem; right: 1rem; background: none;
+      border: none; color: var(--text-dim); cursor: pointer; font-size: 1.2rem;
+    }
+
+    /* ── INTEGRATIONS BAR ── */
+    .integrations-bar {
+      display: flex; align-items: center; justify-content: center;
+      gap: 3rem; flex-wrap: wrap; opacity: 0.5;
+      transition: opacity 0.3s;
+    }
+    .integrations-bar:hover { opacity: 0.8; }
+    .integrations-bar svg { height: 28px; width: auto; fill: var(--text-dim); }
+
+    /* ── BLOG PREVIEW CARDS ── */
+    .blog-preview-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+    .blog-preview-card {
+      background: var(--bg-card); border: 1px solid var(--border);
+      padding: 2rem; display: flex; flex-direction: column;
+      transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s;
+    }
+    .blog-preview-card:hover {
+      border-color: var(--border-accent);
+      box-shadow: 0 4px 24px rgba(212,175,55,0.1);
+      transform: translateY(-2px);
+    }
+    .blog-preview-card .label { margin-bottom: 0.8rem; display: block; }
+    .blog-preview-card h3 {
+      font-family: var(--font-serif); font-size: 1.15rem; font-weight: 700;
+      margin-bottom: 0.6rem; line-height: 1.3;
+    }
+    .blog-preview-card h3 a { color: var(--text); text-decoration: none; transition: color 0.2s; }
+    .blog-preview-card h3 a:hover { color: var(--accent); }
+    .blog-preview-card p { font-size: 0.88rem; flex: 1; margin-bottom: 1.2rem; }
+    .blog-preview-card .read-more {
+      font-size: 0.78rem; font-weight: 600; color: var(--accent);
+      text-decoration: none; letter-spacing: 0.08em; text-transform: uppercase;
+      display: inline-flex; align-items: center; gap: 0.4rem;
+    }
+    .blog-preview-card .read-more:hover { gap: 0.7rem; }
+    @media (max-width: 900px) { .blog-preview-grid { grid-template-columns: 1fr; } }
 
   </style>
 </head>
 <body>
+<div class="scroll-progress" id="scrollProgress"></div>
 
 <!-- ── NAVIGATION ── -->
 <nav id="nav">
@@ -725,11 +954,10 @@
 
       <a href="/book/" class="nav-cta">Book Strategy Call</a>
 
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-
-    <button class="hamburger" id="hamburger" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
   </div>
 </nav>
 
@@ -751,20 +979,36 @@
     <span class="label fade-in">AI Systems Integration</span>
     <h1 class="fade-in fade-in-delay-1">
       Your Workforce. Automated.<br>
-      Your Revenue. <em>Accelerated.</em>
+      Your Revenue. <span class="pop"><span id="typedWord">Accelerated.</span><span class="typing-cursor">&nbsp;</span></span>
     </h1>
     <p class="hero-sub fade-in fade-in-delay-2">
       Augentic AI architects, integrates, and deploys autonomous AI systems that replace manual work and drive measurable revenue outcomes for mid-market and enterprise companies.
     </p>
-    <div class="hero-actions fade-in fade-in-delay-3">
-      <button onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});setTimeout(startWebCall,800);" style="background:var(--accent);border:2px solid var(--accent);color:#0A0A0A;cursor:pointer;font-family:var(--font-sans);font-size:1rem;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;padding:1rem 2.5rem;border-radius:var(--radius);display:inline-flex;align-items:center;gap:0.75rem;transition:all 0.3s;" onmouseover="this.style.opacity='0.88'" onmouseout="this.style.opacity='1'">
+    <div class="hero-actions fade-in fade-in-delay-3" style="display:flex;flex-direction:column;align-items:center;">
+      <button class="auri-hero-btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});setTimeout(startWebCall,800);">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
         Talk to Auri: Live AI Demo
       </button>
-      <div style="font-size:0.75rem;color:var(--text-dim);margin-top:0.6rem;letter-spacing:0.05em;">Try our AI receptionist right now, no signup required</div>
+      <div style="font-size:0.75rem;color:var(--text-dim);margin-top:0.8rem;letter-spacing:0.05em;text-align:center;">Try our AI receptionist right now, no signup required</div>
     </div>
   </div>
 </section>
+
+<!-- ── SOCIAL PROOF TICKER ── -->
+<div class="proof-ticker" id="proofTicker">
+  <div class="proof-ticker-inner">
+    <span><strong>50+</strong> companies building AI workforces</span>
+    <span><strong>80%</strong> reduction in manual outreach</span>
+    <span><strong>12x</strong> faster lead response</span>
+    <span><strong>30-day</strong> deployment timeline</span>
+    <span><strong>24/7</strong> AI voice receptionist</span>
+    <span><strong>50+</strong> companies building AI workforces</span>
+    <span><strong>80%</strong> reduction in manual outreach</span>
+    <span><strong>12x</strong> faster lead response</span>
+    <span><strong>30-day</strong> deployment timeline</span>
+    <span><strong>24/7</strong> AI voice receptionist</span>
+  </div>
+</div>
 
 <div class="divider"></div>
 
@@ -860,20 +1104,45 @@
     </div>
     <div class="results-grid fade-in fade-in-delay-1">
       <div style="background:var(--bg-card);border:1px solid var(--border);padding:2.5rem 2rem;text-align:center;">
-        <div style="font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:var(--accent);margin-bottom:0.5rem;">80%</div>
+        <div class="counter" data-target="80" data-suffix="%" style="font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:var(--accent);margin-bottom:0.5rem;">0%</div>
         <h3 style="font-size:0.95rem;margin-bottom:0.6rem;">Reduction in Manual Outreach</h3>
         <p style="font-size:0.85rem;">$25M SaaS company automated lead follow-up, freeing 3 full-time sales reps for high-value conversations.</p>
       </div>
       <div style="background:var(--bg-card);border:1px solid var(--border);padding:2.5rem 2rem;text-align:center;">
-        <div style="font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:var(--accent);margin-bottom:0.5rem;">12x</div>
+        <div class="counter" data-target="12" data-suffix="x" style="font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:var(--accent);margin-bottom:0.5rem;">0x</div>
         <h3 style="font-size:0.95rem;margin-bottom:0.6rem;">Faster Lead Response Time</h3>
         <p style="font-size:0.85rem;">AI voice agent responds to inbound leads in under 10 seconds, 24/7/365, no missed calls, no voicemail.</p>
       </div>
       <div style="background:var(--bg-card);border:1px solid var(--border);padding:2.5rem 2rem;text-align:center;">
-        <div style="font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:var(--accent);margin-bottom:0.5rem;">$1.2M</div>
+        <div class="counter" data-target="1.2" data-prefix="$" data-suffix="M" data-decimals="1" style="font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:var(--accent);margin-bottom:0.5rem;">$0M</div>
         <h3 style="font-size:0.95rem;margin-bottom:0.6rem;">Annual Labor Cost Avoided</h3>
         <p style="font-size:0.85rem;">Mid-market firm replaced 4 manual workflows with autonomous agents, without reducing headcount.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── INTEGRATIONS BAR ── -->
+<section style="padding:4rem 0;">
+  <div class="container">
+    <div class="section-header center fade-in" style="margin-bottom:2.5rem;">
+      <span class="label">We Integrate With</span>
+    </div>
+    <div class="integrations-bar fade-in fade-in-delay-1">
+      <!-- Salesforce -->
+      <svg viewBox="0 0 100 70" xmlns="http://www.w3.org/2000/svg"><path d="M41.7 10.3c3.5-3.6 8.3-5.8 13.6-5.8 7 0 13.1 3.8 16.3 9.5 2.8-1.2 5.9-1.9 9.2-1.9 12.8 0 23.2 10.4 23.2 23.2S93.6 58.5 80.8 58.5c-1.7 0-3.3-.2-4.9-.5-2.8 4.5-7.8 7.5-13.4 7.5-2.6 0-5-.6-7.2-1.7-2.9 5.3-8.5 8.9-14.9 8.9-6.1 0-11.5-3.3-14.5-8.1-1.3.2-2.7.4-4.1.4C9.7 65 0 55.3 0 43.2S9.7 21.4 21.8 21.4c2.4 0 4.7.4 6.8 1.1 3-7.3 10.1-12.2 13.1-12.2z"/></svg>
+      <!-- HubSpot -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="70" cy="38" r="8"/><path d="M70 48v14c0 5.5-4.5 10-10 10s-10-4.5-10-10 4.5-10 10-10h0"/><path d="M42 50H28V30h14v8H36v4h6v8zm-22 0H8V30h12c5.5 0 8 3.5 8 8s-2.5 8-8 8h-4v4h4z"/><line x1="70" y1="30" x2="70" y2="20" stroke-width="4" stroke="currentColor"/></svg>
+      <!-- Slack -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M22 63a7 7 0 01-7-7 7 7 0 017-7h7v7a7 7 0 01-7 7zm3.5-18a7 7 0 01-7-7V22a7 7 0 0114 0v16a7 7 0 01-7 7zM42 22a7 7 0 017 7 7 7 0 01-7 7h-7v-7a7 7 0 017-7zm-3.5 18a7 7 0 017 7v16a7 7 0 01-14 0V47a7 7 0 017-7zM78 42a7 7 0 017 7 7 7 0 01-7 7h-7v-7a7 7 0 017-7zm-3.5 18a7 7 0 017 7v16a7 7 0 01-14 0V67a7 7 0 017-7zM58 78a7 7 0 01-7-7 7 7 0 017-7h7v7a7 7 0 01-7 7zm3.5-18a7 7 0 01-7-7V37a7 7 0 0114 0v16a7 7 0 01-7 7z"/></svg>
+      <!-- Google -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><path d="M50 20c8.3 0 15 3.2 20 8.5L61 37.5C58.2 34.8 54.5 33 50 33c-9.5 0-17 7.5-17 17s7.5 17 17 17c7.5 0 13-4 15.2-10H50V46h32c.3 2 .5 4 .5 6 0 18-12 30.5-32.5 30.5C27.5 82.5 10 68 10 50S27.5 17.5 50 20z"/></svg>
+      <!-- Twilio -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><circle cx="50" cy="50" r="42" fill="none" stroke="currentColor" stroke-width="6"/><circle cx="38" cy="38" r="7"/><circle cx="62" cy="38" r="7"/><circle cx="38" cy="62" r="7"/><circle cx="62" cy="62" r="7"/></svg>
+      <!-- Microsoft -->
+      <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"><rect x="10" y="10" width="38" height="38"/><rect x="52" y="10" width="38" height="38"/><rect x="10" y="52" width="38" height="38"/><rect x="52" y="52" width="38" height="38"/></svg>
     </div>
   </div>
 </section>
@@ -900,7 +1169,7 @@
           <li>Ongoing optimization and agent retraining</li>
           <li>Executive reporting and KPI dashboards</li>
         </ul>
-        <div class="offering-price">&nbsp; <span style="font-size:0.9rem;font-family:var(--font-sans);color:var(--text-muted);">Custom engagement - contact for pricing</span></div>
+        <div class="offering-price">&nbsp; <span style="font-size:0.75rem;font-family:var(--font-sans);color:var(--text-muted);white-space:nowrap;">Custom engagement - contact for pricing</span></div>
         <a href="#contact" class="btn-primary" style="display:block;font-size:0.78rem;padding:0.75rem 1.6rem;text-align:center;">Schedule Discovery Call</a>
       </div>
 
@@ -1234,6 +1503,45 @@
   </div>
 </section>
 
+<!-- ── LATEST INSIGHTS ── -->
+<section id="latest-insights" style="background:var(--bg-card);">
+  <div class="container">
+    <div class="section-header center fade-in" style="margin-bottom:3.5rem;">
+      <span class="label">Latest Insights</span>
+      <h2>From the <span class="pop">Blog</span></h2>
+    </div>
+    <div class="blog-preview-grid fade-in fade-in-delay-1">
+
+      <div class="blog-preview-card">
+        <span class="label">Systems Thinking</span>
+        <h3><a href="/blog/ai-tools-vs-ai-systems/">AI Tools vs. AI Systems: The Distinction That Defines Winners</a></h3>
+        <p>Most companies have AI tools. Few have AI systems. Here is why that distinction is worth millions.</p>
+        <a href="/blog/ai-tools-vs-ai-systems/" class="read-more">Read More <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="blog-preview-card">
+        <span class="label">Voice AI</span>
+        <h3><a href="/blog/ai-voice-agents-front-office-2026/">AI Voice Agents Are Replacing the Front Office</a></h3>
+        <p>The companies deploying AI voice agents are not experimenting. They are restructuring how their front office operates.</p>
+        <a href="/blog/ai-voice-agents-front-office-2026/" class="read-more">Read More <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+      <div class="blog-preview-card">
+        <span class="label">ROI</span>
+        <h3><a href="/blog/evaluating-ai-roi-framework/">A Framework for Evaluating AI ROI</a></h3>
+        <p>Most AI ROI calculations are wrong. Here is a framework that measures what actually matters to your business.</p>
+        <a href="/blog/evaluating-ai-roi-framework/" class="read-more">Read More <svg width="12" height="12" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+
+    </div>
+    <div style="text-align:center;margin-top:2.5rem;" class="fade-in fade-in-delay-2">
+      <a href="/blog/" class="btn-ghost" style="font-size:0.82rem;">View All Insights <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M1 7h12M8 2l5 5-5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ── FOOTER ── -->
 <footer>
   <div class="container">
@@ -1345,10 +1653,13 @@
     }
   }
 
-  // ── NAV SCROLL ──
+  // ── NAV SCROLL + PROGRESS BAR ──
   const nav = document.getElementById('nav');
+  const scrollProgress = document.getElementById('scrollProgress');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
+    const h = document.documentElement.scrollHeight - window.innerHeight;
+    scrollProgress.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
   }, { passive: true });
 
   // ── MOBILE MENU ──
@@ -1510,7 +1821,142 @@
       item.classList.toggle('open');
     });
   });
+
+  // ── ANIMATED COUNTERS ──
+  const counters = document.querySelectorAll('.counter');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting || entry.target.dataset.done) return;
+      entry.target.dataset.done = '1';
+      const el = entry.target;
+      const target = parseFloat(el.dataset.target);
+      const decimals = parseInt(el.dataset.decimals || '0');
+      const prefix = el.dataset.prefix || '';
+      const suffix = el.dataset.suffix || '';
+      const duration = 1500;
+      const start = performance.now();
+      function update(now) {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        const current = (target * eased).toFixed(decimals);
+        el.textContent = prefix + current + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      }
+      requestAnimationFrame(update);
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // ── TYPING EFFECT ──
+  (function() {
+    const words = ['Accelerated.', 'Amplified.', 'Autonomous.', 'Unstoppable.'];
+    const el = document.getElementById('typedWord');
+    if (!el) return;
+    let wordIndex = 0;
+    let charIndex = words[0].length;
+    let deleting = false;
+    let pause = 2000;
+
+    setTimeout(function tick() {
+      const word = words[wordIndex];
+      if (deleting) {
+        charIndex--;
+        el.textContent = word.substring(0, charIndex);
+        if (charIndex === 0) {
+          deleting = false;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(tick, 300);
+          return;
+        }
+        setTimeout(tick, 40);
+      } else {
+        charIndex++;
+        el.textContent = words[wordIndex].substring(0, charIndex);
+        if (charIndex === words[wordIndex].length) {
+          deleting = true;
+          setTimeout(tick, pause);
+          return;
+        }
+        setTimeout(tick, 80);
+      }
+    }, pause);
+  })();
+
+  // ── SVG DRAW-IN ──
+  document.querySelectorAll('.problem-card').forEach(card => {
+    observer.observe(card);
+  });
+
+  // ── PROCESS TIMELINE FILL ──
+  (function() {
+    const steps = document.querySelector('.process-steps');
+    if (!steps) return;
+    window.addEventListener('scroll', function() {
+      const rect = steps.getBoundingClientRect();
+      const h = steps.offsetHeight;
+      if (rect.top > window.innerHeight || rect.bottom < 0) return;
+      const visible = Math.min(Math.max((window.innerHeight - rect.top) / (h + window.innerHeight * 0.3), 0), 1);
+      steps.style.setProperty('--timeline-fill', (visible * 100) + '%');
+    }, { passive: true });
+  })();
+
+  // ── ACTIVE NAV HIGHLIGHTING ──
+  (function() {
+    var navLinks = document.querySelectorAll('.nav-links a[href^="#"]');
+    var sections = [];
+    navLinks.forEach(function(link) {
+      var id = link.getAttribute('href').slice(1);
+      var sec = document.getElementById(id);
+      if (sec) sections.push({ el: sec, link: link });
+    });
+    function update() {
+      var scrollY = window.scrollY + 120;
+      var active = null;
+      sections.forEach(function(s) {
+        if (s.el.offsetTop <= scrollY) active = s;
+      });
+      navLinks.forEach(function(l) { l.classList.remove('active'); });
+      if (active) active.link.classList.add('active');
+    }
+    window.addEventListener('scroll', update, { passive: true });
+    update();
+  })();
+
+  // ── EXIT INTENT ──
+  (function() {
+    var shown = false;
+    document.addEventListener('mouseout', function(e) {
+      if (shown || e.clientY > 5) return;
+      if (sessionStorage.getItem('exitShown')) return;
+      shown = true;
+      sessionStorage.setItem('exitShown', '1');
+      document.getElementById('exitModal').classList.add('open');
+    });
+    document.getElementById('exitModal').addEventListener('click', function(e) {
+      if (e.target === this) this.classList.remove('open');
+    });
+  })();
 </script>
+
+<!-- ── FLOATING AURI BUTTON ── -->
+<button class="floating-auri" id="floatingAuri" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'});setTimeout(startWebCall,800);" aria-label="Talk to Auri">
+  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+</button>
+<div class="floating-auri-label">Talk to Auri</div>
+
+<!-- ── EXIT INTENT MODAL ── -->
+<div class="exit-modal-overlay" id="exitModal">
+  <div class="exit-modal">
+    <button class="exit-modal-close" onclick="document.getElementById('exitModal').classList.remove('open');">&times;</button>
+    <div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:700;font-size:1.4rem;color:var(--accent);text-transform:uppercase;margin-bottom:0.5rem;">Before You Go</div>
+    <h3 style="font-family:var(--font-serif);font-size:1.6rem;font-weight:700;margin-bottom:0.8rem;">Talk to Auri</h3>
+    <p style="font-size:0.95rem;color:var(--text-muted);margin-bottom:1.5rem;">Try our AI receptionist live, right now. No signup, no commitment.</p>
+    <div style="display:flex;flex-direction:column;gap:0.75rem;align-items:center;">
+      <button onclick="document.getElementById('exitModal').classList.remove('open');document.getElementById('contact').scrollIntoView({behavior:'smooth'});setTimeout(startWebCall,800);" class="btn-primary" style="width:100%;border:none;cursor:pointer;font-size:0.85rem;padding:1rem;">Talk to Auri in Browser</button>
+      <a href="tel:+18135441659" style="font-size:0.9rem;color:var(--text-muted);text-decoration:none;">or call (813) 544-1659</a>
+    </div>
+  </div>
+</div>
 
 <!-- COOKIE CONSENT BANNER -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#111111;border-top:1px solid rgba(212,175,55,0.3);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
