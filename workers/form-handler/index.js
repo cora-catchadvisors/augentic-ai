@@ -150,7 +150,7 @@ async function handleRetellWebCall(env) {
       'Authorization': `Bearer ${env.RETELL_API_KEY}`,
       'Content-Type': 'application/json',
     },
-    body: JSON.stringify({ agent_id: 'agent_d39be9c6c735dbca4ab3ca9359' }),
+    body: JSON.stringify({ agent_id: 'agent_381609afa1b9072f8ea82615ee' }),
   });
   const data = await res.json();
   if (!res.ok) {
