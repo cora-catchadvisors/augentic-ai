@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Integrations | Connect Your Entire Stack | Augentic AI</title>
+  <meta name="description" content="Augentic AI integrates with your CRM, phone system, calendar, email, and 200+ tools. No rip and replace. We plug into what you already use." />
+  <meta property="og:title" content="AI Integrations | Connect Your Entire Stack | Augentic AI" />
+  <meta property="og:description" content="Augentic AI integrates with your CRM, phone system, calendar, email, and 200+ tools. No rip and replace. We plug into what you already use." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://augenticai.com/favicon.svg" />
+  <meta property="og:url" content="https://augenticai.com/integrations/" />
+  <meta property="og:site_name" content="Augentic AI" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="AI Integrations | Connect Your Entire Stack | Augentic AI" />
+  <meta name="twitter:description" content="Augentic AI integrates with your CRM, phone system, calendar, email, and 200+ tools. No rip and replace." />
+  <link rel="canonical" href="https://augenticai.com/integrations/" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0A0A0A; --bg-card: #111111; --bg-raised: #161616;
+      --text: #F5F5F0; --text-muted: #888880; --text-dim: #555550;
+      --accent: #D4AF37; --accent-dim: rgba(212,175,55,0.12);
+      --border: rgba(255,255,255,0.07); --border-accent: rgba(212,175,55,0.3);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --max: 1200px; --radius: 2px;
+    }
+    body.light {
+      --bg: #FAFAF7; --bg-card: #F2F2EE; --bg-raised: #E8E8E4;
+      --text: #0B0B0B; --text-muted: #444440; --text-dim: #999990;
+      --border: rgba(0,0,0,0.08); --border-accent: rgba(212,175,55,0.4);
+    }
+    html { scroll-behavior: smooth; }
+    body { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+    ::selection { background: var(--accent-dim); color: var(--accent); }
+    h1,h2,h3,h4 { font-weight: 500; line-height: 1.25; letter-spacing: -0.02em; }
+    h1 { font-family: var(--font-serif); font-size: clamp(2rem,4vw,3.2rem); }
+    h2 { font-family: var(--font-serif); font-size: clamp(1.6rem,3vw,2.4rem); }
+    h3 { font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600; letter-spacing: 0; }
+    p { color: var(--text-muted); line-height: 1.85; }
+    a { color: inherit; }
+    .label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
+    .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 0; transition: background 0.4s, padding 0.3s; }
+    nav.scrolled { background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); padding: 1rem 0; backdrop-filter: blur(12px); }
+    body.light nav.scrolled { background: rgba(250,250,247,0.95); }
+    nav .container { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; }
+    .nav-links { display: flex; align-items: center; gap: 2rem; list-style: none; }
+    .nav-links a { font-size: 0.8rem; color: var(--text-muted); text-decoration: none; transition: color 0.2s; }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta { font-size: 0.78rem; font-weight: 500; letter-spacing: 0.08em; padding: 0.65rem 1.4rem; background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%); background-size: 300% 100%; animation: goldShimmer 4s ease infinite; color: #0A0A0A; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s; white-space: nowrap; box-shadow: 0 0 14px rgba(212,175,55,0.2); }
+    .nav-cta:hover { opacity: 0.88; }
+    .nav-right { display: flex; align-items: center; gap: 0.75rem; }
+    .theme-toggle { background: none; border: 1px solid var(--border); color: var(--text-muted); cursor: pointer; width: 34px; height: 34px; display: flex; align-items: center; justify-content: center; border-radius: var(--radius); transition: color 0.2s; flex-shrink: 0; }
+    .theme-toggle:hover { color: var(--accent); }
+    .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+    .hamburger span { display: block; width: 22px; height: 1px; background: var(--text); }
+    .mobile-menu { display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0; z-index: 99; background: var(--bg); padding: 6rem 2rem 2rem; flex-direction: column; gap: 2rem; }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1.4rem; color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); padding-bottom: 1.2rem; }
+    footer { background: var(--bg); border-top: 1px solid var(--border); padding: 3rem 0; }
+    .footer-inner { display: flex; flex-direction: column; gap: 3rem; }
+    .footer-top { display: flex; justify-content: space-between; gap: 3rem; flex-wrap: wrap; }
+    .footer-brand { max-width: 260px; }
+    .footer-tagline { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.3rem; }
+    .footer-columns { display: flex; gap: 4rem; flex-wrap: wrap; }
+    .footer-col h4 { font-family: var(--font-sans); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; color: var(--accent); margin-bottom: 0.75rem; }
+    .footer-col ul { list-style: none; display: flex; flex-direction: column; gap: 0.5rem; }
+    .footer-col a { font-size: 0.78rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--text-muted); }
+    .footer-bottom { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem; border-top: 1px solid var(--border); padding-top: 1.5rem; }
+    .footer-legal { display: flex; gap: 1.5rem; }
+    .footer-legal a { font-size: 0.75rem; color: var(--text-dim); text-decoration: none; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--text-muted); }
+    .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
+    @media (max-width: 900px) { .footer-columns { gap: 2rem; } .footer-top { flex-direction: column; } }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
+    .btn-primary { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%); background-size: 300% 100%; animation: goldShimmer 4s ease infinite; color: #0A0A0A; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer; box-shadow: 0 0 18px rgba(212,175,55,0.25); }
+    .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
+    @media (max-width: 900px) { .nav-links, .nav-right .nav-cta { display: none; } .hamburger { display: flex; } }
+
+    /* ── PAGE-SPECIFIC ── */
+    .int-hero { padding: 10rem 0 5rem; border-bottom: 1px solid var(--border); }
+    .int-hero h1 { margin: 1rem 0 1.2rem; }
+    .int-hero p { max-width: 640px; font-size: 1.05rem; }
+
+    .int-approach { padding: 5rem 0; }
+    .int-approach-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 2.5rem; }
+    .int-approach-card { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem 2rem; }
+    .int-approach-card h3 { margin-bottom: 0.8rem; color: var(--text); }
+    .int-approach-card p { font-size: 0.9rem; }
+    .int-approach-card .step { font-family: var(--font-serif); font-size: 2rem; color: var(--accent); margin-bottom: 1rem; display: block; }
+
+    .int-categories { padding: 5rem 0; background: var(--bg-card); }
+    .int-cat { margin-bottom: 4rem; }
+    .int-cat:last-child { margin-bottom: 0; }
+    .int-cat-header { margin-bottom: 2rem; }
+    .int-cat-header h2 { font-size: 1.4rem; margin-top: 0.5rem; }
+    .int-cat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
+    .int-item {
+      background: var(--bg); border: 1px solid var(--border); padding: 1.5rem;
+      display: flex; align-items: flex-start; gap: 1rem; transition: border-color 0.3s;
+    }
+    .int-item:hover { border-color: var(--border-accent); }
+    .int-item img { width: 32px; height: 32px; object-fit: contain; flex-shrink: 0; margin-top: 2px; }
+    .int-item-info h4 { font-size: 0.9rem; font-weight: 600; margin-bottom: 0.3rem; color: var(--text); letter-spacing: 0; }
+    .int-item-info p { font-size: 0.78rem; line-height: 1.6; margin: 0; }
+
+    .int-custom { padding: 5rem 0; }
+    .int-custom-inner { max-width: 720px; }
+    .int-custom-inner h2 { margin-bottom: 1.2rem; }
+    .int-custom-inner p { margin-bottom: 1.2rem; font-size: 1rem; }
+    .int-custom-list { list-style: none; margin: 2rem 0; }
+    .int-custom-list li { padding: 0.6rem 0; font-size: 0.95rem; color: var(--text-muted); display: flex; align-items: flex-start; gap: 0.8rem; }
+    .int-custom-list li::before { content: '-'; color: var(--accent); flex-shrink: 0; font-weight: 600; }
+
+    .cta-section { text-align: center; padding: 5rem 0; background: var(--bg-card); border-top: 1px solid var(--border); }
+    .cta-section h2 { margin-bottom: 1rem; }
+    .cta-section p { max-width: 500px; margin: 0 auto 2rem; }
+
+    @media (max-width: 900px) { .int-approach-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 600px) { .int-cat-grid { grid-template-columns: 1fr; } }
+
+    .footer-logo, .nav-logo { position: relative; }
+    .footer-logo::before, .nav-logo::before {
+      content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(ellipse, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0) 60%);
+      border-radius: 50%;
+      animation: logoGlow 3s ease-in-out infinite;
+      pointer-events: none; z-index: 0;
+    }
+    .footer-logo > *, .nav-logo > * { position: relative; z-index: 1; }
+    @keyframes logoGlow {
+      0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
+      50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.15); }
+    }
+    .scroll-progress {
+      position: fixed; top: 0; left: 0; height: 3px; z-index: 101;
+      background: linear-gradient(90deg, #B8960C, #D4AF37, #F5D060, #D4AF37);
+      width: 0%; transition: width 0.1s linear;
+    }
+    @keyframes goldShimmer {
+      0% { background-position: 200% center; }
+      100% { background-position: -200% center; }
+    }
+  </style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+<nav id="nav">
+  <div class="container">
+    <a href="/" class="nav-logo" style="display:flex;align-items:center;text-decoration:none;"><img src="/logo-light.svg" alt="Augentic AI" height="37" style="height:37px;width:auto;" class="logo-themed" data-light="/logo-dark.svg" data-dark="/logo-light.svg" /></a>
+    <ul class="nav-links">
+      <li><a href="/#solution">Solutions</a></li>
+      <li><a href="/#offerings">Offerings</a></li>
+      <li><a href="/blog/">Insights</a></li>
+      <li><a href="/guide/">AI Guide</a></li>
+    </ul>
+    <div class="nav-right">
+      <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <svg id="iconSun" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="display:none"><circle cx="12" cy="12" r="5"/><line x1="12" y1="2" x2="12" y2="4"/><line x1="12" y1="20" x2="12" y2="22"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="2" y1="12" x2="4" y2="12"/><line x1="20" y1="12" x2="22" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        <svg id="iconMoon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+      </button>
+      <a href="/book/" class="nav-cta">Book Strategy Call</a>
+      <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="/#solution" onclick="closeMobile()">Solutions</a>
+  <a href="/#offerings" onclick="closeMobile()">Offerings</a>
+  <a href="/blog/" onclick="closeMobile()">Insights</a>
+  <a href="/guide/" onclick="closeMobile()">AI Guide</a>
+  <a href="tel:+18135441659" onclick="closeMobile()" style="display:flex;align-items:center;gap:0.5rem;">(813) 544-1659: Talk to Auri</a>
+  <a href="/book/" onclick="closeMobile()" style="color:var(--accent);">Book Strategy Call</a>
+</div>
+
+<!-- ── HERO ── -->
+<div class="int-hero">
+  <div class="container">
+    <span class="label">Integrations</span>
+    <h1>We Plug Into Your Entire Stack</h1>
+    <p>No rip and replace. Augentic AI connects to the tools you already use: your CRM, phone system, calendar, email platform, helpdesk, and everything in between. If it has an API, we integrate with it.</p>
+  </div>
+</div>
+
+<!-- ── HOW WE INTEGRATE ── -->
+<div class="int-approach">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="label">How It Works</span>
+      <h2 style="margin-top:0.75rem;">Three Ways We Connect</h2>
+    </div>
+    <div class="int-approach-grid">
+      <div class="int-approach-card">
+        <span class="step">01</span>
+        <h3>Native Integrations</h3>
+        <p>Direct connections to major platforms via their official APIs. Pre-built, tested, and production-ready. Most integrations are live within 24 hours of deployment.</p>
+      </div>
+      <div class="int-approach-card">
+        <span class="step">02</span>
+        <h3>Webhook and Automation</h3>
+        <p>For tools that support webhooks, Zapier, or Make, we connect your AI agents through event-driven triggers. Real-time data flow without custom development.</p>
+      </div>
+      <div class="int-approach-card">
+        <span class="step">03</span>
+        <h3>Custom API Integration</h3>
+        <p>For proprietary systems, legacy software, or anything with an API, we build custom connectors. Your AI agents work with your stack, not around it.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── INTEGRATION CATEGORIES ── -->
+<div class="int-categories">
+  <div class="container">
+
+    <!-- CRM & Sales -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">CRM and Sales</span>
+        <h2>Your AI agents read, write, and act on your sales data in real time</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/salesforce.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Salesforce" />
+          <div class="int-item-info"><h4>Salesforce</h4><p>Full CRM sync: leads, contacts, opportunities, tasks, and custom objects.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/hubspot.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="HubSpot" />
+          <div class="int-item-info"><h4>HubSpot</h4><p>Contacts, deals, sequences, forms, and marketing automation sync.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/pipedrive.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Pipedrive" />
+          <div class="int-item-info"><h4>Pipedrive</h4><p>Pipeline management, deal tracking, activity logging, and lead routing.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/zoho.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Zoho" />
+          <div class="int-item-info"><h4>Zoho CRM</h4><p>Lead capture, deal updates, workflow triggers, and contact enrichment.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Phone & Voice -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">Phone and Voice</span>
+        <h2>AI voice agents that plug directly into your phone infrastructure</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/twilio.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Twilio" />
+          <div class="int-item-info"><h4>Twilio</h4><p>Programmable voice, SMS, call routing, and recording integration.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/ringcentral.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="RingCentral" />
+          <div class="int-item-info"><h4>RingCentral</h4><p>Call forwarding, IVR replacement, voicemail transcription, and call analytics.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/dialpad.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Dialpad" />
+          <div class="int-item-info"><h4>Dialpad</h4><p>AI-powered call handling, real-time transcription, and coaching integration.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/nice.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="NICE" />
+          <div class="int-item-info"><h4>NICE</h4><p>Contact center integration, workforce management, and call quality analytics.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Calendar & Scheduling -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">Calendar and Scheduling</span>
+        <h2>AI agents that book, reschedule, and manage appointments autonomously</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/google.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Google Calendar" />
+          <div class="int-item-info"><h4>Google Calendar</h4><p>Real-time availability checks, appointment creation, and reminder sync.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/microsoft.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Outlook" />
+          <div class="int-item-info"><h4>Microsoft Outlook</h4><p>Calendar sync, meeting scheduling, and email integration via Microsoft Graph.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/calendly.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Calendly" />
+          <div class="int-item-info"><h4>Calendly</h4><p>Booking link generation, availability sync, and event type routing.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/zoom.us?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Zoom" />
+          <div class="int-item-info"><h4>Zoom</h4><p>Meeting creation, join link distribution, and recording management.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Communication -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">Communication</span>
+        <h2>AI agents that notify, message, and collaborate through your channels</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/slack.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Slack" />
+          <div class="int-item-info"><h4>Slack</h4><p>Real-time notifications, channel updates, lead alerts, and command interactions.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/microsoft.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Microsoft Teams" />
+          <div class="int-item-info"><h4>Microsoft Teams</h4><p>Team notifications, status updates, and workflow approvals via bot integration.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/mailchimp.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Mailchimp" />
+          <div class="int-item-info"><h4>Mailchimp</h4><p>List management, campaign triggers, and subscriber sync from AI workflows.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/sendgrid.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="SendGrid" />
+          <div class="int-item-info"><h4>SendGrid</h4><p>Transactional email delivery, template management, and delivery analytics.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Support & Helpdesk -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">Support and Helpdesk</span>
+        <h2>AI agents that triage, resolve, and escalate support requests</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/zendesk.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Zendesk" />
+          <div class="int-item-info"><h4>Zendesk</h4><p>Ticket creation, auto-resolution, priority routing, and customer history lookup.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/intercom.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Intercom" />
+          <div class="int-item-info"><h4>Intercom</h4><p>Live chat handoff, conversation tagging, and automated response workflows.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/freshworks.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Freshdesk" />
+          <div class="int-item-info"><h4>Freshdesk</h4><p>Ticket triage, knowledge base queries, SLA tracking, and agent assignment.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Automation & Workflow -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">Automation and Workflow</span>
+        <h2>Orchestration layers that connect your AI agents to everything else</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/zapier.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Zapier" />
+          <div class="int-item-info"><h4>Zapier</h4><p>Connect to 6,000+ apps via triggers and actions. No code required.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/make.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Make" />
+          <div class="int-item-info"><h4>Make</h4><p>Visual workflow builder for complex multi-step automations and data transforms.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/notion.so?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Notion" />
+          <div class="int-item-info"><h4>Notion</h4><p>Database sync, page creation, and knowledge base integration for AI context.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/airtable.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Airtable" />
+          <div class="int-item-info"><h4>Airtable</h4><p>Structured data reads and writes, view filtering, and automation triggers.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project Management -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">Project Management</span>
+        <h2>AI agents that update tasks, track progress, and close loops</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/atlassian.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Jira" />
+          <div class="int-item-info"><h4>Jira</h4><p>Issue creation, status updates, sprint tracking, and workflow transitions.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/monday.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Monday" />
+          <div class="int-item-info"><h4>Monday.com</h4><p>Board updates, item creation, status changes, and team notifications.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/asana.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Asana" />
+          <div class="int-item-info"><h4>Asana</h4><p>Task management, project tracking, and deadline monitoring via API.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cloud, Storage & Documents -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">Cloud, Storage and Documents</span>
+        <h2>AI agents that read, generate, and manage your documents and files</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/aws.amazon.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="AWS" />
+          <div class="int-item-info"><h4>AWS</h4><p>S3 storage, Lambda functions, SES email, and infrastructure integration.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/dropbox.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Dropbox" />
+          <div class="int-item-info"><h4>Dropbox</h4><p>File storage, document sharing, and folder sync for AI-generated assets.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/docusign.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="DocuSign" />
+          <div class="int-item-info"><h4>DocuSign</h4><p>Contract generation, signature requests, and completion tracking.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- AI & Intelligence -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">AI and Intelligence</span>
+        <h2>We use the best model for each task, not a single provider</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/openai.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="OpenAI" />
+          <div class="int-item-info"><h4>OpenAI</h4><p>GPT models for conversation, content generation, and function calling.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/anthropic.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Anthropic" />
+          <div class="int-item-info"><h4>Anthropic</h4><p>Claude models for reasoning, analysis, and complex workflow orchestration.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/google.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Google AI" />
+          <div class="int-item-info"><h4>Google AI</h4><p>Gemini models for multimodal tasks, search integration, and data analysis.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- E-commerce & Payments -->
+    <div class="int-cat">
+      <div class="int-cat-header">
+        <span class="label">E-commerce and Payments</span>
+        <h2>AI agents that connect to your revenue infrastructure</h2>
+      </div>
+      <div class="int-cat-grid">
+        <div class="int-item">
+          <img src="https://img.logo.dev/stripe.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Stripe" />
+          <div class="int-item-info"><h4>Stripe</h4><p>Payment processing, subscription management, and revenue reporting.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/shopify.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="Shopify" />
+          <div class="int-item-info"><h4>Shopify</h4><p>Order management, inventory sync, and customer data integration.</p></div>
+        </div>
+        <div class="int-item">
+          <img src="https://img.logo.dev/quickbooks.intuit.com?token=pk_CWBXU3nkSe-mxGTOGSpBeg&format=png" alt="QuickBooks" />
+          <div class="int-item-info"><h4>QuickBooks</h4><p>Invoice generation, payment tracking, and financial data sync.</p></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── CUSTOM INTEGRATIONS ── -->
+<div class="int-custom">
+  <div class="container">
+    <div class="int-custom-inner">
+      <span class="label">Beyond the List</span>
+      <h2>Your Stack Is Unique. We Handle That.</h2>
+      <p>The integrations above are what we deploy most frequently. But every business has proprietary systems, legacy software, or niche tools that are critical to their operations. We build custom connectors for all of them.</p>
+      <ul class="int-custom-list">
+        <li>Custom-built ERP and inventory systems</li>
+        <li>Industry-specific practice management software</li>
+        <li>Legacy databases and on-premise servers</li>
+        <li>Internal tools and admin dashboards</li>
+        <li>Proprietary APIs and third-party data providers</li>
+        <li>HIPAA, SOC 2, and compliance-sensitive environments</li>
+      </ul>
+      <p>If it has an API, a webhook, a database, or even a CSV export, we can connect your AI agents to it.</p>
+    </div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- ── CTA ── -->
+<div class="cta-section">
+  <div class="container">
+    <span class="label">Get Started</span>
+    <h2 style="margin-top:0.75rem;">Tell Us What You Use.<br>We Will Show You How It Connects.</h2>
+    <p>Book a strategy call and walk us through your stack. We will map out exactly how AI agents integrate into your existing tools and workflows.</p>
+    <a href="/book/" class="btn-primary" style="font-size:0.85rem;padding:1rem 2.5rem;">Book a Strategy Call</a>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <div style="display:flex;align-items:center;"><img src="/logo-light.svg" alt="Augentic AI" height="56" style="height:56px;width:auto;" class="logo-themed" data-light="/logo-dark.svg" data-dark="/logo-light.svg" /></div>
+          <div class="footer-tagline">Autonomous AI. Measurable Revenue.</div>
+          <div style="display:flex;flex-direction:column;gap:0.4rem;margin-top:0.75rem;">
+            <a href="tel:+18135441659" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:var(--text-dim);text-decoration:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(813) 544-1659</a>
+            <a href="https://linkedin.com/company/augenticai" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:var(--text-dim);text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
+          </div>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+              <li><a href="/services/ai-voice-agents/">AI Voice Agents</a></li>
+              <li><a href="/services/ai-automation/">AI Automation</a></li>
+              <li><a href="/services/ai-integration/">AI Integration</a></li>
+              <li><a href="/services/ai-strategy/">AI Strategy</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Industries</h4>
+            <ul>
+              <li><a href="/industries/healthcare/">Healthcare</a></li>
+              <li><a href="/industries/legal/">Legal</a></li>
+              <li><a href="/industries/real-estate/">Real Estate</a></li>
+              <li><a href="/industries/home-services/">Home Services</a></li>
+              <li><a href="/industries/financial-services/">Financial Services</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Resources</h4>
+            <ul>
+              <li><a href="/blog/">Insights</a></li>
+              <li><a href="/guide/">AI Guide</a></li>
+              <li><a href="/glossary/">AI Glossary</a></li>
+              <li><a href="/roi-calculator/">ROI Calculator</a></li>
+              <li><a href="/case-studies/">Case Studies</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4>Company</h4>
+            <ul>
+              <li><a href="/about/">About</a></li>
+              <li><a href="/pricing/">Pricing</a></li>
+              <li><a href="/book/">Book a Call</a></li>
+              <li><a href="mailto:hello@augenticai.com">Contact</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div class="footer-copy">&copy; 2026 Augentic AI. All rights reserved.</div>
+        <div class="footer-legal">
+          <a href="/privacy/">Privacy Policy</a>
+          <a href="/terms/">Terms &amp; Conditions</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  const nav = document.getElementById('nav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 40);
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    var sp = document.getElementById('scrollProgress');
+    if (sp) sp.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
+  }, { passive: true });
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+  function closeMobile() { mobileMenu.classList.remove('open'); }
+  const themeToggle = document.getElementById('themeToggle');
+  const iconSun = document.getElementById('iconSun');
+  const iconMoon = document.getElementById('iconMoon');
+  function updateLogos(isLight) {
+    document.querySelectorAll('.logo-themed').forEach(function(img) {
+      img.src = isLight ? img.dataset.light : img.dataset.dark;
+    });
+  }
+  const savedTheme = localStorage.getItem('theme') || 'dark';
+  if (savedTheme === 'light') { document.body.classList.add('light'); iconSun.style.display = 'block'; iconMoon.style.display = 'none'; updateLogos(true); }
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.body.classList.toggle('light');
+    localStorage.setItem('theme', isLight ? 'light' : 'dark');
+    iconSun.style.display = isLight ? 'block' : 'none';
+    iconMoon.style.display = isLight ? 'none' : 'block';
+    updateLogos(isLight);
+  });
+</script>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#111111;border-top:1px solid rgba(212,175,55,0.3);padding:1.25rem 2rem;display:flex;align-items:center;justify-content:space-between;gap:1.5rem;flex-wrap:wrap;">
+  <p style="margin:0;color:#888880;font-size:0.875rem;font-family:Inter,system-ui,sans-serif;line-height:1.6;max-width:700px;">
+    We use cookies to improve your experience and analyze site usage. By continuing, you agree to our
+    <a href="/privacy/" style="color:#D4AF37;text-decoration:underline;">Privacy Policy</a> and
+    <a href="/terms/" style="color:#D4AF37;text-decoration:underline;">Terms</a>.
+  </p>
+  <div style="display:flex;gap:0.75rem;flex-shrink:0;">
+    <button id="cookie-decline" style="padding:0.5rem 1.25rem;background:transparent;border:1px solid rgba(255,255,255,0.15);color:#888880;font-family:Inter,system-ui,sans-serif;font-size:0.8rem;font-weight:500;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;">Decline</button>
+    <button id="cookie-accept" style="padding:0.5rem 1.25rem;background:#D4AF37;border:none;color:#0A0A0A;font-family:Inter,system-ui,sans-serif;font-size:0.8rem;font-weight:600;letter-spacing:0.05em;text-transform:uppercase;cursor:pointer;border-radius:2px;">Accept</button>
+  </div>
+</div>
+<script>
+  (function() {
+    var consent = localStorage.getItem('augentic_cookie_consent');
+    var banner = document.getElementById('cookie-banner');
+    if (!consent && banner) { banner.style.display = 'flex'; }
+    document.getElementById('cookie-accept').addEventListener('click', function() {
+      localStorage.setItem('augentic_cookie_consent', 'accepted');
+      banner.style.display = 'none';
+    });
+    document.getElementById('cookie-decline').addEventListener('click', function() {
+      localStorage.setItem('augentic_cookie_consent', 'declined');
+      banner.style.display = 'none';
+    });
+  })();
+</script>
+
+</body>
+</html>

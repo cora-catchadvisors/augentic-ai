@@ -11,27 +11,27 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Building an AI Workforce: The Playbook for Revenue Teams | Augentic AI Insights</title>
-  <meta name="description" content="A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment." />
-  <meta property="og:title" content="Building an AI Workforce: The Playbook for Revenue Teams" />
-  <meta property="og:description" content="A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment." />
-  <meta property="og:type" content="article" />
+  <title>AI Glossary: Key Terms Explained | Augentic AI</title>
+  <meta name="description" content="Plain-language definitions of AI and automation terms. From AI agents to workflow automation, understand the technology driving modern business operations." />
+  <meta property="og:title" content="AI Glossary: Key Terms Explained | Augentic AI" />
+  <meta property="og:description" content="Plain-language definitions of AI and automation terms. From AI agents to workflow automation, understand the technology driving modern business operations." />
+  <meta property="og:type" content="website" />
   <meta property="og:image" content="https://augenticai.com/favicon.svg" />
-  <meta property="og:url" content="https://augenticai.com/blog/building-ai-workforce-playbook-revenue-teams/" />
+  <meta property="og:url" content="https://augenticai.com/glossary/" />
   <meta property="og:site_name" content="Augentic AI" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Building an AI Workforce: The Playbook for Revenue Teams" />
-  <meta name="twitter:description" content="A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment." />
+  <meta name="twitter:title" content="AI Glossary: Key Terms Explained | Augentic AI" />
+  <meta name="twitter:description" content="Plain-language definitions of AI and automation terms. From AI agents to workflow automation, understand the technology driving modern business operations." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #0A0A0A; --bg-card: #111111; --bg-raised: #161616;
-      --text: #F5F5F0; --text-muted: #888880; --text-dim: #555550;
-      --accent: #D4AF37; --accent-dim: rgba(212,175,55,0.12);
+      --text: #F8F8F4; --text-muted: #C8C8C0; --text-dim: #9A9A92;
+      --accent: #D4AF37; --accent-dim: rgba(212,175,55,0.15);
       --border: rgba(255,255,255,0.07); --border-accent: rgba(212,175,55,0.3);
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-sans: 'Inter', system-ui, sans-serif;
@@ -39,8 +39,9 @@
     }
     body.light {
       --bg: #FAFAF7; --bg-card: #F2F2EE; --bg-raised: #E8E8E4;
-      --text: #0B0B0B; --text-muted: #444440; --text-dim: #999990;
+      --text: #0B0B0B; --text-muted: #111110; --text-dim: #333330;
       --border: rgba(0,0,0,0.08); --border-accent: rgba(212,175,55,0.4);
+      --accent-dim: rgba(212,175,55,0.25);
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
@@ -53,6 +54,7 @@
     a { color: inherit; }
     .label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
     .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    section { padding: 6rem 0; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 0; transition: background 0.4s, padding 0.3s; }
     nav.scrolled { background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); padding: 1rem 0; backdrop-filter: blur(12px); }
     body.light nav.scrolled { background: rgba(250,250,247,0.95); }
@@ -86,25 +88,28 @@
     .footer-legal a:hover { color: var(--text-muted); }
     .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
     @media (max-width: 900px) { .footer-columns { gap: 2rem; } .footer-top { flex-direction: column; } }
-    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
     .btn-primary { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%); background-size: 300% 100%; animation: goldShimmer 4s ease infinite; color: #0A0A0A; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer; box-shadow: 0 0 18px rgba(212,175,55,0.25); }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-    .btn-outline { display: inline-block; padding: 0.85rem 1.8rem; border: 1px solid var(--border-accent); color: var(--accent); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-decoration: none; border-radius: var(--radius); transition: all 0.2s; }
-    .btn-outline:hover { background: var(--accent-dim); }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
     @media (max-width: 900px) { .nav-links, .nav-right .nav-cta { display: none; } .hamburger { display: flex; } }
-        .footer-logo, .nav-logo { position: relative; }
-    .footer-logo::before, .nav-logo::before {
-      content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(ellipse, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0) 60%);
-      border-radius: 50%;
-      animation: logoGlow 3s ease-in-out infinite;
-      pointer-events: none; z-index: 0;
-    }
-    .footer-logo > *, .nav-logo > * { position: relative; z-index: 1; }
-    @keyframes logoGlow {
-      0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.15); }
+
+    /* ── PAGE-SPECIFIC ── */
+    .glossary-hero { padding: 12rem 0 6rem; text-align: center; background: var(--bg-card); }
+    .glossary-hero h1 { margin: 1rem 0 1.5rem; }
+    .glossary-hero p { max-width: 640px; margin: 0 auto; font-size: 1.1rem; }
+
+    .glossary-list { max-width: 860px; margin: 0 auto; }
+    .glossary-item { border: 1px solid var(--border); background: var(--bg-card); padding: 2rem; margin-bottom: 1rem; transition: border-color 0.3s; }
+    .glossary-item:hover { border-color: var(--border-accent); }
+    .glossary-item h3 { color: var(--accent); margin-bottom: 0.6rem; font-size: 1.1rem; }
+    .glossary-item p { font-size: 0.92rem; }
+
+    .cta-section { text-align: center; padding: 6rem 0; background: var(--bg-card); }
+    .cta-section h2 { margin-bottom: 1rem; }
+    .cta-section p { max-width: 500px; margin: 0 auto 2rem; }
+
+    @media (max-width: 900px) {
+      .glossary-hero { padding: 9rem 0 4rem; }
     }
     .scroll-progress {
       position: fixed; top: 0; left: 0; height: 3px; z-index: 101;
@@ -115,26 +120,6 @@
       0% { background-position: 200% center; }
       100% { background-position: -200% center; }
     }
-  </style>
-  <style>
-    .post-header { padding: 10rem 0 4rem; border-bottom: 1px solid var(--border); }
-    .post-meta { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .post-meta .label { margin: 0; }
-    .post-meta-text { font-size: 0.8rem; color: var(--text-dim); }
-    .post-title { margin-bottom: 1.2rem; }
-    .post-desc { font-size: 1.05rem; max-width: 640px; }
-    .post-body { padding: 5rem 0; }
-    .post-body-inner { max-width: 720px; }
-    .post-body p { margin-bottom: 1.6rem; font-size: 1rem; }
-    .post-body h2 { font-size: 1.5rem; margin: 3rem 0 1rem; color: var(--text); }
-    .post-body strong { color: var(--text); font-weight: 500; }
-    .x-credit { background: var(--bg-card); border: 1px solid var(--border-accent); border-left: 3px solid var(--accent); padding: 1.2rem 1.5rem; margin: 2.5rem 0; font-size: 0.88rem; color: var(--text-muted); font-style: italic; border-radius: 0 var(--radius) var(--radius) 0; }
-    .post-footer { padding: 4rem 0; border-top: 1px solid var(--border); }
-    .cta-box { background: var(--bg-card); border: 1px solid var(--border); padding: 3rem; text-align: center; max-width: 600px; margin: 0 auto; }
-    .cta-box h3 { font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1rem; color: var(--text); }
-    .cta-box p { margin-bottom: 2rem; }
-    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
-    .back-link:hover { color: var(--accent); }
   </style>
 </head>
 <body>
@@ -167,78 +152,160 @@
   <a href="/book/" onclick="closeMobile()" style="color:var(--accent);">Book Strategy Call</a>
 </div>
 
-<div class="post-header">
+<!-- ── HERO ── -->
+<div class="glossary-hero">
   <div class="container">
-    <a href="/blog/" class="back-link">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M6 2L1 7l5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Back to Insights
-    </a>
-    <div class="post-meta">
-      <span class="label">Playbooks</span>
-      <span class="post-meta-text">March 3, 2026</span>
-      <span class="post-meta-text">7 min read</span>
-    </div>
-    <h1 class="post-title">Building an AI Workforce: The Playbook for Revenue Teams</h1>
-    <p class="post-desc">A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment.</p>
+    <span class="label">Reference</span>
+    <h1>AI Glossary</h1>
+    <p>Clear, business-friendly definitions of the AI and automation terms that matter. No jargon for jargon's sake. Just the concepts you need to understand to make informed decisions about AI in your business.</p>
   </div>
 </div>
 
-<div class="post-body">
+<div class="divider"></div>
+
+<!-- ── GLOSSARY ── -->
+<section style="background:var(--bg);">
   <div class="container">
-    <div class="post-body-inner">
-      
-      
-<p>Most AI initiatives in revenue organizations follow a predictable trajectory: enthusiastic pilot, promising early results, integration challenges, scope creep, and eventually a quiet deprioritization as the team returns to doing things manually. The problem is almost never the AI. It is the process.</p>
+    <div class="glossary-list">
 
-<p>This playbook describes the approach that actually works.</p>
+      <div class="glossary-item">
+        <h3>Agentic AI</h3>
+        <p>AI systems that can take independent action to accomplish goals, make decisions, and execute multi-step tasks without requiring human approval at every stage. Unlike simple chatbots, agentic AI operates autonomously within defined boundaries.</p>
+      </div>
 
-<h2>Phase 1: Workflow Mapping (Week 1-2)</h2>
+      <div class="glossary-item">
+        <h3>AI Agent</h3>
+        <p>A software program powered by artificial intelligence that performs specific tasks on behalf of a business. An AI agent can answer phone calls, respond to customer inquiries, book appointments, qualify leads, or manage workflows, all without human involvement.</p>
+      </div>
 
-<p>Before touching any technology, map your revenue workflow in detail. Document every task performed by every role in your sales and customer success motion. For each task, capture: frequency, time required, who performs it, what triggers it, what systems are involved, and what happens next. This map is the foundation of everything that follows.</p>
+      <div class="glossary-item">
+        <h3>AI Workforce</h3>
+        <p>A coordinated team of AI agents deployed across a business, each handling different functions. Instead of a single bot, an AI workforce operates like a full team: one agent handles calls, another manages follow-up, another processes intake, and so on.</p>
+      </div>
 
-<p>Identify your top three automation candidates using this criteria: high frequency (happens daily or multiple times per week), well-defined trigger (a specific event or condition initiates the task), consistent logic (the right action does not depend heavily on nuanced human judgment), and measurable output (you can tell whether the task was completed correctly).</p>
+      <div class="glossary-item">
+        <h3>Autonomous Workflow</h3>
+        <p>A business process that runs from start to finish without manual intervention. When a lead calls in, an autonomous workflow can answer the call, qualify the prospect, book an appointment, send confirmation emails, and update the CRM, all automatically.</p>
+      </div>
 
-<h2>Phase 2: System Design (Week 2-3)</h2>
+      <div class="glossary-item">
+        <h3>Conversational AI</h3>
+        <p>Technology that enables machines to have natural, human-like conversations through voice or text. Conversational AI powers AI receptionists, customer service agents, and intake systems that interact with people the way a trained employee would.</p>
+      </div>
 
-<p>For each automation candidate, design the agent architecture. This includes: what data sources the agent needs to read, what actions the agent needs to take, what systems it needs to write to, what the decision logic looks like, and what conditions should trigger human escalation rather than automated action.</p>
+      <div class="glossary-item">
+        <h3>CRM Integration</h3>
+        <p>Connecting an AI system directly to your Customer Relationship Management software (such as Salesforce, HubSpot, or GoHighLevel). This allows AI agents to read and write customer data, update deal stages, and trigger follow-up actions automatically.</p>
+      </div>
 
-<p>This is also when you define your measurement framework. What does success look like for each workflow? What metrics will you track, and how will you access them?</p>
+      <div class="glossary-item">
+        <h3>Data Pipeline</h3>
+        <p>The automated flow of data from one system to another. In an AI context, a data pipeline might move call transcripts into your CRM, route lead information to your scheduling tool, or feed customer interactions into analytics dashboards.</p>
+      </div>
 
-<h2>Phase 3: Integration Build (Week 3-5)</h2>
+      <div class="glossary-item">
+        <h3>Fine-Tuning</h3>
+        <p>The process of training an AI model on your specific business data to improve its accuracy and relevance. Fine-tuning allows an AI agent to learn your terminology, service offerings, pricing, and preferred responses.</p>
+      </div>
 
-<p>Build the integration layer that connects your AI agents to your existing systems. This is the most technically demanding phase and the most common point of failure in DIY AI initiatives. CRM APIs have quirks. Email authentication requirements are strict. Calendar integrations have edge cases. This work requires engineering expertise, not just AI expertise.</p>
+      <div class="glossary-item">
+        <h3>Generative AI</h3>
+        <p>AI that creates new content, including text, speech, images, or code. Large language models like GPT and Claude are generative AI systems. In business, generative AI powers conversational agents, content creation, and automated communication.</p>
+      </div>
 
-<div style="background:var(--bg-card);border:1px solid var(--border-accent);padding:2rem;margin:2.5rem 0;text-align:center;">
-  <p style="color:var(--accent);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;">Ready to move beyond AI tools?</p>
-  <p style="font-size:0.9rem;margin-bottom:1rem;">Book a free strategy call to see what AI systems could do for your business.</p>
-  <a href="/book/" style="display:inline-block;padding:0.7rem 1.8rem;background:linear-gradient(105deg,#D4AF37 0%,#D4AF37 30%,#F5D060 50%,#D4AF37 70%,#D4AF37 100%);background-size:300% 100%;animation:goldShimmer 4s ease infinite;color:#0A0A0A;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;box-shadow:0 0 14px rgba(212,175,55,0.2);">Book Strategy Call</a>
-</div>
+      <div class="glossary-item">
+        <h3>Hallucination</h3>
+        <p>When an AI system generates information that sounds plausible but is factually incorrect. Hallucinations are a known risk with generative AI. Proper system design, grounding techniques, and knowledge base integration significantly reduce this risk.</p>
+      </div>
 
-<h2>Phase 4: Deployment and Calibration (Week 5-6)</h2>
+      <div class="glossary-item">
+        <h3>Intent Detection</h3>
+        <p>The AI's ability to understand what a caller or user is trying to accomplish. When someone calls and says "I need to reschedule my appointment," intent detection identifies this as a scheduling request and routes the conversation accordingly.</p>
+      </div>
 
-<p>Deploy with a supervised period. Run the agents in parallel with existing manual workflows for one to two weeks. Compare outputs. Identify edge cases the agents handle incorrectly. Tune the decision logic. This calibration phase is not optional - it is what separates a production system from a demo.</p>
+      <div class="glossary-item">
+        <h3>Knowledge Base</h3>
+        <p>A structured collection of information that an AI agent draws from when answering questions. Your knowledge base might include service descriptions, pricing, office hours, FAQs, policies, and procedures. The more complete the knowledge base, the more accurate the AI.</p>
+      </div>
 
-<h2>Phase 5: Optimization and Scale (Ongoing)</h2>
+      <div class="glossary-item">
+        <h3>LLM (Large Language Model)</h3>
+        <p>The foundational AI technology behind modern conversational AI. LLMs are trained on vast amounts of text data and can understand, generate, and reason about human language. GPT-4, Claude, and Llama are examples of large language models.</p>
+      </div>
 
-<p>Once the system is in production, establish a regular cadence for performance review. Monthly at minimum. Review agent output quality, task completion rates, error rates, and business outcome metrics. As agents perform well on the initial workflows, expand to the next tier of automation candidates.</p>
+      <div class="glossary-item">
+        <h3>Machine Learning</h3>
+        <p>A branch of artificial intelligence where systems improve their performance through experience rather than explicit programming. Machine learning powers recommendation engines, predictive analytics, and the continuous improvement of AI agents over time.</p>
+      </div>
 
-<h2>The Common Failure Modes</h2>
+      <div class="glossary-item">
+        <h3>Natural Language Processing (NLP)</h3>
+        <p>The technology that allows AI to understand and respond to human language, whether spoken or written. NLP is what enables an AI voice agent to comprehend a caller's request, extract key details, and respond naturally.</p>
+      </div>
 
-<p>The teams that fail at this process almost always make one of three mistakes: they start with the technology instead of the workflow, they skip the calibration phase to move faster, or they deploy without ownership - no single person accountable for monitoring and optimizing the system after launch.</p>
+      <div class="glossary-item">
+        <h3>Prompt Engineering</h3>
+        <p>The practice of designing the instructions and context given to an AI system to produce optimal responses. Well-crafted prompts ensure your AI agent stays on script, maintains the right tone, and handles edge cases correctly.</p>
+      </div>
 
-<p>The teams that succeed treat AI deployment the same way they treat any other critical infrastructure investment: with clear ownership, measurable outcomes, and ongoing operational discipline.</p>
+      <div class="glossary-item">
+        <h3>RAG (Retrieval-Augmented Generation)</h3>
+        <p>A technique where an AI system retrieves relevant information from a knowledge base before generating a response. RAG dramatically reduces hallucinations and ensures AI agents provide accurate, business-specific answers grounded in your actual data.</p>
+      </div>
+
+      <div class="glossary-item">
+        <h3>RPA (Robotic Process Automation)</h3>
+        <p>Software that automates repetitive, rule-based tasks like data entry, form filling, and file transfers. RPA handles structured tasks with fixed rules, while AI agents handle unstructured tasks that require judgment and natural language understanding.</p>
+      </div>
+
+      <div class="glossary-item">
+        <h3>Sentiment Analysis</h3>
+        <p>The AI's ability to detect the emotional tone of a conversation. Sentiment analysis can identify when a caller is frustrated, confused, or ready to buy, allowing the AI agent to adjust its approach or escalate to a human when appropriate.</p>
+      </div>
+
+      <div class="glossary-item">
+        <h3>Speech-to-Text (STT)</h3>
+        <p>Technology that converts spoken language into written text in real time. Speech-to-text is the first step in any AI voice agent interaction: the system hears the caller's words, transcribes them, and then processes the text to understand and respond.</p>
+      </div>
+
+      <div class="glossary-item">
+        <h3>Systems Integration</h3>
+        <p>The process of connecting multiple software systems so they work together as a unified operation. AI systems integration means connecting AI agents to your CRM, phone system, calendar, EHR, or any other tool so data flows automatically between them.</p>
+      </div>
+
+      <div class="glossary-item">
+        <h3>Text-to-Speech (TTS)</h3>
+        <p>Technology that converts written text into natural-sounding spoken language. Text-to-speech is what gives AI voice agents their voice. Modern TTS systems produce speech that is nearly indistinguishable from a human, with natural pacing and intonation.</p>
+      </div>
+
+      <div class="glossary-item">
+        <h3>Voice Agent</h3>
+        <p>An AI-powered system that handles phone conversations autonomously. Voice agents answer inbound calls, make outbound calls, and conduct full conversations including greeting callers, understanding requests, providing information, and taking actions like booking appointments.</p>
+      </div>
+
+      <div class="glossary-item">
+        <h3>Workflow Automation</h3>
+        <p>Using technology to execute business processes automatically based on predefined triggers and rules. When a new lead submits a form, workflow automation can instantly send a confirmation, notify the sales team, create a CRM record, and schedule a follow-up call.</p>
+      </div>
 
     </div>
   </div>
-</div>
+</section>
 
-<div class="post-footer">
+<div class="divider"></div>
+
+<!-- ── CTA ── -->
+<div class="cta-section">
   <div class="container">
-    <div class="cta-box">
-      <h3>Ready to Build Your AI Workforce?</h3>
-      <p>Schedule a 30-minute strategy call. We will tell you exactly what we would build for your business - and what it would cost.</p>
-      <a href="/book/" class="btn-primary">Book a Strategy Call</a>
+    <span class="label">Take the Next Step</span>
+    <h2 style="margin-top:0.75rem;">Ready to Put These<br>Concepts to Work?</h2>
+    <p>Book a strategy call to discuss how AI voice agents, workflow automation, and systems integration can drive real results for your business.</p>
+    <div style="margin-bottom:2rem;">
+      <div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:700;font-size:1.6rem;color:var(--accent);text-transform:uppercase;margin-bottom:0.3rem;">Talk to Auri</div>
+      <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.6rem;">Our AI receptionist: live right now</div>
+      <a href="tel:+18135441659" style="font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:0.02em;">(813) 544-1659</a>
     </div>
+    <a href="/book/" class="btn-primary" style="font-size:0.85rem;padding:1rem 2.5rem;">Book a Strategy Call</a>
   </div>
 </div>
 
@@ -255,44 +322,10 @@
           </div>
         </div>
         <div class="footer-columns">
-          <div class="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/ai-voice-agents/">AI Voice Agents</a></li>
-              <li><a href="/services/ai-automation/">AI Automation</a></li>
-              <li><a href="/services/ai-integration/">AI Integration</a></li>
-              <li><a href="/services/ai-strategy/">AI Strategy</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Industries</h4>
-            <ul>
-              <li><a href="/industries/healthcare/">Healthcare</a></li>
-              <li><a href="/industries/legal/">Legal</a></li>
-              <li><a href="/industries/real-estate/">Real Estate</a></li>
-              <li><a href="/industries/home-services/">Home Services</a></li>
-              <li><a href="/industries/financial-services/">Financial Services</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="/blog/">Insights</a></li>
-              <li><a href="/guide/">AI Guide</a></li>
-              <li><a href="/glossary/">AI Glossary</a></li>
-              <li><a href="/roi-calculator/">ROI Calculator</a></li>
-              <li><a href="/case-studies/">Case Studies</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/about/">About</a></li>
-              <li><a href="/pricing/">Pricing</a></li>
-              <li><a href="/book/">Book a Call</a></li>
-              <li><a href="mailto:hello@augenticai.com">Contact</a></li>
-            </ul>
-          </div>
+          <div class="footer-col"><h4>Services</h4><ul><li><a href="/services/ai-voice-agents/">AI Voice Agents</a></li><li><a href="/services/ai-automation/">AI Automation</a></li><li><a href="/services/ai-integration/">AI Integration</a></li><li><a href="/services/ai-strategy/">AI Strategy</a></li></ul></div>
+          <div class="footer-col"><h4>Industries</h4><ul><li><a href="/industries/healthcare/">Healthcare</a></li><li><a href="/industries/legal/">Legal</a></li><li><a href="/industries/real-estate/">Real Estate</a></li><li><a href="/industries/home-services/">Home Services</a></li><li><a href="/industries/financial-services/">Financial Services</a></li></ul></div>
+          <div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Insights</a></li><li><a href="/guide/">AI Guide</a></li><li><a href="/glossary/">AI Glossary</a></li><li><a href="/roi-calculator/">ROI Calculator</a></li><li><a href="/case-studies/">Case Studies</a></li></ul></div>
+          <div class="footer-col"><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/book/">Book a Call</a></li><li><a href="mailto:hello@augenticai.com">Contact</a></li></ul></div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -305,6 +338,7 @@
     </div>
   </div>
 </footer>
+
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -349,20 +383,17 @@
   </div>
 </div>
 <script>
-  (function() {
-    var consent = localStorage.getItem('augentic_cookie_consent');
-    var banner = document.getElementById('cookie-banner');
-    if (!consent && banner) { banner.style.display = 'flex'; }
-    document.getElementById('cookie-accept').addEventListener('click', function() {
-      localStorage.setItem('augentic_cookie_consent', 'accepted');
-      banner.style.display = 'none';
-    });
-    document.getElementById('cookie-decline').addEventListener('click', function() {
-      localStorage.setItem('augentic_cookie_consent', 'declined');
-      banner.style.display = 'none';
-    });
-  })();
+  var consent = localStorage.getItem('augentic_cookie_consent');
+  var banner = document.getElementById('cookie-banner');
+  if (!consent && banner) { banner.style.display = 'flex'; }
+  document.getElementById('cookie-accept')?.addEventListener('click', function() {
+    localStorage.setItem('augentic_cookie_consent', 'accepted');
+    banner.style.display = 'none';
+  });
+  document.getElementById('cookie-decline')?.addEventListener('click', function() {
+    localStorage.setItem('augentic_cookie_consent', 'declined');
+    banner.style.display = 'none';
+  });
 </script>
-
 </body>
 </html>

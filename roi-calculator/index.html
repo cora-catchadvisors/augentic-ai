@@ -11,27 +11,27 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Building an AI Workforce: The Playbook for Revenue Teams | Augentic AI Insights</title>
-  <meta name="description" content="A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment." />
-  <meta property="og:title" content="Building an AI Workforce: The Playbook for Revenue Teams" />
-  <meta property="og:description" content="A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment." />
-  <meta property="og:type" content="article" />
+  <title>AI ROI Calculator | Augentic AI</title>
+  <meta name="description" content="Calculate the ROI of AI voice agents for your business. See projected revenue recovery, cost savings, and net return on investment in real time." />
+  <meta property="og:title" content="AI ROI Calculator | Augentic AI" />
+  <meta property="og:description" content="Calculate the ROI of AI voice agents for your business. See projected revenue recovery, cost savings, and net return on investment in real time." />
+  <meta property="og:type" content="website" />
   <meta property="og:image" content="https://augenticai.com/favicon.svg" />
-  <meta property="og:url" content="https://augenticai.com/blog/building-ai-workforce-playbook-revenue-teams/" />
+  <meta property="og:url" content="https://augenticai.com/roi-calculator/" />
   <meta property="og:site_name" content="Augentic AI" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Building an AI Workforce: The Playbook for Revenue Teams" />
-  <meta name="twitter:description" content="A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment." />
+  <meta name="twitter:title" content="AI ROI Calculator | Augentic AI" />
+  <meta name="twitter:description" content="Calculate the ROI of AI voice agents for your business. See projected revenue recovery, cost savings, and net return on investment in real time." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #0A0A0A; --bg-card: #111111; --bg-raised: #161616;
-      --text: #F5F5F0; --text-muted: #888880; --text-dim: #555550;
-      --accent: #D4AF37; --accent-dim: rgba(212,175,55,0.12);
+      --text: #F8F8F4; --text-muted: #C8C8C0; --text-dim: #9A9A92;
+      --accent: #D4AF37; --accent-dim: rgba(212,175,55,0.15);
       --border: rgba(255,255,255,0.07); --border-accent: rgba(212,175,55,0.3);
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-sans: 'Inter', system-ui, sans-serif;
@@ -39,8 +39,9 @@
     }
     body.light {
       --bg: #FAFAF7; --bg-card: #F2F2EE; --bg-raised: #E8E8E4;
-      --text: #0B0B0B; --text-muted: #444440; --text-dim: #999990;
+      --text: #0B0B0B; --text-muted: #111110; --text-dim: #333330;
       --border: rgba(0,0,0,0.08); --border-accent: rgba(212,175,55,0.4);
+      --accent-dim: rgba(212,175,55,0.25);
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
@@ -53,6 +54,7 @@
     a { color: inherit; }
     .label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
     .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    section { padding: 6rem 0; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 0; transition: background 0.4s, padding 0.3s; }
     nav.scrolled { background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); padding: 1rem 0; backdrop-filter: blur(12px); }
     body.light nav.scrolled { background: rgba(250,250,247,0.95); }
@@ -86,25 +88,62 @@
     .footer-legal a:hover { color: var(--text-muted); }
     .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
     @media (max-width: 900px) { .footer-columns { gap: 2rem; } .footer-top { flex-direction: column; } }
-    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
     .btn-primary { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%); background-size: 300% 100%; animation: goldShimmer 4s ease infinite; color: #0A0A0A; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer; box-shadow: 0 0 18px rgba(212,175,55,0.25); }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-    .btn-outline { display: inline-block; padding: 0.85rem 1.8rem; border: 1px solid var(--border-accent); color: var(--accent); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-decoration: none; border-radius: var(--radius); transition: all 0.2s; }
-    .btn-outline:hover { background: var(--accent-dim); }
+    .btn-secondary { display: inline-block; padding: 0.9rem 2rem; background: transparent; border: 1px solid var(--border-accent); color: var(--accent); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: background 0.2s, transform 0.2s; cursor: pointer; }
+    .btn-secondary:hover { background: var(--accent-dim); transform: translateY(-1px); }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
     @media (max-width: 900px) { .nav-links, .nav-right .nav-cta { display: none; } .hamburger { display: flex; } }
-        .footer-logo, .nav-logo { position: relative; }
-    .footer-logo::before, .nav-logo::before {
-      content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(ellipse, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0) 60%);
-      border-radius: 50%;
-      animation: logoGlow 3s ease-in-out infinite;
-      pointer-events: none; z-index: 0;
+
+    /* ── PAGE-SPECIFIC ── */
+    .calc-hero { padding: 12rem 0 6rem; text-align: center; background: var(--bg-card); }
+    .calc-hero h1 { margin: 1rem 0 1.5rem; }
+    .calc-hero p { max-width: 640px; margin: 0 auto; font-size: 1.1rem; }
+
+    .calc-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: start; }
+    .calc-inputs { background: var(--bg-card); border: 1px solid var(--border); padding: 2.5rem; }
+    .calc-inputs h2 { font-size: 1.3rem; margin-bottom: 2rem; }
+    .input-group { margin-bottom: 1.5rem; }
+    .input-group label { display: block; font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 0.5rem; letter-spacing: 0.02em; }
+    .input-group .input-hint { font-size: 0.75rem; color: var(--text-dim); margin-bottom: 0.5rem; }
+    .input-group input[type="number"] {
+      width: 100%; padding: 0.75rem 1rem; background: var(--bg); border: 1px solid var(--border);
+      color: var(--text); font-family: var(--font-sans); font-size: 1rem; border-radius: var(--radius);
+      outline: none; transition: border-color 0.2s;
     }
-    .footer-logo > *, .nav-logo > * { position: relative; z-index: 1; }
-    @keyframes logoGlow {
-      0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.15); }
+    .input-group input[type="number"]:focus { border-color: var(--accent); }
+    .input-group input[type="range"] {
+      width: 100%; height: 4px; appearance: none; -webkit-appearance: none; background: var(--border);
+      border-radius: 2px; outline: none; margin-top: 0.5rem;
+    }
+    .input-group input[type="range"]::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 18px; height: 18px; background: var(--accent);
+      border-radius: 50%; cursor: pointer; border: 2px solid var(--bg);
+    }
+    .input-group input[type="range"]::-moz-range-thumb {
+      width: 18px; height: 18px; background: var(--accent);
+      border-radius: 50%; cursor: pointer; border: 2px solid var(--bg);
+    }
+    .range-display { display: flex; justify-content: space-between; align-items: center; margin-top: 0.3rem; }
+    .range-value { font-family: var(--font-serif); font-size: 1.2rem; font-weight: 700; color: var(--accent); }
+
+    .calc-results { background: var(--bg-card); border: 1px solid var(--border-accent); padding: 2.5rem; position: sticky; top: 7rem; }
+    .calc-results h2 { font-size: 1.3rem; margin-bottom: 2rem; }
+    .result-item { padding: 1.25rem 0; border-bottom: 1px solid var(--border); }
+    .result-item:last-child { border-bottom: none; }
+    .result-label { font-size: 0.78rem; font-weight: 500; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 0.3rem; }
+    .result-value { font-family: var(--font-serif); font-size: 1.8rem; font-weight: 700; color: var(--text); }
+    .result-value.highlight { color: var(--accent); }
+    .result-note { font-size: 0.78rem; color: var(--text-dim); margin-top: 0.2rem; }
+
+    .cta-section { text-align: center; padding: 6rem 0; background: var(--bg-card); }
+    .cta-section h2 { margin-bottom: 1rem; }
+    .cta-section p { max-width: 500px; margin: 0 auto 2rem; }
+
+    @media (max-width: 900px) {
+      .calc-layout { grid-template-columns: 1fr; }
+      .calc-results { position: static; }
+      .calc-hero { padding: 9rem 0 4rem; }
     }
     .scroll-progress {
       position: fixed; top: 0; left: 0; height: 3px; z-index: 101;
@@ -115,26 +154,6 @@
       0% { background-position: 200% center; }
       100% { background-position: -200% center; }
     }
-  </style>
-  <style>
-    .post-header { padding: 10rem 0 4rem; border-bottom: 1px solid var(--border); }
-    .post-meta { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .post-meta .label { margin: 0; }
-    .post-meta-text { font-size: 0.8rem; color: var(--text-dim); }
-    .post-title { margin-bottom: 1.2rem; }
-    .post-desc { font-size: 1.05rem; max-width: 640px; }
-    .post-body { padding: 5rem 0; }
-    .post-body-inner { max-width: 720px; }
-    .post-body p { margin-bottom: 1.6rem; font-size: 1rem; }
-    .post-body h2 { font-size: 1.5rem; margin: 3rem 0 1rem; color: var(--text); }
-    .post-body strong { color: var(--text); font-weight: 500; }
-    .x-credit { background: var(--bg-card); border: 1px solid var(--border-accent); border-left: 3px solid var(--accent); padding: 1.2rem 1.5rem; margin: 2.5rem 0; font-size: 0.88rem; color: var(--text-muted); font-style: italic; border-radius: 0 var(--radius) var(--radius) 0; }
-    .post-footer { padding: 4rem 0; border-top: 1px solid var(--border); }
-    .cta-box { background: var(--bg-card); border: 1px solid var(--border); padding: 3rem; text-align: center; max-width: 600px; margin: 0 auto; }
-    .cta-box h3 { font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1rem; color: var(--text); }
-    .cta-box p { margin-bottom: 2rem; }
-    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
-    .back-link:hover { color: var(--accent); }
   </style>
 </head>
 <body>
@@ -167,77 +186,119 @@
   <a href="/book/" onclick="closeMobile()" style="color:var(--accent);">Book Strategy Call</a>
 </div>
 
-<div class="post-header">
+<!-- ── HERO ── -->
+<div class="calc-hero">
   <div class="container">
-    <a href="/blog/" class="back-link">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M6 2L1 7l5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Back to Insights
-    </a>
-    <div class="post-meta">
-      <span class="label">Playbooks</span>
-      <span class="post-meta-text">March 3, 2026</span>
-      <span class="post-meta-text">7 min read</span>
-    </div>
-    <h1 class="post-title">Building an AI Workforce: The Playbook for Revenue Teams</h1>
-    <p class="post-desc">A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment.</p>
+    <span class="label">ROI Calculator</span>
+    <h1>Calculate Your AI ROI</h1>
+    <p>Enter your current numbers below. See exactly how much revenue an AI voice agent can recover and how quickly it pays for itself. All calculations update in real time.</p>
   </div>
 </div>
 
-<div class="post-body">
+<div class="divider"></div>
+
+<!-- ── CALCULATOR ── -->
+<section style="background:var(--bg);">
   <div class="container">
-    <div class="post-body-inner">
-      
-      
-<p>Most AI initiatives in revenue organizations follow a predictable trajectory: enthusiastic pilot, promising early results, integration challenges, scope creep, and eventually a quiet deprioritization as the team returns to doing things manually. The problem is almost never the AI. It is the process.</p>
+    <div class="calc-layout">
 
-<p>This playbook describes the approach that actually works.</p>
+      <!-- INPUTS -->
+      <div class="calc-inputs">
+        <h2>Your Current Numbers</h2>
 
-<h2>Phase 1: Workflow Mapping (Week 1-2)</h2>
+        <div class="input-group">
+          <label for="callVolume">Monthly Call Volume</label>
+          <div class="input-hint">Total inbound calls your business receives per month</div>
+          <input type="number" id="callVolume" value="500" min="0" step="10" />
+        </div>
 
-<p>Before touching any technology, map your revenue workflow in detail. Document every task performed by every role in your sales and customer success motion. For each task, capture: frequency, time required, who performs it, what triggers it, what systems are involved, and what happens next. This map is the foundation of everything that follows.</p>
+        <div class="input-group">
+          <label for="missedRate">Average Missed Call Rate</label>
+          <div class="range-display">
+            <span class="input-hint">Percentage of calls that go unanswered</span>
+            <span class="range-value" id="missedRateDisplay">30%</span>
+          </div>
+          <input type="range" id="missedRate" value="30" min="5" max="80" step="1" />
+        </div>
 
-<p>Identify your top three automation candidates using this criteria: high frequency (happens daily or multiple times per week), well-defined trigger (a specific event or condition initiates the task), consistent logic (the right action does not depend heavily on nuanced human judgment), and measurable output (you can tell whether the task was completed correctly).</p>
+        <div class="input-group">
+          <label for="revenuePerLead">Average Revenue per Converted Lead</label>
+          <div class="input-hint">What a typical customer is worth when they convert</div>
+          <input type="number" id="revenuePerLead" value="500" min="0" step="25" />
+        </div>
 
-<h2>Phase 2: System Design (Week 2-3)</h2>
+        <div class="input-group">
+          <label for="costPerAgent">Cost per Receptionist / Agent</label>
+          <div class="input-hint">Monthly salary + benefits for one front desk person</div>
+          <input type="number" id="costPerAgent" value="4000" min="0" step="100" />
+        </div>
 
-<p>For each automation candidate, design the agent architecture. This includes: what data sources the agent needs to read, what actions the agent needs to take, what systems it needs to write to, what the decision logic looks like, and what conditions should trigger human escalation rather than automated action.</p>
+        <div class="input-group">
+          <label for="numAgents">Number of Receptionists</label>
+          <div class="input-hint">Current headcount handling inbound calls</div>
+          <input type="number" id="numAgents" value="2" min="0" step="1" />
+        </div>
+      </div>
 
-<p>This is also when you define your measurement framework. What does success look like for each workflow? What metrics will you track, and how will you access them?</p>
+      <!-- RESULTS -->
+      <div class="calc-results">
+        <h2>Projected AI Impact</h2>
 
-<h2>Phase 3: Integration Build (Week 3-5)</h2>
+        <div class="result-item">
+          <div class="result-label">Recovered Calls / Month</div>
+          <div class="result-value" id="recoveredCalls">150</div>
+          <div class="result-note">Calls currently going unanswered that AI would capture</div>
+        </div>
 
-<p>Build the integration layer that connects your AI agents to your existing systems. This is the most technically demanding phase and the most common point of failure in DIY AI initiatives. CRM APIs have quirks. Email authentication requirements are strict. Calendar integrations have edge cases. This work requires engineering expertise, not just AI expertise.</p>
+        <div class="result-item">
+          <div class="result-label">Additional Monthly Revenue</div>
+          <div class="result-value highlight" id="monthlyRevenue">$18,750</div>
+          <div class="result-note">Based on a 25% conversion rate on recovered calls</div>
+        </div>
 
-<div style="background:var(--bg-card);border:1px solid var(--border-accent);padding:2rem;margin:2.5rem 0;text-align:center;">
-  <p style="color:var(--accent);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;">Ready to move beyond AI tools?</p>
-  <p style="font-size:0.9rem;margin-bottom:1rem;">Book a free strategy call to see what AI systems could do for your business.</p>
-  <a href="/book/" style="display:inline-block;padding:0.7rem 1.8rem;background:linear-gradient(105deg,#D4AF37 0%,#D4AF37 30%,#F5D060 50%,#D4AF37 70%,#D4AF37 100%);background-size:300% 100%;animation:goldShimmer 4s ease infinite;color:#0A0A0A;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;box-shadow:0 0 14px rgba(212,175,55,0.2);">Book Strategy Call</a>
-</div>
+        <div class="result-item">
+          <div class="result-label">Annual Revenue Impact</div>
+          <div class="result-value highlight" id="annualRevenue">$225,000</div>
+        </div>
 
-<h2>Phase 4: Deployment and Calibration (Week 5-6)</h2>
+        <div class="result-item">
+          <div class="result-label">Current Monthly Staffing Cost</div>
+          <div class="result-value" id="staffingCost">$8,000</div>
+        </div>
 
-<p>Deploy with a supervised period. Run the agents in parallel with existing manual workflows for one to two weeks. Compare outputs. Identify edge cases the agents handle incorrectly. Tune the decision logic. This calibration phase is not optional - it is what separates a production system from a demo.</p>
+        <div class="result-item">
+          <div class="result-label">AI Solution Cost</div>
+          <div class="result-value" id="aiCost">$2,500</div>
+          <div class="result-note">Starting plan with 24/7 coverage</div>
+        </div>
 
-<h2>Phase 5: Optimization and Scale (Ongoing)</h2>
-
-<p>Once the system is in production, establish a regular cadence for performance review. Monthly at minimum. Review agent output quality, task completion rates, error rates, and business outcome metrics. As agents perform well on the initial workflows, expand to the next tier of automation candidates.</p>
-
-<h2>The Common Failure Modes</h2>
-
-<p>The teams that fail at this process almost always make one of three mistakes: they start with the technology instead of the workflow, they skip the calibration phase to move faster, or they deploy without ownership - no single person accountable for monitoring and optimizing the system after launch.</p>
-
-<p>The teams that succeed treat AI deployment the same way they treat any other critical infrastructure investment: with clear ownership, measurable outcomes, and ongoing operational discipline.</p>
+        <div class="result-item">
+          <div class="result-label">Net Monthly ROI</div>
+          <div class="result-value highlight" id="netROI">$24,250</div>
+          <div class="result-note" id="roiNote">Revenue gained + staffing savings - AI cost</div>
+        </div>
+      </div>
 
     </div>
   </div>
-</div>
+</section>
 
-<div class="post-footer">
+<div class="divider"></div>
+
+<!-- ── CTA ── -->
+<div class="cta-section">
   <div class="container">
-    <div class="cta-box">
-      <h3>Ready to Build Your AI Workforce?</h3>
-      <p>Schedule a 30-minute strategy call. We will tell you exactly what we would build for your business - and what it would cost.</p>
-      <a href="/book/" class="btn-primary">Book a Strategy Call</a>
+    <span class="label">Take Action</span>
+    <h2 style="margin-top:0.75rem;">Like What You See?<br>Let's Make It Real.</h2>
+    <p>These numbers are projections. Book a strategy call and we will build a custom ROI analysis based on your actual business data.</p>
+    <div style="margin-bottom:2rem;">
+      <div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:700;font-size:1.6rem;color:var(--accent);text-transform:uppercase;margin-bottom:0.3rem;">Talk to Auri</div>
+      <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.6rem;">Our AI receptionist: live right now</div>
+      <a href="tel:+18135441659" style="font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:0.02em;">(813) 544-1659</a>
+    </div>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;">
+      <a href="/book/" class="btn-primary" style="font-size:0.85rem;padding:1rem 2.5rem;">Book a Strategy Call</a>
+      <a href="tel:+18135441659" class="btn-secondary" style="font-size:0.85rem;padding:1rem 2.5rem;">Talk to Auri</a>
     </div>
   </div>
 </div>
@@ -249,7 +310,7 @@
         <div class="footer-brand">
           <div style="display:flex;align-items:center;"><img src="/logo-light.svg" alt="Augentic AI" height="56" style="height:56px;width:auto;" class="logo-themed" data-light="/logo-dark.svg" data-dark="/logo-light.svg" /></div>
           <div class="footer-tagline">Autonomous AI. Measurable Revenue.</div>
-          <div style="margin-top:1rem;display:flex;gap:1rem;align-items:center;">
+          <div style="display:flex;flex-direction:column;gap:0.4rem;margin-top:0.75rem;">
             <a href="tel:+18135441659" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:var(--text-dim);text-decoration:none;"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>(813) 544-1659</a>
             <a href="https://linkedin.com/company/augenticai" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;gap:0.4rem;font-size:0.78rem;color:var(--text-dim);text-decoration:none;"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>LinkedIn</a>
           </div>
@@ -305,7 +366,9 @@
     </div>
   </div>
 </footer>
+
 <script>
+  // Nav scroll
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
     nav.classList.toggle('scrolled', window.scrollY > 40);
@@ -313,10 +376,14 @@
     var sp = document.getElementById('scrollProgress');
     if (sp) sp.style.width = h > 0 ? (window.scrollY / h * 100) + '%' : '0%';
   }, { passive: true });
+
+  // Mobile menu
   const hamburger = document.getElementById('hamburger');
   const mobileMenu = document.getElementById('mobileMenu');
   hamburger.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
   function closeMobile() { mobileMenu.classList.remove('open'); }
+
+  // Theme toggle
   const themeToggle = document.getElementById('themeToggle');
   const iconSun = document.getElementById('iconSun');
   const iconMoon = document.getElementById('iconMoon');
@@ -334,6 +401,54 @@
     iconMoon.style.display = isLight ? 'none' : 'block';
     updateLogos(isLight);
   });
+
+  // ROI Calculator
+  var callVolume = document.getElementById('callVolume');
+  var missedRate = document.getElementById('missedRate');
+  var missedRateDisplay = document.getElementById('missedRateDisplay');
+  var revenuePerLead = document.getElementById('revenuePerLead');
+  var costPerAgent = document.getElementById('costPerAgent');
+  var numAgents = document.getElementById('numAgents');
+
+  function formatCurrency(n) {
+    if (n >= 1000000) return '$' + (n / 1000000).toFixed(1).replace(/\.0$/, '') + 'M';
+    if (n >= 10000) return '$' + Math.round(n).toLocaleString();
+    return '$' + Math.round(n).toLocaleString();
+  }
+
+  function calculate() {
+    var calls = parseFloat(callVolume.value) || 0;
+    var missed = (parseFloat(missedRate.value) || 0) / 100;
+    var revenue = parseFloat(revenuePerLead.value) || 0;
+    var agentCost = parseFloat(costPerAgent.value) || 0;
+    var agents = parseFloat(numAgents.value) || 0;
+
+    missedRateDisplay.textContent = Math.round(missed * 100) + '%';
+
+    var recoveredCallsCount = Math.round(calls * missed);
+    var conversionRate = 0.25;
+    var monthlyRev = recoveredCallsCount * conversionRate * revenue;
+    var annualRev = monthlyRev * 12;
+    var staffCost = agentCost * agents;
+    var aiMonthlyCost = 2500;
+    var staffSavings = Math.max(0, staffCost - aiMonthlyCost);
+    var netMonthlyROI = monthlyRev + staffSavings;
+
+    document.getElementById('recoveredCalls').textContent = recoveredCallsCount.toLocaleString();
+    document.getElementById('monthlyRevenue').textContent = formatCurrency(monthlyRev);
+    document.getElementById('annualRevenue').textContent = formatCurrency(annualRev);
+    document.getElementById('staffingCost').textContent = formatCurrency(staffCost);
+    document.getElementById('aiCost').textContent = formatCurrency(aiMonthlyCost);
+    document.getElementById('netROI').textContent = formatCurrency(netMonthlyROI);
+  }
+
+  callVolume.addEventListener('input', calculate);
+  missedRate.addEventListener('input', calculate);
+  revenuePerLead.addEventListener('input', calculate);
+  costPerAgent.addEventListener('input', calculate);
+  numAgents.addEventListener('input', calculate);
+
+  calculate();
 </script>
 
 <!-- COOKIE CONSENT BANNER -->
@@ -349,20 +464,17 @@
   </div>
 </div>
 <script>
-  (function() {
-    var consent = localStorage.getItem('augentic_cookie_consent');
-    var banner = document.getElementById('cookie-banner');
-    if (!consent && banner) { banner.style.display = 'flex'; }
-    document.getElementById('cookie-accept').addEventListener('click', function() {
-      localStorage.setItem('augentic_cookie_consent', 'accepted');
-      banner.style.display = 'none';
-    });
-    document.getElementById('cookie-decline').addEventListener('click', function() {
-      localStorage.setItem('augentic_cookie_consent', 'declined');
-      banner.style.display = 'none';
-    });
-  })();
+  var consent = localStorage.getItem('augentic_cookie_consent');
+  var banner = document.getElementById('cookie-banner');
+  if (!consent && banner) { banner.style.display = 'flex'; }
+  document.getElementById('cookie-accept')?.addEventListener('click', function() {
+    localStorage.setItem('augentic_cookie_consent', 'accepted');
+    banner.style.display = 'none';
+  });
+  document.getElementById('cookie-decline')?.addEventListener('click', function() {
+    localStorage.setItem('augentic_cookie_consent', 'declined');
+    banner.style.display = 'none';
+  });
 </script>
-
 </body>
 </html>

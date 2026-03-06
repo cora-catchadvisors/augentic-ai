@@ -11,27 +11,27 @@
   </script>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Building an AI Workforce: The Playbook for Revenue Teams | Augentic AI Insights</title>
-  <meta name="description" content="A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment." />
-  <meta property="og:title" content="Building an AI Workforce: The Playbook for Revenue Teams" />
-  <meta property="og:description" content="A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment." />
-  <meta property="og:type" content="article" />
+  <title>AI Automation Agency in Fort Lauderdale, FL | Augentic AI</title>
+  <meta name="description" content="Fort Lauderdale's AI automation agency. We deploy AI voice agents, autonomous workflows, and intelligent systems for Broward County and South Florida businesses." />
+  <meta property="og:title" content="AI Automation Agency in Fort Lauderdale, FL | Augentic AI" />
+  <meta property="og:description" content="Fort Lauderdale's AI automation agency. We deploy AI voice agents, autonomous workflows, and intelligent systems for Broward County and South Florida businesses." />
+  <meta property="og:type" content="website" />
   <meta property="og:image" content="https://augenticai.com/favicon.svg" />
-  <meta property="og:url" content="https://augenticai.com/blog/building-ai-workforce-playbook-revenue-teams/" />
+  <meta property="og:url" content="https://augenticai.com/fort-lauderdale/" />
   <meta property="og:site_name" content="Augentic AI" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Building an AI Workforce: The Playbook for Revenue Teams" />
-  <meta name="twitter:description" content="A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment." />
+  <meta name="twitter:title" content="AI Automation Agency in Fort Lauderdale, FL | Augentic AI" />
+  <meta name="twitter:description" content="Fort Lauderdale's AI automation agency. We deploy AI voice agents, autonomous workflows, and intelligent systems for Broward County and South Florida businesses." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
       --bg: #0A0A0A; --bg-card: #111111; --bg-raised: #161616;
-      --text: #F5F5F0; --text-muted: #888880; --text-dim: #555550;
-      --accent: #D4AF37; --accent-dim: rgba(212,175,55,0.12);
+      --text: #F8F8F4; --text-muted: #C8C8C0; --text-dim: #9A9A92;
+      --accent: #D4AF37; --accent-dim: rgba(212,175,55,0.15);
       --border: rgba(255,255,255,0.07); --border-accent: rgba(212,175,55,0.3);
       --font-serif: 'Playfair Display', Georgia, serif;
       --font-sans: 'Inter', system-ui, sans-serif;
@@ -39,8 +39,9 @@
     }
     body.light {
       --bg: #FAFAF7; --bg-card: #F2F2EE; --bg-raised: #E8E8E4;
-      --text: #0B0B0B; --text-muted: #444440; --text-dim: #999990;
+      --text: #0B0B0B; --text-muted: #111110; --text-dim: #333330;
       --border: rgba(0,0,0,0.08); --border-accent: rgba(212,175,55,0.4);
+      --accent-dim: rgba(212,175,55,0.25);
     }
     html { scroll-behavior: smooth; }
     body { background: var(--bg); color: var(--text); font-family: var(--font-sans); font-weight: 400; line-height: 1.7; -webkit-font-smoothing: antialiased; }
@@ -53,6 +54,7 @@
     a { color: inherit; }
     .label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; color: var(--accent); }
     .container { max-width: var(--max); margin: 0 auto; padding: 0 2rem; }
+    section { padding: 6rem 0; }
     nav { position: fixed; top: 0; left: 0; right: 0; z-index: 100; padding: 1.5rem 0; transition: background 0.4s, padding 0.3s; }
     nav.scrolled { background: rgba(10,10,10,0.95); border-bottom: 1px solid var(--border); padding: 1rem 0; backdrop-filter: blur(12px); }
     body.light nav.scrolled { background: rgba(250,250,247,0.95); }
@@ -86,25 +88,47 @@
     .footer-legal a:hover { color: var(--text-muted); }
     .footer-copy { font-size: 0.75rem; color: var(--text-dim); }
     @media (max-width: 900px) { .footer-columns { gap: 2rem; } .footer-top { flex-direction: column; } }
-    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
     .btn-primary { display: inline-block; padding: 0.9rem 2rem; background: linear-gradient(105deg, #D4AF37 0%, #D4AF37 30%, #F5D060 50%, #D4AF37 70%, #D4AF37 100%); background-size: 300% 100%; animation: goldShimmer 4s ease infinite; color: #0A0A0A; font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: opacity 0.2s, transform 0.2s; border: none; cursor: pointer; box-shadow: 0 0 18px rgba(212,175,55,0.25); }
     .btn-primary:hover { opacity: 0.88; transform: translateY(-1px); }
-    .btn-outline { display: inline-block; padding: 0.85rem 1.8rem; border: 1px solid var(--border-accent); color: var(--accent); font-size: 0.82rem; font-weight: 500; letter-spacing: 0.08em; text-decoration: none; border-radius: var(--radius); transition: all 0.2s; }
-    .btn-outline:hover { background: var(--accent-dim); }
+    .btn-secondary { display: inline-block; padding: 0.9rem 2rem; background: transparent; border: 1px solid var(--border-accent); color: var(--accent); font-size: 0.82rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none; border-radius: var(--radius); transition: background 0.2s, transform 0.2s; cursor: pointer; }
+    .btn-secondary:hover { background: var(--accent-dim); transform: translateY(-1px); }
+    .divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border), transparent); }
     @media (max-width: 900px) { .nav-links, .nav-right .nav-cta { display: none; } .hamburger { display: flex; } }
-        .footer-logo, .nav-logo { position: relative; }
-    .footer-logo::before, .nav-logo::before {
-      content: ''; position: absolute; top: 50%; left: 50%; width: 100%; height: 100%;
-      transform: translate(-50%, -50%);
-      background: radial-gradient(ellipse, rgba(212,175,55,0.25) 0%, rgba(212,175,55,0) 60%);
-      border-radius: 50%;
-      animation: logoGlow 3s ease-in-out infinite;
-      pointer-events: none; z-index: 0;
-    }
-    .footer-logo > *, .nav-logo > * { position: relative; z-index: 1; }
-    @keyframes logoGlow {
-      0%, 100% { opacity: 0.3; transform: translate(-50%, -50%) scale(1); }
-      50% { opacity: 0.7; transform: translate(-50%, -50%) scale(1.15); }
+
+    .city-hero { padding: 12rem 0 6rem; text-align: center; background: var(--bg-card); }
+    .city-hero h1 { margin: 1rem 0 1.5rem; }
+    .city-hero p { max-width: 640px; margin: 0 auto; font-size: 1.1rem; }
+    .city-hero .hero-phone { font-family: var(--font-serif); font-size: 1.5rem; font-weight: 700; color: var(--text); text-decoration: none; letter-spacing: 0.02em; display: inline-block; margin-top: 2rem; }
+    .city-hero .hero-phone:hover { color: var(--accent); }
+    .city-hero .hero-ctas { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-top: 2.5rem; }
+
+    .features-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .feature-item { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; transition: border-color 0.3s; }
+    .feature-item:hover { border-color: var(--border-accent); }
+    .feature-item h3 { margin-bottom: 0.6rem; }
+    .feature-item p { font-size: 0.9rem; }
+
+    .why-section { background: var(--bg-card); }
+    .why-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .why-item { padding: 2rem; border: 1px solid var(--border); background: var(--bg); transition: border-color 0.3s; }
+    .why-item:hover { border-color: var(--border-accent); }
+    .why-item h3 { margin-bottom: 0.6rem; color: var(--accent); }
+    .why-item p { font-size: 0.9rem; }
+
+    .industries-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-top: 3rem; }
+    .industry-item { background: var(--bg-card); border: 1px solid var(--border); padding: 2rem; text-align: center; transition: border-color 0.3s; }
+    .industry-item:hover { border-color: var(--border-accent); }
+    .industry-item .industry-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+    .industry-item h3 { margin-bottom: 0.5rem; }
+    .industry-item p { font-size: 0.85rem; }
+
+    .cta-section { text-align: center; padding: 6rem 0; background: var(--bg-card); }
+    .cta-section h2 { margin-bottom: 1rem; }
+    .cta-section p { max-width: 500px; margin: 0 auto 2rem; }
+
+    @media (max-width: 900px) {
+      .features-grid, .why-grid, .industries-grid { grid-template-columns: 1fr; }
+      .city-hero { padding: 9rem 0 4rem; }
     }
     .scroll-progress {
       position: fixed; top: 0; left: 0; height: 3px; z-index: 101;
@@ -115,26 +139,6 @@
       0% { background-position: 200% center; }
       100% { background-position: -200% center; }
     }
-  </style>
-  <style>
-    .post-header { padding: 10rem 0 4rem; border-bottom: 1px solid var(--border); }
-    .post-meta { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
-    .post-meta .label { margin: 0; }
-    .post-meta-text { font-size: 0.8rem; color: var(--text-dim); }
-    .post-title { margin-bottom: 1.2rem; }
-    .post-desc { font-size: 1.05rem; max-width: 640px; }
-    .post-body { padding: 5rem 0; }
-    .post-body-inner { max-width: 720px; }
-    .post-body p { margin-bottom: 1.6rem; font-size: 1rem; }
-    .post-body h2 { font-size: 1.5rem; margin: 3rem 0 1rem; color: var(--text); }
-    .post-body strong { color: var(--text); font-weight: 500; }
-    .x-credit { background: var(--bg-card); border: 1px solid var(--border-accent); border-left: 3px solid var(--accent); padding: 1.2rem 1.5rem; margin: 2.5rem 0; font-size: 0.88rem; color: var(--text-muted); font-style: italic; border-radius: 0 var(--radius) var(--radius) 0; }
-    .post-footer { padding: 4rem 0; border-top: 1px solid var(--border); }
-    .cta-box { background: var(--bg-card); border: 1px solid var(--border); padding: 3rem; text-align: center; max-width: 600px; margin: 0 auto; }
-    .cta-box h3 { font-family: var(--font-serif); font-size: 1.6rem; margin-bottom: 1rem; color: var(--text); }
-    .cta-box p { margin-bottom: 2rem; }
-    .back-link { display: inline-flex; align-items: center; gap: 0.5rem; font-size: 0.82rem; color: var(--text-muted); text-decoration: none; margin-bottom: 3rem; transition: color 0.2s; }
-    .back-link:hover { color: var(--accent); }
   </style>
 </head>
 <body>
@@ -167,78 +171,130 @@
   <a href="/book/" onclick="closeMobile()" style="color:var(--accent);">Book Strategy Call</a>
 </div>
 
-<div class="post-header">
+<!-- ── HERO ── -->
+<div class="city-hero">
   <div class="container">
-    <a href="/blog/" class="back-link">
-      <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M13 7H1M6 2L1 7l5 5" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-      Back to Insights
-    </a>
-    <div class="post-meta">
-      <span class="label">Playbooks</span>
-      <span class="post-meta-text">March 3, 2026</span>
-      <span class="post-meta-text">7 min read</span>
-    </div>
-    <h1 class="post-title">Building an AI Workforce: The Playbook for Revenue Teams</h1>
-    <p class="post-desc">A step-by-step framework for deploying autonomous AI across your revenue operations - from workflow mapping to production deployment.</p>
-  </div>
-</div>
-
-<div class="post-body">
-  <div class="container">
-    <div class="post-body-inner">
-      
-      
-<p>Most AI initiatives in revenue organizations follow a predictable trajectory: enthusiastic pilot, promising early results, integration challenges, scope creep, and eventually a quiet deprioritization as the team returns to doing things manually. The problem is almost never the AI. It is the process.</p>
-
-<p>This playbook describes the approach that actually works.</p>
-
-<h2>Phase 1: Workflow Mapping (Week 1-2)</h2>
-
-<p>Before touching any technology, map your revenue workflow in detail. Document every task performed by every role in your sales and customer success motion. For each task, capture: frequency, time required, who performs it, what triggers it, what systems are involved, and what happens next. This map is the foundation of everything that follows.</p>
-
-<p>Identify your top three automation candidates using this criteria: high frequency (happens daily or multiple times per week), well-defined trigger (a specific event or condition initiates the task), consistent logic (the right action does not depend heavily on nuanced human judgment), and measurable output (you can tell whether the task was completed correctly).</p>
-
-<h2>Phase 2: System Design (Week 2-3)</h2>
-
-<p>For each automation candidate, design the agent architecture. This includes: what data sources the agent needs to read, what actions the agent needs to take, what systems it needs to write to, what the decision logic looks like, and what conditions should trigger human escalation rather than automated action.</p>
-
-<p>This is also when you define your measurement framework. What does success look like for each workflow? What metrics will you track, and how will you access them?</p>
-
-<h2>Phase 3: Integration Build (Week 3-5)</h2>
-
-<p>Build the integration layer that connects your AI agents to your existing systems. This is the most technically demanding phase and the most common point of failure in DIY AI initiatives. CRM APIs have quirks. Email authentication requirements are strict. Calendar integrations have edge cases. This work requires engineering expertise, not just AI expertise.</p>
-
-<div style="background:var(--bg-card);border:1px solid var(--border-accent);padding:2rem;margin:2.5rem 0;text-align:center;">
-  <p style="color:var(--accent);font-weight:600;font-size:0.95rem;margin-bottom:0.5rem;">Ready to move beyond AI tools?</p>
-  <p style="font-size:0.9rem;margin-bottom:1rem;">Book a free strategy call to see what AI systems could do for your business.</p>
-  <a href="/book/" style="display:inline-block;padding:0.7rem 1.8rem;background:linear-gradient(105deg,#D4AF37 0%,#D4AF37 30%,#F5D060 50%,#D4AF37 70%,#D4AF37 100%);background-size:300% 100%;animation:goldShimmer 4s ease infinite;color:#0A0A0A;font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;border-radius:2px;box-shadow:0 0 14px rgba(212,175,55,0.2);">Book Strategy Call</a>
-</div>
-
-<h2>Phase 4: Deployment and Calibration (Week 5-6)</h2>
-
-<p>Deploy with a supervised period. Run the agents in parallel with existing manual workflows for one to two weeks. Compare outputs. Identify edge cases the agents handle incorrectly. Tune the decision logic. This calibration phase is not optional - it is what separates a production system from a demo.</p>
-
-<h2>Phase 5: Optimization and Scale (Ongoing)</h2>
-
-<p>Once the system is in production, establish a regular cadence for performance review. Monthly at minimum. Review agent output quality, task completion rates, error rates, and business outcome metrics. As agents perform well on the initial workflows, expand to the next tier of automation candidates.</p>
-
-<h2>The Common Failure Modes</h2>
-
-<p>The teams that fail at this process almost always make one of three mistakes: they start with the technology instead of the workflow, they skip the calibration phase to move faster, or they deploy without ownership - no single person accountable for monitoring and optimizing the system after launch.</p>
-
-<p>The teams that succeed treat AI deployment the same way they treat any other critical infrastructure investment: with clear ownership, measurable outcomes, and ongoing operational discipline.</p>
-
+    <span class="label">Fort Lauderdale AI Automation</span>
+    <h1>AI Automation for<br>Fort Lauderdale Businesses</h1>
+    <p>Augentic AI deploys AI voice agents, autonomous workflows, and intelligent systems for businesses across Fort Lauderdale, Broward County, and South Florida. Capture every lead. Automate every workflow.</p>
+    <a href="tel:+18135441659" class="hero-phone">(813) 544-1659</a>
+    <div class="hero-ctas">
+      <a href="/book/" class="btn-primary" style="font-size:0.85rem;padding:1rem 2.5rem;">Book a Strategy Call</a>
+      <a href="tel:+18135441659" class="btn-secondary" style="font-size:0.85rem;padding:1rem 2.5rem;">Talk to Auri, Our AI</a>
     </div>
   </div>
 </div>
 
-<div class="post-footer">
+<div class="divider"></div>
+
+<!-- ── SERVICES ── -->
+<section style="background:var(--bg);">
   <div class="container">
-    <div class="cta-box">
-      <h3>Ready to Build Your AI Workforce?</h3>
-      <p>Schedule a 30-minute strategy call. We will tell you exactly what we would build for your business - and what it would cost.</p>
-      <a href="/book/" class="btn-primary">Book a Strategy Call</a>
+    <div style="text-align:center;">
+      <span class="label">What We Deploy</span>
+      <h2 style="margin-top:0.75rem;">AI Solutions for Fort Lauderdale Businesses</h2>
     </div>
+    <div class="features-grid">
+      <div class="feature-item">
+        <h3>AI Voice Agents</h3>
+        <p>Intelligent AI receptionists that answer every call, book appointments, qualify leads, and route messages 24/7. Your Fort Lauderdale business never misses another revenue opportunity.</p>
+      </div>
+      <div class="feature-item">
+        <h3>AI Workflow Automation</h3>
+        <p>Autonomous systems that handle intake, follow-up, scheduling, and internal operations. We eliminate the manual bottlenecks that cost South Florida businesses time and money.</p>
+      </div>
+      <div class="feature-item">
+        <h3>AI Systems Integration</h3>
+        <p>End-to-end integration of AI into your existing tech stack. CRM, EHR, practice management, accounting: we connect intelligent automation to the tools your team already uses.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── WHY FORT LAUDERDALE ── -->
+<section class="why-section">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="label">Local Expertise</span>
+      <h2 style="margin-top:0.75rem;">Why Fort Lauderdale Businesses Choose Augentic AI</h2>
+    </div>
+    <div class="why-grid">
+      <div class="why-item">
+        <h3>South Florida Market Knowledge</h3>
+        <p>Fort Lauderdale sits at the center of one of the fastest-growing metro areas in the country. We understand the competitive dynamics of Broward County and build AI systems that give your business an edge.</p>
+      </div>
+      <div class="why-item">
+        <h3>Industry Alignment</h3>
+        <p>South Florida's economy is driven by marine, tourism, real estate, healthcare, and professional services. We build AI solutions purpose-fit for the industries that define this market.</p>
+      </div>
+      <div class="why-item">
+        <h3>Fast Deployment</h3>
+        <p>No six-month roadmaps. We scope, build, and deploy production AI systems in days to weeks. Fort Lauderdale businesses start seeing measurable results immediately, not next quarter.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── INDUSTRIES ── -->
+<section style="background:var(--bg);">
+  <div class="container">
+    <div style="text-align:center;">
+      <span class="label">Industries We Serve</span>
+      <h2 style="margin-top:0.75rem;">AI Automation Across Fort Lauderdale</h2>
+    </div>
+    <div class="industries-grid">
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">+</div>
+        <h3>Medical Practices</h3>
+        <p>AI-powered patient intake, appointment scheduling, and after-hours call handling for Fort Lauderdale clinics, specialists, and multi-location practices.</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&sect;</div>
+        <h3>Law Firms</h3>
+        <p>Intelligent lead qualification, client intake automation, and 24/7 call answering for Fort Lauderdale attorneys across personal injury, immigration, family law, and more.</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&#9670;</div>
+        <h3>Home Services</h3>
+        <p>Never miss a service call again. AI dispatching, booking, and follow-up for HVAC, plumbing, electrical, and marine services companies across Broward County.</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&#8962;</div>
+        <h3>Real Estate</h3>
+        <p>Automated lead capture, showing scheduling, and prospect follow-up for Fort Lauderdale real estate agents, brokerages, and property management firms.</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&#9733;</div>
+        <h3>Marine &amp; Tourism</h3>
+        <p>Streamlined booking, customer inquiries, and operational workflows for Fort Lauderdale's marine industry, charter companies, and hospitality businesses.</p>
+      </div>
+      <div class="industry-item">
+        <div class="industry-icon" aria-hidden="true">&#36;</div>
+        <h3>Financial Services</h3>
+        <p>Compliant AI automation for client scheduling, document collection, and prospect qualification for South Florida financial advisors and wealth management firms.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── CTA ── -->
+<div class="cta-section">
+  <div class="container">
+    <span class="label">Get Started</span>
+    <h2 style="margin-top:0.75rem;">Ready to Automate<br>Your Fort Lauderdale Business?</h2>
+    <p>Talk to Auri, our AI receptionist, or book a strategy call to see how Augentic AI deploys intelligent automation for South Florida businesses.</p>
+    <div style="margin-bottom:2rem;">
+      <div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:700;font-size:1.6rem;color:var(--accent);text-transform:uppercase;margin-bottom:0.3rem;">Talk to Auri</div>
+      <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.6rem;">Our AI receptionist: live right now</div>
+      <a href="tel:+18135441659" style="font-family:'Playfair Display',Georgia,serif;font-size:2rem;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:0.02em;">(813) 544-1659</a>
+    </div>
+    <a href="/book/" class="btn-primary" style="font-size:0.85rem;padding:1rem 2.5rem;">Book a Strategy Call</a>
   </div>
 </div>
 
@@ -255,44 +311,10 @@
           </div>
         </div>
         <div class="footer-columns">
-          <div class="footer-col">
-            <h4>Services</h4>
-            <ul>
-              <li><a href="/services/ai-voice-agents/">AI Voice Agents</a></li>
-              <li><a href="/services/ai-automation/">AI Automation</a></li>
-              <li><a href="/services/ai-integration/">AI Integration</a></li>
-              <li><a href="/services/ai-strategy/">AI Strategy</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Industries</h4>
-            <ul>
-              <li><a href="/industries/healthcare/">Healthcare</a></li>
-              <li><a href="/industries/legal/">Legal</a></li>
-              <li><a href="/industries/real-estate/">Real Estate</a></li>
-              <li><a href="/industries/home-services/">Home Services</a></li>
-              <li><a href="/industries/financial-services/">Financial Services</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Resources</h4>
-            <ul>
-              <li><a href="/blog/">Insights</a></li>
-              <li><a href="/guide/">AI Guide</a></li>
-              <li><a href="/glossary/">AI Glossary</a></li>
-              <li><a href="/roi-calculator/">ROI Calculator</a></li>
-              <li><a href="/case-studies/">Case Studies</a></li>
-            </ul>
-          </div>
-          <div class="footer-col">
-            <h4>Company</h4>
-            <ul>
-              <li><a href="/about/">About</a></li>
-              <li><a href="/pricing/">Pricing</a></li>
-              <li><a href="/book/">Book a Call</a></li>
-              <li><a href="mailto:hello@augenticai.com">Contact</a></li>
-            </ul>
-          </div>
+          <div class="footer-col"><h4>Services</h4><ul><li><a href="/services/ai-voice-agents/">AI Voice Agents</a></li><li><a href="/services/ai-automation/">AI Automation</a></li><li><a href="/services/ai-integration/">AI Integration</a></li><li><a href="/services/ai-strategy/">AI Strategy</a></li></ul></div>
+          <div class="footer-col"><h4>Industries</h4><ul><li><a href="/industries/healthcare/">Healthcare</a></li><li><a href="/industries/legal/">Legal</a></li><li><a href="/industries/real-estate/">Real Estate</a></li><li><a href="/industries/home-services/">Home Services</a></li><li><a href="/industries/financial-services/">Financial Services</a></li></ul></div>
+          <div class="footer-col"><h4>Resources</h4><ul><li><a href="/blog/">Insights</a></li><li><a href="/guide/">AI Guide</a></li><li><a href="/glossary/">AI Glossary</a></li><li><a href="/roi-calculator/">ROI Calculator</a></li><li><a href="/case-studies/">Case Studies</a></li></ul></div>
+          <div class="footer-col"><h4>Company</h4><ul><li><a href="/about/">About</a></li><li><a href="/pricing/">Pricing</a></li><li><a href="/book/">Book a Call</a></li><li><a href="mailto:hello@augenticai.com">Contact</a></li></ul></div>
         </div>
       </div>
       <div class="footer-bottom">
@@ -305,6 +327,7 @@
     </div>
   </div>
 </footer>
+
 <script>
   const nav = document.getElementById('nav');
   window.addEventListener('scroll', () => {
@@ -349,20 +372,17 @@
   </div>
 </div>
 <script>
-  (function() {
-    var consent = localStorage.getItem('augentic_cookie_consent');
-    var banner = document.getElementById('cookie-banner');
-    if (!consent && banner) { banner.style.display = 'flex'; }
-    document.getElementById('cookie-accept').addEventListener('click', function() {
-      localStorage.setItem('augentic_cookie_consent', 'accepted');
-      banner.style.display = 'none';
-    });
-    document.getElementById('cookie-decline').addEventListener('click', function() {
-      localStorage.setItem('augentic_cookie_consent', 'declined');
-      banner.style.display = 'none';
-    });
-  })();
+  var consent = localStorage.getItem('augentic_cookie_consent');
+  var banner = document.getElementById('cookie-banner');
+  if (!consent && banner) { banner.style.display = 'flex'; }
+  document.getElementById('cookie-accept')?.addEventListener('click', function() {
+    localStorage.setItem('augentic_cookie_consent', 'accepted');
+    banner.style.display = 'none';
+  });
+  document.getElementById('cookie-decline')?.addEventListener('click', function() {
+    localStorage.setItem('augentic_cookie_consent', 'declined');
+    banner.style.display = 'none';
+  });
 </script>
-
 </body>
 </html>
