@@ -5,6 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Augentic AI - Autonomous AI Workforces for Revenue-Driven Companies</title>
   <meta name="description" content="Augentic AI architects, integrates, and deploys autonomous AI systems that replace manual work and drive measurable revenue outcomes." />
+  <meta property="og:title" content="Augentic AI — Autonomous AI Workforces for Revenue-Driven Companies" />
+  <meta property="og:description" content="Augentic AI architects, integrates, and deploys autonomous AI systems that replace manual work and drive measurable revenue outcomes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://augenticai.com/favicon.svg" />
+  <meta property="og:url" content="https://augenticai.com/" />
+  <meta property="og:site_name" content="Augentic AI" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Augentic AI — Autonomous AI Workforces for Revenue-Driven Companies" />
+  <meta name="twitter:description" content="Augentic AI architects, integrates, and deploys autonomous AI systems that replace manual work and drive measurable revenue outcomes." />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Augentic AI",
+    "url": "https://augenticai.com",
+    "logo": "https://augenticai.com/favicon.svg",
+    "description": "AI systems integrator that architects, integrates, and deploys autonomous AI workforces for revenue-driven companies.",
+    "telephone": "+1-813-544-1659",
+    "email": "hello@augenticai.com",
+    "sameAs": ["https://linkedin.com/company/augenticai"],
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+1-813-544-1659",
+      "contactType": "sales",
+      "availableLanguage": "English"
+    },
+    "areaServed": "US",
+    "serviceType": ["AI Systems Integration", "AI Workforce Automation", "AI Voice Agents"]
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Poppins:ital,wght@1,700&display=swap" rel="stylesheet" />
@@ -541,6 +571,60 @@
       .nav-logo svg { width: 130px; height: 30px; }
     }
 
+    /* ── RESULTS GRID ── */
+    .results-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 2rem; }
+    @media (max-width: 900px) { .results-grid { grid-template-columns: 1fr; } }
+
+    /* ── FAQ ── */
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; background: none; border: none; color: var(--text);
+      font-family: var(--font-sans); font-size: 1.05rem; font-weight: 600;
+      text-align: left; padding: 1.4rem 0; cursor: pointer;
+      display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-q svg { flex-shrink: 0; transition: transform 0.3s; }
+    .faq-item.open .faq-q svg { transform: rotate(45deg); }
+    .faq-a { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, padding 0.35s ease; }
+    .faq-item.open .faq-a { max-height: 400px; padding-bottom: 1.4rem; }
+    .faq-a p { font-size: 0.95rem; }
+
+    /* ── STICKY MOBILE CTA ── */
+    .mobile-sticky-cta {
+      display: none; position: fixed; bottom: 0; left: 0; right: 0; z-index: 90;
+      background: var(--bg-card); border-top: 1px solid var(--border);
+      padding: 0.75rem 1rem; gap: 0.75rem; align-items: center; justify-content: center;
+    }
+    .mobile-sticky-cta a {
+      flex: 1; text-align: center; padding: 0.7rem 0.5rem; font-size: 0.78rem;
+      font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+      text-decoration: none; border-radius: var(--radius);
+    }
+    .mobile-sticky-cta .cta-call {
+      background: transparent; border: 1px solid var(--border-accent); color: var(--accent);
+    }
+    .mobile-sticky-cta .cta-book {
+      background: var(--accent); color: #0A0A0A;
+    }
+    @media (max-width: 900px) {
+      .mobile-sticky-cta { display: flex; }
+      #cookie-banner, #cookieBanner { bottom: 52px !important; }
+    }
+
+    /* ── INDUSTRY GRID ── */
+    .industries-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+    }
+    @media (max-width: 900px) {
+      .industries-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .industries-grid { grid-template-columns: 1fr; }
+    }
+
     /* ── LIGHT MODE ── */
     body.light {
       --bg: #FAFAF7;
@@ -654,6 +738,7 @@
   <a href="#offerings" onclick="closeMobile()">Offerings</a>
   <a href="/blog/" onclick="closeMobile()">Insights</a>
   <a href="/guide/" onclick="closeMobile()">AI Guide</a>
+  <a href="tel:+18135441659" onclick="closeMobile()" style="display:flex;align-items:center;gap:0.5rem;">(813) 544-1659 — Talk to Auri</a>
   <a href="/book/" onclick="closeMobile()" style="color: var(--accent);">Book Strategy Call</a>
 </div>
 
@@ -761,6 +846,35 @@
         <span class="step-number">04</span>
         <h3>Optimize</h3>
         <p>We monitor performance, retrain agents, and scale what works. AI systems are not set-and-forget - we treat them as living infrastructure that improves over time.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ── SOCIAL PROOF ── -->
+<section id="results" style="padding:5rem 0;">
+  <div class="container">
+    <div class="section-header center fade-in" style="margin-bottom:3.5rem;">
+      <span class="label">Results</span>
+      <h2>Real Outcomes. <span class="pop">Real Revenue.</span></h2>
+    </div>
+    <div class="results-grid fade-in fade-in-delay-1">
+      <div style="background:var(--bg-card);border:1px solid var(--border);padding:2.5rem 2rem;text-align:center;">
+        <div style="font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:var(--accent);margin-bottom:0.5rem;">80%</div>
+        <h3 style="font-size:0.95rem;margin-bottom:0.6rem;">Reduction in Manual Outreach</h3>
+        <p style="font-size:0.85rem;">$25M SaaS company automated lead follow-up, freeing 3 full-time sales reps for high-value conversations.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);padding:2.5rem 2rem;text-align:center;">
+        <div style="font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:var(--accent);margin-bottom:0.5rem;">12x</div>
+        <h3 style="font-size:0.95rem;margin-bottom:0.6rem;">Faster Lead Response Time</h3>
+        <p style="font-size:0.85rem;">AI voice agent responds to inbound leads in under 10 seconds — 24/7/365, no missed calls, no voicemail.</p>
+      </div>
+      <div style="background:var(--bg-card);border:1px solid var(--border);padding:2.5rem 2rem;text-align:center;">
+        <div style="font-family:var(--font-serif);font-size:clamp(2.4rem,4vw,3.2rem);font-weight:700;color:var(--accent);margin-bottom:0.5rem;">$1.2M</div>
+        <h3 style="font-size:0.95rem;margin-bottom:0.6rem;">Annual Labor Cost Avoided</h3>
+        <p style="font-size:0.85rem;">Mid-market firm replaced 4 manual workflows with autonomous agents — without reducing headcount.</p>
       </div>
     </div>
   </div>
@@ -920,7 +1034,7 @@
       <span class="label">Industry Use Cases</span>
       <h2>AI That Works in<br><span class="pop">Your Industry</span></h2>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:1.5rem;" class="fade-in fade-in-delay-1">
+    <div class="industries-grid fade-in fade-in-delay-1">
 
       <div style="background:var(--bg);border:1px solid var(--border);padding:2.5rem 2rem;display:flex;flex-direction:column;">
         <span class="label" style="margin-bottom:1.2rem;">Healthcare</span>
@@ -1001,6 +1115,51 @@
 
 <div class="divider"></div>
 
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="container">
+    <div class="section-header center fade-in" style="margin-bottom:3.5rem;">
+      <span class="label">FAQ</span>
+      <h2>Common <span class="pop">Questions</span></h2>
+    </div>
+    <div style="max-width:780px;margin:0 auto;" class="fade-in fade-in-delay-1">
+
+      <div class="faq-item">
+        <button class="faq-q">How long does it take to deploy an AI system?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="9" y1="3" x2="9" y2="15"/><line x1="3" y1="9" x2="15" y2="9"/></svg></button>
+        <div class="faq-a"><p>Most engagements go from discovery to live deployment in 30 days. Our Accelerator program runs 90 days for more complex, multi-workflow buildouts. We move fast because we have done this before — we are not experimenting on your dime.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Do we need to replace our existing tools?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="9" y1="3" x2="9" y2="15"/><line x1="3" y1="9" x2="15" y2="9"/></svg></button>
+        <div class="faq-a"><p>No. We integrate into your existing stack — CRM, email, calendar, phone system, whatever you are running today. No rip and replace. Your team keeps working while the AI agents start alongside them.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What does it cost?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="9" y1="3" x2="9" y2="15"/><line x1="3" y1="9" x2="15" y2="9"/></svg></button>
+        <div class="faq-a"><p>It depends on scope. Our AI Voice Front Desk starts at $199/month. The Accelerator program is a fixed-fee 90-day engagement. Enterprise buildouts are custom-scoped. Every engagement is tied to measurable ROI — we will show you the math before you commit.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Is our data secure?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="9" y1="3" x2="9" y2="15"/><line x1="3" y1="9" x2="15" y2="9"/></svg></button>
+        <div class="faq-a"><p>Yes. We build enterprise-grade infrastructure with encryption at rest and in transit, role-based access controls, and SOC 2-aligned practices. For healthcare clients, we design HIPAA-compliant architectures. Your data never leaves your control.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What if we have already tried AI and it did not work?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="9" y1="3" x2="9" y2="15"/><line x1="3" y1="9" x2="15" y2="9"/></svg></button>
+        <div class="faq-a"><p>That is our most common client. Most companies have tried AI tools — chatbots, copilots, point solutions — and seen underwhelming results. The difference is tools vs. systems. We build systems that operate autonomously, not tools that require human babysitting.</p></div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">What integrations do you support?<svg width="18" height="18" viewBox="0 0 18 18" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="9" y1="3" x2="9" y2="15"/><line x1="3" y1="9" x2="15" y2="9"/></svg></button>
+        <div class="faq-a"><p>Salesforce, HubSpot, GoHighLevel, Outlook, Gmail, Google Calendar, Slack, Teams, Twilio, RingCentral, and most major CRM, email, and phone platforms. If it has an API, we can connect to it.</p></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
 <!-- ── CTA ── -->
 <section id="contact">
   <div class="container">
@@ -1009,9 +1168,17 @@
       <h2 class="fade-in fade-in-delay-1">Ready to Build<br><span class="pop">Your AI Workforce?</span></h2>
       <p class="fade-in fade-in-delay-2" style="margin-bottom:2rem;">Tell us about your business. We will assess your workflows, identify your highest-leverage automation opportunities, and tell you exactly what we would build.</p>
 
-      <div class="fade-in fade-in-delay-2" style="background:var(--bg-card);border:1px solid var(--border-accent);padding:1.5rem 2rem;margin-bottom:2.5rem;text-align:center;display:flex;align-items:center;justify-content:center;gap:1rem;flex-wrap:wrap;">
-        <span style="font-size:0.7rem;font-weight:600;letter-spacing:0.15em;text-transform:uppercase;color:var(--accent);">Call to test our AI receptionist</span>
-        <a href="tel:+18135441659" style="font-family:var(--font-serif);font-size:1.5rem;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text)'">(813) 544-1659</a>
+      <div class="fade-in fade-in-delay-2" style="background:var(--bg-card);border:1px solid var(--border-accent);padding:2rem 2.5rem;margin-bottom:2.5rem;text-align:center;">
+        <div style="font-family:'Poppins',sans-serif;font-style:italic;font-weight:700;font-size:clamp(1.4rem,3vw,2rem);color:var(--accent);text-transform:uppercase;margin-bottom:0.4rem;">Talk to Auri</div>
+        <div style="font-size:0.72rem;font-weight:500;letter-spacing:0.15em;text-transform:uppercase;color:var(--text-dim);margin-bottom:0.8rem;">Our AI receptionist — live right now</div>
+        <a href="tel:+18135441659" style="font-family:var(--font-serif);font-size:1.8rem;font-weight:700;color:var(--text);text-decoration:none;letter-spacing:0.02em;transition:color 0.2s;" onmouseover="this.style.color='var(--accent)'" onmouseout="this.style.color='var(--text)'">(813) 544-1659</a>
+        <div style="margin-top:1rem;">
+          <button id="webCallBtn" onclick="startWebCall()" style="background:none;border:1px solid var(--border-accent);color:var(--accent);font-family:var(--font-sans);font-size:0.78rem;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;padding:0.6rem 1.6rem;cursor:pointer;border-radius:var(--radius);transition:all 0.2s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='none'">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:0.4rem;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            Talk in Browser
+          </button>
+          <div id="webCallStatus" style="font-size:0.75rem;color:var(--text-dim);margin-top:0.5rem;display:none;"></div>
+        </div>
       </div>
 
       <form class="contact-form fade-in fade-in-delay-3" id="contactForm" onsubmit="handleSubmit(event)">
@@ -1095,6 +1262,12 @@
     </div>
   </div>
 </footer>
+
+<!-- ── STICKY MOBILE CTA ── -->
+<div class="mobile-sticky-cta">
+  <a href="tel:+18135441659" class="cta-call">Talk to Auri</a>
+  <a href="#contact" class="cta-book">Book a Call</a>
+</div>
 
 <script>
 
@@ -1331,6 +1504,14 @@
     });
     heroObserver.observe(hero);
   })();
+
+  // ── FAQ TOGGLE ──
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.parentElement;
+      item.classList.toggle('open');
+    });
+  });
 </script>
 
 <!-- COOKIE CONSENT BANNER -->
@@ -1361,6 +1542,52 @@
       banner.style.display = 'none';
     });
   })();
+</script>
+
+<!-- Retell AI Web Calling -->
+<script type="module">
+  import { RetellWebClient } from 'https://cdn.jsdelivr.net/npm/retell-client-js-sdk@3/+esm';
+  const retell = new RetellWebClient();
+  const WORKER = 'https://augentic-form-handler.kyle-50d.workers.dev';
+
+  window.startWebCall = async function() {
+    const btn = document.getElementById('webCallBtn');
+    const status = document.getElementById('webCallStatus');
+    btn.disabled = true;
+    btn.textContent = 'Connecting...';
+    status.style.display = 'block';
+    status.textContent = 'Requesting microphone access...';
+
+    try {
+      const res = await fetch(WORKER + '/retell', { method: 'POST' });
+      const data = await res.json();
+      if (!data.access_token) throw new Error(data.error || 'No access token');
+
+      await retell.startCall({ accessToken: data.access_token, sampleRate: 24000 });
+
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor" style="vertical-align:-2px;margin-right:0.4rem;"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></svg>End Call';
+      btn.onclick = function() { retell.stopCall(); };
+      status.textContent = 'Connected — talking to Auri';
+      status.style.color = 'var(--accent)';
+    } catch (err) {
+      console.error('Web call error:', err);
+      status.textContent = 'Could not connect. Try calling instead.';
+      status.style.color = '#cc4444';
+      btn.disabled = false;
+      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:0.4rem;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>Talk in Browser';
+      btn.onclick = window.startWebCall;
+    }
+  };
+
+  retell.on('call_ended', () => {
+    const btn = document.getElementById('webCallBtn');
+    const status = document.getElementById('webCallStatus');
+    btn.disabled = false;
+    btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="vertical-align:-2px;margin-right:0.4rem;"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>Talk in Browser';
+    btn.onclick = window.startWebCall;
+    status.textContent = 'Call ended';
+    status.style.color = 'var(--text-dim)';
+  });
 </script>
 </body>
 </html>

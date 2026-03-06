@@ -138,13 +138,42 @@ function columnLetter(n) {
   return s;
 }
 
+// ── Retell AI web call ──
+
+async function handleRetellWebCall(env) {
+  if (!env.RETELL_API_KEY) {
+    return new Response(JSON.stringify({ error: 'Retell not configured' }), { status: 500, headers: CORS_HEADERS });
+  }
+  const res = await fetch('https://api.retellai.com/v2/create-web-call', {
+    method: 'POST',
+    headers: {
+      'Authorization': `Bearer ${env.RETELL_API_KEY}`,
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({ agent_id: 'agent_d39be9c6c735dbca4ab3ca9359' }),
+  });
+  const data = await res.json();
+  if (!res.ok) {
+    return new Response(JSON.stringify({ error: data.message || 'Failed to create web call' }), { status: res.status, headers: CORS_HEADERS });
+  }
+  return new Response(JSON.stringify({ access_token: data.access_token }), { status: 200, headers: CORS_HEADERS });
+}
+
 // ── Main handler ──
 
 export default {
   async fetch(request, env) {
+    const url = new URL(request.url);
+
     if (request.method === 'OPTIONS') {
       return new Response(null, { status: 204, headers: CORS_HEADERS });
     }
+
+    // Retell web call endpoint
+    if (url.pathname === '/retell' && request.method === 'POST') {
+      return handleRetellWebCall(env);
+    }
+
     if (request.method !== 'POST') {
       return new Response(JSON.stringify({ error: 'Method not allowed' }), { status: 405, headers: CORS_HEADERS });
     }
