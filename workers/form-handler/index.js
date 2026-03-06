@@ -207,7 +207,7 @@ export default {
       const slackBlocks = [
         {
           type: 'header',
-          text: { type: 'plain_text', text: 'Augentic AI — New Lead', emoji: true },
+          text: { type: 'plain_text', text: 'Augentic AI: New Lead', emoji: true },
         },
         {
           type: 'section',
@@ -238,7 +238,7 @@ export default {
           headers: { Authorization: `Bearer ${env.SLACK_BOT_TOKEN}`, 'Content-Type': 'application/json' },
           body: JSON.stringify({
             channel: SLACK_CHANNEL_ID,
-            text: `Augentic AI — New lead: ${name} (${email})`,
+            text: `Augentic AI: New lead: ${name} (${email})`,
             blocks: slackBlocks,
           }),
         });
